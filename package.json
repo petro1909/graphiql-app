@@ -38,7 +38,6 @@
     "husky": "^8.0.3",
     "jsdom": "^23.0.1",
     "lint-staged": "^15.1.0",
-    "msw": "^1.1.1",
     "prettier": "^3.1.0",
     "react-hook-form": "^7.48.2",
     "react-redux": "^8.1.3",
