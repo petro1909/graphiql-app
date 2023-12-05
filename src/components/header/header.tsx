@@ -5,7 +5,7 @@ import { CustomNavLink } from '@components/custom-nav-link/custom-nav-link';
 import { Button } from '@components/button/button';
 import { Select } from '@components/select/select';
 
-import styles from './Header.module.scss';
+import styles from './header.module.scss';
 
 export const Header: React.FC = () => {
   const [isSticky, setIsSticky] = useState(false);

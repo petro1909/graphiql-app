@@ -1,4 +1,4 @@
-import styles from './Select.module.scss';
+import styles from './select.module.scss';
 
 export const Select: React.FC = () => {
   return (
