@@ -18,6 +18,16 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./",
+    "paths": {
+      "@app_types/*": ["./src/types/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@components/*": ["./src/components/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@validation/*": ["./src/validation/*"],
+    },
     "plugins": [
       {
         "name": "typescript-plugin-css-modules",
