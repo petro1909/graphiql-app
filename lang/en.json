@@ -1,4 +1,9 @@
 {
   "signout": "Sign Out",
-  "welcomePage": "Welcome Page"
+  "welcomePage": "Welcome Page",
+  "created": "Application was created in 2023",
+  "createdBy": "creators",
+  "petrName": "Petr",
+  "nataliaName": "Natalia",
+  "daryaName": "Darya"
 }
