@@ -21,6 +21,8 @@ export default defineConfig({
       '@redux': path.resolve(__dirname, './src/redux'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@validation': path.resolve(__dirname, './src/validation'),
+      '@localization': path.resolve(__dirname, './src/localization'),
+      '@lang': path.resolve(__dirname, './lang'),
     },
   },
   test: {
