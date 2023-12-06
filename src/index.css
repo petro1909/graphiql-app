@@ -12,6 +12,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.active {
+  color: #2db3c9;
+}
+
 body {
   margin: 0;
 }
