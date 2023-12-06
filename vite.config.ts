@@ -10,12 +10,18 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly',
     },
   },
+  envDir: process.cwd(),
+  envPrefix: '_',
+  define: {
+    'process.env': {},
+  },
   plugins: [react()],
   resolve: {
     alias: {
       '@app_types': path.resolve(__dirname, './src/types'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@service': path.resolve(__dirname, './src/services'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@utils': path.resolve(__dirname, './src/utils'),
       '@redux': path.resolve(__dirname, './src/redux'),
