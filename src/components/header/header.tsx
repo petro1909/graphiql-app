@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
     };
   }, []);
 
-  const classNamesSticky = isSticky ? styles.sticky : '';
+  const classNamesSticky = isSticky && styles.sticky;
 
   return (
     <header className={classNames(classNamesSticky, styles.header)}>

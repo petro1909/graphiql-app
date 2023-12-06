@@ -3,7 +3,7 @@
 .button {
     font-size: 1rem;
     font-weight: 700;
-    padding: 10px 17px;
+    padding: 0.625rem 1.125rem;
     margin-right: 0;
     border-radius: 1rem;
     line-height: 1.25;
@@ -16,7 +16,7 @@
 
 .buttonLight {
     background-color: $color-white;
-    border: 2px solid $color-gray;
+    border: 0.125rem solid $color-gray;
     color: $color-base;
 
   &:hover {
@@ -26,34 +26,34 @@
 
   &:focus {
     background-color: $color-gray-light;
-    border: 2px solid $color-gray-light;
+    border: 0.125rem solid $color-gray-light;
   }
 
   &:disabled {
     background-color: $color-gray-light;
-    border: 2px solid $color-gray-light;
+    border: 0.125rem solid $color-gray-light;
     color: $color-gray-dark;
   }
 }
 
 .buttonDark {
     background-color: $color-blue;
-    border: 2px solid $color-blue;
+    border: 0.125rem solid $color-blue;
     color: $color-white;
 
   &:hover {
-    border: 2px solid $color-blue-light;
+    border: 0.125rem solid $color-blue-light;
     background-color: $color-blue-light;
   }
 
   &:focus {
     background-color: $color-blue-light;
-    border: 2px solid $color-blue-light;
+    border: 0.125rem solid $color-blue-light;
   }
 
   &:disabled {
     background-color: $color-gray-light;
-    border: 2px solid $color-gray-light;
+    border: 0.125rem solid $color-gray-light;
     color: $color-gray-dark;
   }
 }

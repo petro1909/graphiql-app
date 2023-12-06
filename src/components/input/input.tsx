@@ -1,13 +1,9 @@
+import { InputHTMLAttributes } from 'react';
 import styles from './input.module.scss';
 
-type InputProps = {
-  name?: string;
-  onChange?: () => void;
-  value?: string | number;
-  placeholder?: string;
+type InputProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'name' | 'disabled'> & {
   label?: string;
   error?: string;
-  disabled?: boolean;
 };
 
 export const Input: React.FC<InputProps> = ({ onChange, name, disabled, value, placeholder, label, error }) => {
