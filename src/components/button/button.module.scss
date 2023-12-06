@@ -1,0 +1,59 @@
+@import '../../variables.scss';
+
+.button {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 17px;
+    margin-right: 0;
+    border-radius: 1rem;
+    line-height: 1.25;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.buttonLight {
+    background-color: $color-white;
+    border: 2px solid $color-gray;
+    color: $color-base;
+
+  &:hover {
+    border-color: $color-gray;
+    background-color: $color-gray-light;
+  }
+
+  &:focus {
+    background-color: $color-gray-light;
+    border: 2px solid $color-gray-light;
+  }
+
+  &:disabled {
+    background-color: $color-gray-light;
+    border: 2px solid $color-gray-light;
+    color: $color-gray-dark;
+  }
+}
+
+.buttonDark {
+    background-color: $color-blue;
+    border: 2px solid $color-blue;
+    color: $color-white;
+
+  &:hover {
+    border: 2px solid $color-blue-light;
+    background-color: $color-blue-light;
+  }
+
+  &:focus {
+    background-color: $color-blue-light;
+    border: 2px solid $color-blue-light;
+  }
+
+  &:disabled {
+    background-color: $color-gray-light;
+    border: 2px solid $color-gray-light;
+    color: $color-gray-dark;
+  }
+}

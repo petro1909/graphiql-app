@@ -1,3 +1,3 @@
 export function WelcomePage() {
-  return <section>Welcome</section>;
+  return <section style={{ height: '800px' }}>Welcome</section>;
 }

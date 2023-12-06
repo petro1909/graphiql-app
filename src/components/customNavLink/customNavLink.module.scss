@@ -1,0 +1,13 @@
+@import '../../variables.scss';
+
+.link {
+  font-weight: 500;
+  color: $color-blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-blue;
+    text-decoration: underline;
+  }
+}
+
