@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
-import { CustomNavLink } from '@components/custom-nav-link/custom-nav-link';
+import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Button } from '@components/button/button';
-import { Select } from '@components/select/select';
+import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
 
 import styles from './header.module.scss';
 
@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
         Welcome page
       </CustomNavLink>
       <div className={styles.flex}>
-        <Select />
+        <SelectLanguage />
         <Button mode="light">Sign Out</Button>
       </div>
     </header>

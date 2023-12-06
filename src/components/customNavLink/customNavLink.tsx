@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { ReactNode } from 'react';
 import classNames from 'classnames';
 
-import styles from './custom-nav-link.module.scss';
+import styles from './customNavLink.module.scss';
 
 type CustomNavLinkProps = {
   to: string;

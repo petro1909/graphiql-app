@@ -1,6 +1,6 @@
-import styles from './select.module.scss';
+import styles from './selectLanguage.module.scss';
 
-export const Select: React.FC = () => {
+export const SelectLanguage: React.FC = () => {
   return (
     <div className={styles.field}>
       <select className={styles.select} name="pets" id="pet-select">
