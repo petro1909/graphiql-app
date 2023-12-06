@@ -6,8 +6,11 @@ import { Button } from '@components/button/button';
 import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
 
 import styles from './header.module.scss';
+import React from 'react';
+import { useLocale } from '@localization/useLocale';
 
 export const Header: React.FC = () => {
+  const { language } = useLocale();
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -28,11 +31,11 @@ export const Header: React.FC = () => {
   return (
     <header className={classNames(classNamesSticky, styles.header)}>
       <CustomNavLink to="/" className={styles.link}>
-        Welcome page
+        {language.strings.welcomePage}
       </CustomNavLink>
       <div className={styles.flex}>
         <SelectLanguage />
-        <Button mode="light">Sign Out</Button>
+        <Button mode="light">{language.strings.signout}</Button>
       </div>
     </header>
   );
