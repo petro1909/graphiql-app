@@ -3,23 +3,23 @@
 .footer {
     margin-top: auto;
     display: flex;
-    padding: 0 7.5rem;
+    padding: 0 120px;
     align-items: center;
     justify-content: space-between;
     background-color: $color-gray-light;
-    height: 3rem;
+    height: 48px;
     font-size: 14px;
     color: $color-gray-dark;
 }
 
 .wrapperInfo {
     display: flex;
-    gap: 1.5rem;
+    gap: 24px;
     align-items: center;
 }
 
 .logo {
-    width: 4rem;
+    width: 64px;
     margin-top: 3px;
 }
 

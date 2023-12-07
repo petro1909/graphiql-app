@@ -1,4 +1,6 @@
+import { StrictMode } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 import { Layout } from '@components/layout/layout';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
 import { AuthorizationPage } from '@pages/auth';
@@ -7,32 +9,33 @@ import { MainPage } from '@pages/main';
 import { NotFound } from '@pages/404';
 
 import './style.css';
-import { StrictMode } from 'react';
 
-const mainPath = '/';
-const authPath = '/auth';
-const anyOtherPath = '*';
-const gpaphiqlPath = '/gpaphiql';
+const routes = {
+  mainPath: '/',
+  authPath: '/auth',
+  anyOtherPath: '*',
+  gpaphiqlPath: '/gpaphiql',
+};
 
 const router = createBrowserRouter([
   {
-    path: mainPath,
+    path: routes.mainPath,
     element: <SimpleLayout />,
     children: [
       { index: true, element: <WelcomePage /> },
       {
-        path: authPath,
+        path: routes.authPath,
         element: <AuthorizationPage />,
       },
-      { path: anyOtherPath, element: <NotFound /> },
+      { path: routes.anyOtherPath, element: <NotFound /> },
     ],
   },
   {
-    path: mainPath,
+    path: routes.mainPath,
     element: <Layout />,
     children: [
       {
-        path: gpaphiqlPath,
+        path: routes.gpaphiqlPath,
         element: <MainPage />,
       },
     ],

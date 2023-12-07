@@ -5,8 +5,8 @@
     top: 0;
     background-color: #ffffff;
     border-bottom: 1px solid rgb(225 224 223);
-    height: 4.5rem;
-    padding: 0 7.5rem;
+    height: 72px;
+    padding: 0 120px;
 
     display: flex;
     flex-direction: row;
@@ -14,7 +14,7 @@
     align-items: center;
 
     &.sticky {
-        height: 4rem;
+        height: 64px;
         box-shadow: 0 4px 8px rgba(0,0,0,.04);
     }
 }
@@ -22,5 +22,5 @@
 .flex {
     display: flex;
     align-items: center;
-    gap: 1.5rem
+    gap: 24px;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocale } from '@localization/useLocale';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 
-import rsLogo from '../../assets/rs_school_js.svg';
+import rsLogo from '@assets/rs_school_js.svg';
 import styles from './footer.module.scss';
 
 export const Footer: React.FC = () => {

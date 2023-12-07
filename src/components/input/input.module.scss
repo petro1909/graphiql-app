@@ -8,8 +8,8 @@
 }
 
 .label {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  margin-bottom: 8rem;
+  font-size: 16px;
   color: $color-base;
 }
 
@@ -19,16 +19,16 @@
   color: $color-red;
   line-height: 12px;
   position: absolute;
-  bottom: -1rem;
+  bottom: -16px;
 }
 
 .input {
   border-radius: 6px;
-  height: 2.5rem;
-  font-size: 1rem;
+  height: 40px;
+  font-size: 16px;
   border: 2px solid $color-gray;
   color: $color-base;
-  padding: 0 0.5rem;
+  padding: 0 8px;
   flex: auto;
   opacity: 1;
 
@@ -39,6 +39,6 @@
   }
   &::placeholder {
     opacity: 0.5;
-    font-size: 1rem;
+    font-size: 16px;
   }
 }
