@@ -8,7 +8,7 @@
     justify-content: space-between;
     background-color: $color-gray-light;
     height: 3rem;
-    font-size: 0.875rem;
+    font-size: 14px;
     color: $color-gray-dark;
 }
 
@@ -20,11 +20,11 @@
 
 .logo {
     width: 4rem;
-    margin-top: 0.19rem;
+    margin-top: 3px;
 }
 
 .flex {
     display: flex;
     align-items: flex-end;
-    gap: 0.25rem;
+    gap: 4px;
 }

@@ -9,25 +9,30 @@ import { NotFound } from '@pages/404';
 import './style.css';
 import { StrictMode } from 'react';
 
+const mainPath = '/';
+const authPath = '/auth';
+const anyOtherPath = '*';
+const gpaphiqlPath = '/gpaphiql';
+
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: mainPath,
     element: <SimpleLayout />,
     children: [
       { index: true, element: <WelcomePage /> },
       {
-        path: '/auth',
+        path: authPath,
         element: <AuthorizationPage />,
       },
-      { path: '*', element: <NotFound /> },
+      { path: anyOtherPath, element: <NotFound /> },
     ],
   },
   {
-    path: '/',
+    path: mainPath,
     element: <Layout />,
     children: [
       {
-        path: '/gpaphiql',
+        path: gpaphiqlPath,
         element: <MainPage />,
       },
     ],
