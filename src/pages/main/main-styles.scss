@@ -1,22 +1,22 @@
 @mixin btns {
   box-sizing: border-box;
   border-radius: 20px;
-  padding: 5px 10px
+  padding: 5px 10px;
 }
 
-.main-top{
+.main-top {
   display: flex;
   gap: 50px;
   justify-content: space-between;
   align-items: center;
 }
 
-.endpoint{
+.endpoint {
   padding: 30px;
   display: flex;
   gap: 15px;
 
-  &-input{
+  &-input {
     @include btns;
 
     min-height: 35px;
@@ -24,32 +24,32 @@
 
     outline: none;
 
-    &:focus{
+    &:focus {
       box-sizing: border-box;
       border: 2px solid blue;
     }
   }
 
-  &-btn{
+  &-btn {
     @include btns;
     background-color: white;
     color: black;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       color: white;
-      background-color: rgba(0, 0, 255, .8);
+      background-color: rgba(0, 0, 255, 0.8);
     }
   }
 }
 
-.documentation-btn{
+.documentation-btn {
   padding: 30px;
   min-width: 300px;
   text-align: center;
 
-  &:hover{
-cursor: pointer;
-    background-color: rgba(0, 0, 255, .8);
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 255, 0.8);
   }
 }
