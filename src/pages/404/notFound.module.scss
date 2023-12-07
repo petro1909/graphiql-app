@@ -1,7 +1,7 @@
-@import '../../variables.scss';
+@import '../../helpers/mixins' ;
 
 .notFound {
-    height: calc(100vh - 3rem);
+    height: calc(100vh - 48px);
     background-image: url(../../assets/bg.jpg);
     background-position: left;
 }
@@ -19,7 +19,7 @@
     font-size: 200px;
     line-height: 190px;
     font-weight: 600;
-    @media only screen and (max-width: $screen-sm){
+    @include _480 {
         font-size: 150px;
         line-height: 150px;
         font-weight: 600;
@@ -29,10 +29,11 @@
 .text {
     font-size: 52px;
     font-weight: 500;
-    @media only screen and (max-width: $screen-md){
+    
+    @include _768 {
         font-size: 40px;
     }
-    @media only screen and (max-width: $screen-sm){
+    @include _480 {
         font-size: 24px;
     }
 }
@@ -40,11 +41,11 @@
 .smallText {
     font-size: 30px;
     font-weight: 400;
-    margin-bottom: 2.75rem;
-    @media only screen and (max-width: $screen-md){
+    margin-bottom: 44px;
+    @include _768 {
         font-size: 22px;
     }
-    @media only screen and (max-width: $screen-sm){
+    @include _480 {
         font-size: 14px;
     }
 }
