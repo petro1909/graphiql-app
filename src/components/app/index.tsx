@@ -6,7 +6,7 @@ import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
 import { AuthorizationPage } from '@pages/auth';
 import { WelcomePage } from '@pages/welcome';
 import { MainPage } from '@pages/main';
-import { NotFound } from '@pages/404';
+import { NotFound } from '@pages/404/notFound';
 
 import './style.css';
 

@@ -5,5 +5,8 @@
   "createdBy": "создатели",
   "petrName": "Пётр",
   "nataliaName": "Наталья",
-  "daryaName": "Дарья"
+  "daryaName": "Дарья",
+  "pageNotExist": "Страница, которую вы ищете, не существует",
+  "pageMissing": "Страница отсутствует",
+  "backToHomepage": "Вернуться на главную страницу"
 }
