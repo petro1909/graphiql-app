@@ -1,0 +1,55 @@
+@mixin btns {
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 5px 10px
+}
+
+.main-top{
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.endpoint{
+  padding: 30px;
+  display: flex;
+  gap: 15px;
+
+  &-input{
+    @include btns;
+
+    min-height: 35px;
+    min-width: 350px;
+
+    outline: none;
+
+    &:focus{
+      box-sizing: border-box;
+      border: 2px solid blue;
+    }
+  }
+
+  &-btn{
+    @include btns;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+
+    &:hover{
+      color: white;
+      background-color: rgba(0, 0, 255, .8);
+    }
+  }
+}
+
+.documentation-btn{
+  padding: 30px;
+  min-width: 300px;
+  text-align: center;
+
+  &:hover{
+cursor: pointer;
+    background-color: rgba(0, 0, 255, .8);
+  }
+}

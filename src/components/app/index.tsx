@@ -12,7 +12,7 @@ export function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<WelcomePage />} />
           <Route path="/auth" element={<AuthorizationPage />} />
-          <Route path="/gpaphiql" element={<MainPage />} />
+          <Route path="/main-page" element={<MainPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
