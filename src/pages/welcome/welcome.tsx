@@ -15,15 +15,15 @@ export const Welcome: React.FC = () => {
   return (
     <section className={classes.welcome}>
       <div className={classes.wrapperInfo}>
-        <div className={classes.bigText}>Welcome to GraphiQL progect</div>
+        <div className={classes.bigText}>{language.strings.Welcome}</div>
 
         <div className={classes.actionWrapper}>
-          {!isAuth ? (
+          {isAuth ? (
             <CustomNavLink to={HOME_URL}>
               <Button>{language.strings.Homepage}</Button>
             </CustomNavLink>
           ) : (
-            <CustomNavLink to={AUTH_URL}>Sign In / Sign Up</CustomNavLink>
+            <CustomNavLink to={AUTH_URL}>{language.strings.LogIn}</CustomNavLink>
           )}
         </div>
       </div>
