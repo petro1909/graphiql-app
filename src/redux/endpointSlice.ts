@@ -18,7 +18,7 @@ const endpointSliceInitState: EndPointSliceState = {
   validRequest: {
     URL: '',
     headers: {},
-    variables: {},
+    variables: '',
     query: '',
   },
 };
