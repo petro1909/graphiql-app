@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocale } from '@localization/useLocale';
 
-import { AUTH_URL, HOME_URL } from '@components/constants/constants';
+import { routes } from '@components/constants/constants';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Button } from '@components/button/button';
 
@@ -19,11 +19,11 @@ export const Welcome: React.FC = () => {
 
         <div className={classes.actionWrapper}>
           {isAuth ? (
-            <CustomNavLink to={HOME_URL}>
+            <CustomNavLink to={routes.HOME_URL}>
               <Button>{language.strings.Homepage}</Button>
             </CustomNavLink>
           ) : (
-            <CustomNavLink to={AUTH_URL}>{language.strings.SignIn}</CustomNavLink>
+            <CustomNavLink to={routes.AUTH_URL}>{language.strings.SignIn}</CustomNavLink>
           )}
         </div>
       </div>

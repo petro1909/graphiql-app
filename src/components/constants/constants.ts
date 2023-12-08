@@ -1,3 +1,6 @@
-export const HOME_URL = '/gpaphiql';
-export const WELCOME_URL = '/';
-export const AUTH_URL = '/auth';
+export const routes = {
+  WELCOME_URL: '/',
+  AUTH_URL: '/auth',
+  ANY_OTHER_URL: '*',
+  HOME_URL: '/gpaphiql',
+};
