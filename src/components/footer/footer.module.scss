@@ -1,4 +1,5 @@
 @use '../../helpers/variables.scss' as *;
+@import '../../helpers/mixins';
 
 .footer {
   margin-top: auto;
@@ -6,16 +7,27 @@
   padding: 0 120px;
   align-items: center;
   justify-content: space-between;
-  background-color: $color-gray-light;
   height: 48px;
   font-size: 14px;
   color: $color-gray-dark;
+
+  @include _768 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    height: 90px;
+    padding: 24px;
+  }
 }
 
 .wrapperInfo {
   display: flex;
   gap: 24px;
   align-items: center;
+  @include _480 {
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 
 .logo {

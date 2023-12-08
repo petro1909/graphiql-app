@@ -4,6 +4,9 @@
   height: calc(100vh - 48px);
   background-image: url(../../assets/bg.jpg);
   background-position: left;
+  @include _768 {
+    height: calc(100vh - 138px);
+  }
 }
 
 .wrapperInfo {

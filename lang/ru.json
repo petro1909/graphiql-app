@@ -11,5 +11,10 @@
   "backToHomepage": "Вернуться на главную страницу",
   "setEndpoint": "Установить endpoint",
   "doc": "Документация",
-  "endpointPlaceholder": "Введите адрес"
+  "endpointPlaceholder": "Введите адрес",
+  "Homepage": "Главная страница",
+  "SignIn": "Войти / Зарегистрироваться",
+  "Welcome": "Добро пожаловать в проект GraphiQL",
+  "English": "Английский",
+  "Russian": "Русский"
 }

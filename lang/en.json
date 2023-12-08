@@ -11,5 +11,10 @@
   "backToHomepage": "Back to Homepage",
   "setEndpoint": "Set endpoint",
   "doc": "Documentation",
-  "endpointPlaceholder": "enter endpoint"
+  "endpointPlaceholder": "enter endpoint",
+  "Homepage": "Homepage",
+  "SignIn": "Sign In / Sign Up",
+  "Welcome": "Welcome to GraphiQL progect",
+  "English": "English",
+  "Russian": "Russian"
 }

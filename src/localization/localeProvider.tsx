@@ -5,17 +5,17 @@ import { Language, languages } from './languages';
 
 type LocaleContextType = {
   language: Language;
-  setLanguage: (languageName: string) => void;
+  handleChangeLanguage: (languageName: string) => void;
 };
 
-export const LocaleContext = createContext<LocaleContextType>({ language: languages.EN, setLanguage: () => {} });
+export const LocaleContext = createContext<LocaleContextType>({ language: languages.EN, handleChangeLanguage: () => {} });
 export const LocaleProvider = ({ children }: BaseProps) => {
-  const [language, updateLanguage] = useState<Language>(() => languages[localStorage.getItem('lang') as keyof typeof languages] || languages.EN);
+  const [language, setLanguage] = useState<Language>(() => languages[localStorage.getItem('lang') as keyof typeof languages] || languages.EN);
 
-  const setLanguage = (language: string) => {
-    updateLanguage(languages[language as keyof typeof languages]);
+  const handleChangeLanguage = (language: string) => {
+    setLanguage(languages[language as keyof typeof languages]);
     localStorage.setItem('lang', language);
   };
 
-  return <LocaleContext.Provider value={{ language, setLanguage }}>{children}</LocaleContext.Provider>;
+  return <LocaleContext.Provider value={{ language, handleChangeLanguage }}>{children}</LocaleContext.Provider>;
 };
