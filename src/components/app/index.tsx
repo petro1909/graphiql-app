@@ -1,6 +1,5 @@
 import { StrictMode } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-
 import { routes } from '@components/constants/constants';
 import { Layout } from '@components/layout/layout';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';

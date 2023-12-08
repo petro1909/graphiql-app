@@ -1,31 +1,31 @@
 @use '../../helpers/variables.scss' as *;
-@import '../../helpers/mixins';
+@import '../../helpers/mixins' ;
 
 .header {
-  position: sticky;
-  top: 0;
-  background-color: #ffffff;
-  border-bottom: 1px solid rgb(225 224 223);
-  height: 72px;
-  padding: 0 120px;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(225 224 223);
+    height: 72px;
+    padding: 0 120px;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  @include _768 {
-    padding: 0 24px;
-  }
+    @include _768 {
+        padding: 0 24px;
+    }
 
-  &.headerSmall {
-    height: 64px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
-  }
+    &.headerSmall {
+        height: 64px;
+        box-shadow: 0 4px 8px rgba(0,0,0,.04);
+    }
 }
 
 .flex {
-  display: flex;
-  align-items: center;
-  gap: 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
