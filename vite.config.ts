@@ -23,6 +23,7 @@ export default defineConfig({
       '@validation': path.resolve(__dirname, './src/validation'),
       '@localization': path.resolve(__dirname, './src/localization'),
       '@lang': path.resolve(__dirname, './lang'),
+      '@service': path.resolve(__dirname, './src/service'),
     },
   },
   test: {

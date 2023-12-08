@@ -29,6 +29,7 @@
       "@validation/*": ["./src/validation/*"],
       "@localization/*": ["./src/localization/*"],
       "@lang/*": ["./lang/*"],
+      "@service/*": ["./src/service/*"]
     },
     "plugins": [
       {
