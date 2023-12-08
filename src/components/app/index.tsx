@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Layout } from '@components/layout/layout';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
 import { AuthorizationPage } from '@pages/auth';
-import { WelcomePage } from '@pages/welcome';
+import { Welcome } from '@pages/welcome/welcome';
 import { MainPage } from '@pages/main';
 import { NotFound } from '@pages/404/notFound';
 
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     path: routes.mainPath,
     element: <SimpleLayout />,
     children: [
-      { index: true, element: <WelcomePage /> },
+      { index: true, element: <Welcome /> },
       {
         path: routes.authPath,
         element: <AuthorizationPage />,

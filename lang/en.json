@@ -8,5 +8,6 @@
   "daryaName": "Darya",
   "pageNotExist": "Page you're looking for doesn't exist",
   "pageMissing": "Page missing",
-  "backToHomepage": "Back to Homepage"
+  "backToHomepage": "Back to Homepage",
+  "Homepage" : "Homepage"
 }
