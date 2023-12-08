@@ -3,7 +3,7 @@ import { useLocale } from '@localization/useLocale';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
-import { HOME_URL } from '@components/constants/constants';
+import { WELCOME_URL } from '@components/constants/constants';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Button } from '@components/button/button';
 import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className={classNames(classNamesSticky, classes.header)}>
-      <CustomNavLink to={HOME_URL} className={classes.link}>
+      <CustomNavLink to={WELCOME_URL} className={classes.link}>
         {language.strings.welcomePage}
       </CustomNavLink>
       <div className={classes.flex}>

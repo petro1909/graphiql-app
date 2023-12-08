@@ -10,6 +10,6 @@
   "pageMissing": "Page missing",
   "backToHomepage": "Back to Homepage",
   "Homepage" : "Homepage",
-  "LogIn" : "Sign In / Sign Up",
+  "SignIn" : "Sign In / Sign Up",
   "Welcome" : "Welcome to GraphiQL progect"
 }

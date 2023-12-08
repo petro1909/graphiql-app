@@ -23,7 +23,7 @@ export const Welcome: React.FC = () => {
               <Button>{language.strings.Homepage}</Button>
             </CustomNavLink>
           ) : (
-            <CustomNavLink to={AUTH_URL}>{language.strings.LogIn}</CustomNavLink>
+            <CustomNavLink to={AUTH_URL}>{language.strings.SignIn}</CustomNavLink>
           )}
         </div>
       </div>
