@@ -1,0 +1,30 @@
+@use '../../helpers/variables.scss' as *;
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    padding: 0 120px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-gray-light;
+    height: 48px;
+    font-size: 14px;
+    color: $color-gray-dark;
+}
+
+.wrapperInfo {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.logo {
+    width: 64px;
+    margin-top: 3px;
+}
+
+.flex {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+}

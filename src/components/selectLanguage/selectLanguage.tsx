@@ -1,6 +1,7 @@
 import { useLocale } from '@localization/useLocale';
-import styles from './selectLanguage.module.scss';
 import { languages } from '@localization/languages';
+
+import classes from './selectLanguage.module.scss';
 
 export const SelectLanguage: React.FC = () => {
   const { language, setLanguage } = useLocale();
@@ -11,8 +12,8 @@ export const SelectLanguage: React.FC = () => {
   };
 
   return (
-    <div className={styles.field}>
-      <select className={styles.select} name="language" id="language-select" defaultValue={language.name} onChange={onChange}>
+    <div className={classes.field}>
+      <select className={classes.select} name="language" id="language-select" defaultValue={language.name} onChange={onChange}>
         <option value={languages.EN.name}>{languages.EN.title}</option>
         <option value={languages.RU.name}>{languages.RU.title}</option>
       </select>

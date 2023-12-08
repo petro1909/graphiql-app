@@ -1,23 +1,19 @@
-import styles from './input.module.scss';
+import { InputHTMLAttributes } from 'react';
+import classes from './input.module.scss';
 
-type InputProps = {
-  name?: string;
-  onChange?: () => void;
-  value?: string | number;
-  placeholder?: string;
+type InputProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'name' | 'disabled'> & {
   label?: string;
   error?: string;
-  disabled?: boolean;
 };
 
 export const Input: React.FC<InputProps> = ({ onChange, name, disabled, value, placeholder, label, error }) => {
   return (
-    <div className={styles.field}>
-      <label className={styles.label} htmlFor={name}>
+    <div className={classes.field}>
+      <label className={classes.label} htmlFor={name}>
         {label}
       </label>
-      <input className={styles.input} name={name} disabled={disabled} onChange={onChange} value={value} placeholder={placeholder} />
-      <div className={styles.error}>{error}</div>
+      <input className={classes.input} name={name} disabled={disabled} onChange={onChange} value={value} placeholder={placeholder} />
+      <div className={classes.error}>{error}</div>
     </div>
   );
 };

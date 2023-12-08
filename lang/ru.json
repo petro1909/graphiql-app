@@ -1,4 +1,12 @@
 {
   "signout": "Выйти",
-  "welcomePage": "Главная"
+  "welcomePage": "Приветственная страница",
+  "created": "Приложение создано в 2023 году",
+  "createdBy": "создатели",
+  "petrName": "Пётр",
+  "nataliaName": "Наталья",
+  "daryaName": "Дарья",
+  "pageNotExist": "Страница, которую вы ищете, не существует",
+  "pageMissing": "Страница отсутствует",
+  "backToHomepage": "Вернуться на главную страницу"
 }
