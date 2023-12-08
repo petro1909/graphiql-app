@@ -11,5 +11,7 @@
   "backToHomepage": "Back to Homepage",
   "Homepage" : "Homepage",
   "SignIn" : "Sign In / Sign Up",
-  "Welcome" : "Welcome to GraphiQL progect"
+  "Welcome" : "Welcome to GraphiQL progect",
+  "English" : "English",
+  "Russian" : "Russian"
 }
