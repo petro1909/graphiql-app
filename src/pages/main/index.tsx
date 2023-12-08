@@ -17,11 +17,11 @@ export function MainPage() {
         <aside className="actions">actions</aside>
         <section className="graphGL">
           <div className="graphGL-request">request</div>
-          <div className="graphGL-result">responce</div>
-          <div className="graphGL-vars"></div>
-          <div className="graphGL-json"></div>
+          <div className="graphGL-responce">responce</div>
+          <div className="documentation-content">Doc content</div>
+          <div className="graphGL-vars">vars</div>
+          <div className="graphGL-json">json</div>
         </section>
-        <div className="documentation-content">Doc content</div>
       </section>
     </main>
   );
