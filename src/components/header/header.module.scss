@@ -1,4 +1,5 @@
 @use '../../helpers/variables.scss' as *;
+@import '../../helpers/mixins' ;
 
 .header {
     position: sticky;
@@ -13,7 +14,11 @@
     justify-content: space-between;
     align-items: center;
 
-    &.sticky {
+    @include _768 {
+        padding: 0 24px;
+    }
+
+    &.headerSmall {
         height: 64px;
         box-shadow: 0 4px 8px rgba(0,0,0,.04);
     }

@@ -1,41 +1,35 @@
 import { StrictMode } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
+import { routes } from '@components/constants/constants';
 import { Layout } from '@components/layout/layout';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
 import { AuthorizationPage } from '@pages/auth';
-import { WelcomePage } from '@pages/welcome';
+import { Welcome } from '@pages/welcome/welcome';
 import { MainPage } from '@pages/main';
 import { NotFound } from '@pages/404/notFound';
 
 import './style.css';
 
-const routes = {
-  mainPath: '/',
-  authPath: '/auth',
-  anyOtherPath: '*',
-  gpaphiqlPath: '/gpaphiql',
-};
-
 const router = createBrowserRouter([
   {
-    path: routes.mainPath,
+    path: routes.WELCOME_URL,
     element: <SimpleLayout />,
     children: [
-      { index: true, element: <WelcomePage /> },
+      { index: true, element: <Welcome /> },
       {
-        path: routes.authPath,
+        path: routes.AUTH_URL,
         element: <AuthorizationPage />,
       },
-      { path: routes.anyOtherPath, element: <NotFound /> },
+      { path: routes.ANY_OTHER_URL, element: <NotFound /> },
     ],
   },
   {
-    path: routes.mainPath,
+    path: routes.WELCOME_URL,
     element: <Layout />,
     children: [
       {
-        path: routes.gpaphiqlPath,
+        path: routes.HOME_URL,
         element: <MainPage />,
       },
     ],
