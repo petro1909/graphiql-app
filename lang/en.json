@@ -1,4 +1,15 @@
 {
   "signout": "Sign Out",
-  "welcomePage": "Welcome Page"
+  "welcomePage": "Welcome Page",
+  "created": "Application was created in 2023",
+  "createdBy": "creators",
+  "petrName": "Petr",
+  "nataliaName": "Natalia",
+  "daryaName": "Darya",
+  "pageNotExist": "Page you're looking for doesn't exist",
+  "pageMissing": "Page missing",
+  "backToHomepage": "Back to Homepage",
+  "setEndpoint": "Set endpoint",
+  "doc": "Documentation",
+  "endpointPlaceholder": "enter endpoint"
 }
