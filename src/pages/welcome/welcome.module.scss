@@ -1,44 +1,44 @@
-@import '../../helpers/mixins' ;
+@import '../../helpers/mixins';
 
 .welcome {
-    height: calc(100vh - 48px);
-    background-image: url(../../assets/bgWeb.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    @include _768 {
-        height: calc(100vh - 138px);
-    }
+  height: calc(100vh - 48px);
+  background-image: url(../../assets/bgWeb.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  @include _768 {
+    height: calc(100vh - 138px);
+  }
 }
 
 .wrapperInfo {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .bigText {
-    font-size: 65px;
-    line-height: 65px;
-    font-weight: 700;
-    margin: 0 8px;
-    text-align: center;
+  font-size: 65px;
+  line-height: 65px;
+  font-weight: 700;
+  margin: 0 8px;
+  text-align: center;
 
-    @include _480 {
-        font-size: 54px;
-        line-height: 54px;
-        font-weight: 600;
-    }
+  @include _480 {
+    font-size: 54px;
+    line-height: 54px;
+    font-weight: 600;
+  }
 }
 
 .actionWrapper {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    @include _768 {
-        right: 24px;
-    }
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  @include _768 {
+    right: 24px;
+  }
 }
