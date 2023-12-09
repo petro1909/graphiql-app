@@ -1,13 +1,20 @@
 import { useLocale } from '@localization/useLocale';
 import { Input } from '@components/input/input';
 import { Button } from '@components/button/button';
+import { ActionsPanel } from '@components/actionsPanel/actionsPanel';
+import { QueryEditor } from '@components/queryEditor/queryEditor';
+import { ResponseSection } from '@components/responseSection/responceSection';
+import { DocumentationSection } from '@components/documentationSection/documentationSection';
+import { VarEditor } from '@components/varsEditor/varsEditor';
+import { HeadersEditor } from '@components/headersEditor/headersEditor';
 import classes from './mainPage.module.scss';
+import classNames from 'classnames';
 
 export function MainPage() {
   const { language } = useLocale();
   const placeholder = language.strings.endpointPlaceholder;
-  const isDisabled = false;
-  const docBtnStyle = isDisabled ? classes.documentationDisabled : classes.documentationBtn;
+  const isDocsShown = false;
+  const docBtnStyle = isDocsShown ? classes.documentationBtn : classes.documentationDisabled;
   return (
     <main className={classes.main}>
       <section className={classes.mainTop}>
@@ -15,17 +22,15 @@ export function MainPage() {
           <Input placeholder={placeholder}></Input>
           <Button mode="light">{language.strings.setEndpoint}</Button>
         </div>
-        <div className={docBtnStyle} data-disabled={isDisabled}>
-          {language.strings.doc}
-        </div>
+        <div className={docBtnStyle}>{language.strings.doc}</div>
       </section>
-      <section className={classes.sandBox}>
-        <aside className={classes.actions}>actions</aside>
-        <div className={classes.sandBoxRequest}>Query editor / JSON viewer</div>
-        <div className={classes.sandBoxResponce}>Response section</div>
-        <div className={classes.documentationContent}>Documentation content</div>
-        <div className={classes.sandBoxVars}>Variables editor section</div>
-        <div className={classes.sandBoxJson}>Headers editor section</div>
+      <section className={classNames(classes.sandBox, isDocsShown ? classes.visibleDocs : '')}>
+        <ActionsPanel />
+        <QueryEditor />
+        <ResponseSection />
+        <DocumentationSection />
+        <VarEditor />
+        <HeadersEditor />
       </section>
     </main>
   );
