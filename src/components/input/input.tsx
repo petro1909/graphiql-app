@@ -9,9 +9,11 @@ type InputProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChang
 export const Input: React.FC<InputProps> = ({ onChange, name, disabled, value, placeholder, label, error }) => {
   return (
     <div className={classes.field}>
-      <label className={classes.label} htmlFor={name}>
-        {label}
-      </label>
+      {label && (
+        <label className={classes.label} htmlFor={name}>
+          {label}
+        </label>
+      )}
       <input className={classes.input} name={name} disabled={disabled} onChange={onChange} value={value} placeholder={placeholder} />
       <div className={classes.error}>{error}</div>
     </div>

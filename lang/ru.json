@@ -8,5 +8,13 @@
   "daryaName": "Дарья",
   "pageNotExist": "Страница, которую вы ищете, не существует",
   "pageMissing": "Страница отсутствует",
-  "backToHomepage": "Вернуться на главную страницу"
+  "backToHomepage": "Вернуться на главную страницу",
+  "setEndpoint": "Установить endpoint",
+  "doc": "Документация",
+  "endpointPlaceholder": "Введите адрес",
+  "homepage": "Главная страница",
+  "signIn": "Войти / Зарегистрироваться",
+  "welcome": "Добро пожаловать в проект GraphiQL",
+  "english": "Английский",
+  "russian": "Русский"
 }

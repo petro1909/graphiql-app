@@ -1,0 +1,85 @@
+@use '../../helpers/variables.scss' as *;
+@import '../../helpers/mixins';
+
+.main {
+  margin-bottom: 50px;
+}
+
+.mainTop {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+
+  @include _768 {
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+.endpoint {
+  padding: 30px;
+  display: flex;
+  gap: 15px;
+
+  @include _768 {
+    flex-wrap: wrap;
+  }
+}
+
+.documentation {
+  &Btn {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    background-color: $color-gray-light;
+    color: $color-black;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-black;
+      border-color: $color-blue;
+      background-color: $color-blue;
+    }
+  }
+
+  &Disabled {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    background-color: $color-gray-light;
+    color: $color-gray-dark;
+    cursor: auto;
+  }
+}
+
+.mainContent {
+  display: flex;
+}
+
+.sandBox {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 0;
+  grid-gap: 15px;
+  overflow-x: hidden;
+
+  @include _768 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visibleDocs {
+  grid-template-columns: 120px 1fr 1fr minmax(100px, 300px);
+
+  @include _768 {
+    grid-template-columns: 1fr;
+  }
+}
