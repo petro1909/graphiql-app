@@ -1,54 +1,54 @@
-@import '../../helpers/mixins' ;
+@import '../../helpers/mixins';
 
 .notFound {
-    height: calc(100vh - 48px);
-    background-image: url(../../assets/bg.jpg);
-    background-position: left;
-    @include _768 {
-        height: calc(100vh - 138px);
-    }
+  height: calc(100vh - 48px);
+  background-image: url(../../assets/bg.jpg);
+  background-position: left;
+  @include _768 {
+    height: calc(100vh - 138px);
+  }
 }
 
 .wrapperInfo {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .bigText {
-    font-size: 200px;
-    line-height: 190px;
+  font-size: 200px;
+  line-height: 190px;
+  font-weight: 600;
+  @include _480 {
+    font-size: 150px;
+    line-height: 150px;
     font-weight: 600;
-    @include _480 {
-        font-size: 150px;
-        line-height: 150px;
-        font-weight: 600;
-    }
+  }
 }
 
 .text {
-    font-size: 52px;
-    font-weight: 500;
-    
-    @include _768 {
-        font-size: 40px;
-    }
-    @include _480 {
-        font-size: 24px;
-    }
+  font-size: 52px;
+  font-weight: 500;
+
+  @include _768 {
+    font-size: 40px;
+  }
+  @include _480 {
+    font-size: 24px;
+  }
 }
 
 .smallText {
-    font-size: 30px;
-    font-weight: 400;
-    margin-bottom: 44px;
-    @include _768 {
-        font-size: 22px;
-    }
-    @include _480 {
-        font-size: 14px;
-    }
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 44px;
+  @include _768 {
+    font-size: 22px;
+  }
+  @include _480 {
+    font-size: 14px;
+  }
 }

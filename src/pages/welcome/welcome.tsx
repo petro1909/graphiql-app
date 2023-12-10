@@ -15,15 +15,15 @@ export const Welcome: React.FC = () => {
   return (
     <section className={classes.welcome}>
       <div className={classes.wrapperInfo}>
-        <div className={classes.bigText}>{language.strings.Welcome}</div>
+        <div className={classes.bigText}>{language.strings.welcome}</div>
 
         <div className={classes.actionWrapper}>
           {isAuth ? (
             <CustomNavLink to={routes.HOME_URL}>
-              <Button>{language.strings.Homepage}</Button>
+              <Button>{language.strings.homepage}</Button>
             </CustomNavLink>
           ) : (
-            <CustomNavLink to={routes.AUTH_URL}>{language.strings.SignIn}</CustomNavLink>
+            <CustomNavLink to={routes.AUTH_URL}>{language.strings.signIn}</CustomNavLink>
           )}
         </div>
       </div>

@@ -1,13 +1,12 @@
 @use '../../helpers/variables.scss' as *;
 
 .button {
-    font-size: 16px;
-    font-weight: 700;
-    padding: 10px 16px;
-    margin-right: 0;
-    border-radius: 16px;
-    line-height: 1.25;
-    cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 16px;
+  line-height: 1.25;
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -16,9 +15,9 @@
 }
 
 .buttonLight {
-    background-color: $color-white;
-    border: 2px solid $color-gray;
-    color: $color-base;
+  background-color: $color-white;
+  border: 2px solid $color-gray;
+  color: $color-base;
 
   &:hover {
     border-color: $color-gray;
@@ -38,9 +37,9 @@
 }
 
 .buttonDark {
-    background-color: $color-blue;
-    border: 2px solid $color-blue;
-    color: $color-white;
+  background-color: $color-blue;
+  border: 2px solid $color-blue;
+  color: $color-white;
 
   &:hover {
     border: 2px solid $color-blue-light;
