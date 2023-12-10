@@ -14,8 +14,8 @@ export const SelectLanguage: React.FC = () => {
   return (
     <div className={classes.field}>
       <select className={classes.select} name="language" id="language-select" defaultValue={language.name} onChange={onChange}>
-        <option value={languages.EN.name}>{language.strings.English}</option>
-        <option value={languages.RU.name}>{language.strings.Russian}</option>
+        <option value={languages.EN.name}>{language.strings.english}</option>
+        <option value={languages.RU.name}>{language.strings.russian}</option>
       </select>
     </div>
   );

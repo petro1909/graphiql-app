@@ -12,9 +12,9 @@
   "setEndpoint": "Установить endpoint",
   "doc": "Документация",
   "endpointPlaceholder": "Введите адрес",
-  "Homepage": "Главная страница",
-  "SignIn": "Войти / Зарегистрироваться",
-  "Welcome": "Добро пожаловать в проект GraphiQL",
-  "English": "Английский",
-  "Russian": "Русский"
+  "homepage": "Главная страница",
+  "signIn": "Войти / Зарегистрироваться",
+  "welcome": "Добро пожаловать в проект GraphiQL",
+  "english": "Английский",
+  "russian": "Русский"
 }

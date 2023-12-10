@@ -1,5 +1,8 @@
-import classes from '../../pages/main/mainPage.module.scss';
+import classes from './documentation.module.scss';
+import classNames from 'classnames';
 
 export const DocumentationSection: React.FC = () => {
-  return <div className={classes.documentationContent}>Documentation content</div>;
+  const isDocsShown = false;
+
+  return <div className={classNames(classes.documentationContent, isDocsShown && classes.visible)}>Documentation content</div>;
 };
