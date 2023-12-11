@@ -1,0 +1,30 @@
+@import '../../helpers/mixins';
+
+.auth {
+  height: calc(100vh - 48px);
+  background-image: url(../../assets/bgWeb.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  @include _768 {
+    height: calc(100vh - 138px);
+  }
+}
+
+.authForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //   align-items: center;
+  position: relative;
+  max-width: 300px;
+  gap: 24px;
+  margin: auto;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+}
