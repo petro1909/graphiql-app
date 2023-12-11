@@ -19,8 +19,8 @@ export const Welcome: React.FC = () => {
 
         <div className={classes.actionWrapper}>
           {isAuth ? (
-            <CustomNavLink to={routes.HOME_URL}>
-              <Button>{language.strings.homepage}</Button>
+            <CustomNavLink to={routes.MAIN_URL}>
+              <Button>{language.strings.mainPage}</Button>
             </CustomNavLink>
           ) : (
             <CustomNavLink to={routes.AUTH_URL}>{language.strings.signIn}</CustomNavLink>

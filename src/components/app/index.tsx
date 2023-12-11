@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { routes } from '@components/constants/constants';
 import { Layout } from '@components/layout/layout';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
-import { AuthorizationPage } from '@pages/auth';
+import { AuthorizationPage } from '@pages/auth/auth';
 import { Welcome } from '@pages/welcome/welcome';
 import { MainPage } from '@pages/main/mainPage';
 import { NotFound } from '@pages/404/notFound';
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: routes.HOME_URL,
+        path: routes.MAIN_URL,
         element: <MainPage />,
       },
     ],

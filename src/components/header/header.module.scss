@@ -8,15 +8,16 @@
   background-color: #ffffff;
   border-bottom: 1px solid rgb(225 224 223);
   height: 72px;
-  padding: 0 120px;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  & > div {
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
 
-  @include _768 {
-    padding: 0 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &.headerSmall {
@@ -29,4 +30,18 @@
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+.homeIcon {
+  // height: 18px;
+  display: none;
+  @include _480 {
+    display: block;
+  }
+}
+
+.desktopLink {
+  @include _480 {
+    display: none;
+  }
 }

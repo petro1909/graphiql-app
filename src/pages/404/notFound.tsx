@@ -16,8 +16,8 @@ export const NotFound: React.FC = () => {
         <div className={classes.bigText}>404</div>
         <div className={classes.text}>{language.strings.pageMissing}</div>
         <div className={classes.smallText}>{language.strings.pageNotExist}</div>
-        <CustomNavLink to={routes.HOME_URL}>
-          <Button>{language.strings.backToHomepage}</Button>
+        <CustomNavLink to={routes.MAIN_URL}>
+          <Button>{language.strings.backToMainPage}</Button>
         </CustomNavLink>
       </div>
     </section>

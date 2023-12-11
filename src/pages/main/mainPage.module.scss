@@ -11,23 +11,27 @@
   display: flex;
   gap: 50px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  padding: 20px 0;
 
   @include _768 {
     flex-wrap: wrap;
-    gap: 0;
     justify-content: center;
     margin-bottom: 30px;
   }
 }
 
 .endpoint {
-  padding: 30px;
   display: flex;
   gap: 15px;
 
-  @include _768 {
+  & > button {
+    flex: 1 0 auto;
+  }
+
+  @include _480 {
     flex-wrap: wrap;
+    gap: 24px;
   }
 }
 
@@ -56,6 +60,10 @@
     background-color: $color-gray-light;
     color: $color-gray-dark;
     cursor: auto;
+
+    @include _480 {
+      width: 100%;
+    }
   }
 }
 

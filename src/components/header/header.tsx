@@ -8,6 +8,7 @@ import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Button } from '@components/button/button';
 import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
 
+import HomeIcon from '@assets/home-icon.svg';
 import classes from './header.module.scss';
 
 export const Header: React.FC = () => {
@@ -31,12 +32,15 @@ export const Header: React.FC = () => {
 
   return (
     <header className={classNames(classNamesSticky, classes.header)}>
-      <CustomNavLink to={routes.WELCOME_URL} className={classes.link}>
-        {language.strings.welcomePage}
-      </CustomNavLink>
-      <div className={classes.flex}>
-        <SelectLanguage />
-        <Button mode="light">{language.strings.signout}</Button>
+      <div>
+        <CustomNavLink to={routes.WELCOME_URL} className={classes.link}>
+          <img src={HomeIcon} className={classes.homeIcon} alt="home" />
+          <label className={classes.desktopLink}>{language.strings.welcomePage} </label>
+        </CustomNavLink>
+        <div className={classes.flex}>
+          <SelectLanguage />
+          <Button mode="light">{language.strings.signout}</Button>
+        </div>
       </div>
     </header>
   );

@@ -2,9 +2,9 @@
 @import '../../helpers/mixins';
 
 .footer {
-  margin-top: auto;
+  width: 95%;
+  margin: auto auto 0;
   display: flex;
-  padding: 0 120px;
   align-items: center;
   justify-content: space-between;
   height: 48px;
@@ -16,7 +16,6 @@
     justify-content: center;
     gap: 12px;
     height: 90px;
-    padding: 24px;
   }
 }
 
@@ -24,10 +23,6 @@
   display: flex;
   gap: 24px;
   align-items: center;
-  @include _480 {
-    flex-direction: column;
-    gap: 4px;
-  }
 }
 
 .logo {
