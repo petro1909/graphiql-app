@@ -1,7 +1,7 @@
 @import '../../helpers/mixins';
 
 .notFound {
-  height: calc(100vh - 48px);
+  flex-grow: 1;
   background-image: url(../../assets/bg.jpg);
   background-position: left;
   @include _768 {
