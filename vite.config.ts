@@ -24,6 +24,7 @@ export default defineConfig({
       '@localization': path.resolve(__dirname, './src/localization'),
       '@lang': path.resolve(__dirname, './lang'),
       '@service': path.resolve(__dirname, './src/service'),
+      '@helpers': path.resolve(__dirname, './src/helpers'),
     },
   },
   test: {
