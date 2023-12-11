@@ -22,6 +22,8 @@
       "@app_types/*": ["./src/types/*"],
       "@pages/*": ["./src/pages/*"],
       "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@helpers/*": ["./src/helpers/*"],
       "@assets/*": ["./src/assets/*"],
       "@utils/*": ["./src/utils/*"],
       "@redux/*": ["./src/redux/*"],

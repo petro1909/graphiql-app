@@ -1,21 +1,10 @@
-@import '../../helpers/mixins';
+@import '@helpers/mixins';
 
 .notFound {
-  height: calc(100vh - 48px);
-  background-image: url(../../assets/bg.jpg);
-  background-position: left;
-  @include _768 {
-    height: calc(100vh - 138px);
-  }
-}
-
-.wrapperInfo {
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-grow: 1;
+  background-image: url(@assets/bg.jpg);
+  background-position: left;
 }
 
 .bigText {

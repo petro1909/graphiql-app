@@ -1,5 +1,5 @@
-@use '../../helpers/variables.scss' as *;
-@import '../../helpers/mixins';
+@use '@helpers/variables.scss' as *;
+@import '@helpers/mixins';
 
 .header {
   z-index: 2;
@@ -33,7 +33,6 @@
 }
 
 .homeIcon {
-  // height: 18px;
   display: none;
   @include _480 {
     display: block;

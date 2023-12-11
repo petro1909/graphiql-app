@@ -3,7 +3,7 @@ import { useLocale } from '@localization/useLocale';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
-import { routes } from '@components/constants/constants';
+import { routes } from '@constants/constants';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Button } from '@components/button/button';
 import { SelectLanguage } from '@components/selectLanguage/selectLanguage';

@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { routes } from '@components/constants/constants';
+import { routes } from '@constants/constants';
 import { Layout } from '@components/layout/layout';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
 import { AuthorizationPage } from '@pages/auth/auth';
