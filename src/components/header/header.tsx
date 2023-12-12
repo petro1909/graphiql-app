@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className={classNames(classNamesSticky, classes.header)}>
-      <div>
+      <div className={classes.headerContent}>
         <CustomNavLink to={routes.WELCOME_URL} className={classes.link}>
           <img src={HomeIcon} className={classes.homeIcon} alt="home" />
           <label className={classes.desktopLink}>{language.strings.welcomePage} </label>

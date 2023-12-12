@@ -13,10 +13,18 @@
   "doc": "Documentation",
   "endpointPlaceholder": "enter endpoint",
   "mainPage": "Main Page",
-  "signIn": "Sign In / Sign Up",
+  "authorization": "Sign In / Sign Up",
   "welcome": "Welcome to GraphiQL progect",
   "english": "English",
   "russian": "Russian",
-  "authEmailLabel": "Enter your email",
-  "authPasswordLabel": "Enter your password"
+  "authEmailLabel": "Enter email",
+  "authPasswordLabel": "Enter password",
+  "authConfirmPasswordLabel": "Repeat password",
+  "authNameLabel": "Enter name",
+  "authEmailPlaceholder": "Email",
+  "authPasswordPlaceholder": "Password",
+  "authConfirmPasswordPlaceholder": "Repeat password",
+  "authNamePlaceholder": "Name",
+  "signIn": "Sign In",
+  "signUp": "Sign Up"
 }

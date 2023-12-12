@@ -13,10 +13,18 @@
   "doc": "Документация",
   "endpointPlaceholder": "Введите адрес",
   "mainPage": "Главная страница",
-  "signIn": "Войти / Зарегистрироваться",
+  "authorization": "Войти / Зарегистрироваться",
   "welcome": "Добро пожаловать в проект GraphiQL",
   "english": "Английский",
   "russian": "Русский",
   "authEmailLabel": "Введите адрес электронной почты",
-  "authPasswordLabel": "Введите пароль"
+  "authPasswordLabel": "Введите пароль",
+  "authConfirmPasswordLabel": "Подтвердите пароль",
+  "authNameLabel": "Введите свое имя",
+  "authEmailPlaceholder": "Электронная почта",
+  "authPasswordPlaceholder": "Пароль",
+  "authConfirmPasswordPlaceholder": "Повторите пароль",
+  "authNamePlaceholder": "Имя",
+  "signIn": "Войти",
+  "signUp": "Зарегистрироваться"
 }

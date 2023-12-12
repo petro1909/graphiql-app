@@ -25,14 +25,14 @@
   display: flex;
   gap: 15px;
 
-  & > button {
-    flex: 1 0 auto;
-  }
-
   @include _480 {
     flex-wrap: wrap;
     gap: 24px;
   }
+}
+
+.endpointButton {
+  flex: 1 0 auto;
 }
 
 .documentation {

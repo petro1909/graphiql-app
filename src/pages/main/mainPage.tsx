@@ -18,7 +18,9 @@ export function MainPage() {
       <section className={classes.mainTop}>
         <div className={classes.endpoint}>
           <Input placeholder={placeholder} />
-          <Button mode="light">{language.strings.setEndpoint}</Button>
+          <Button mode="light" className={classes.endpointButton}>
+            {language.strings.setEndpoint}
+          </Button>
         </div>
         <div className={docBtnStyle}>{language.strings.doc}</div>
       </section>
