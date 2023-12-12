@@ -1,7 +1,7 @@
 import { useLocale } from '@localization/useLocale';
 import { Button } from '@components/button/button';
 import { ActionsPanel } from '@components/graphql/actionsPanel/actionsPanel';
-import DocumentationSection from '@components/graphql/documentationSection/documentationSection';
+import { Documentation } from '@components/graphql/documentation/documentation';
 
 import classes from './mainPage.module.scss';
 import classNames from 'classnames';
@@ -55,7 +55,7 @@ export function MainPage() {
         </section>
         <section className={classNames(classes.docsGridWrapper, !docsVisibility && classes.docsHidden)}>
           <SandboxContainer>
-            <DocumentationSection />
+            <Documentation />
           </SandboxContainer>
         </section>
       </section>
