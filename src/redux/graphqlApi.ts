@@ -9,7 +9,7 @@ export const grapqlApi = createApi({
       query: ({ URL, variables, query }) => ({
         url: URL,
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true' },
         body: JSON.stringify({ query, variables }),
       }),
     }),
