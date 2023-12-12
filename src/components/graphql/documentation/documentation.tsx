@@ -13,8 +13,10 @@ import { GraphQLResponse, __Schema, __Type } from '@app_types/graphql';
 import { AllTypes } from './allTypes/allTypes';
 import { SingleType } from './singleType/singleTypes';
 import { Button } from '@components/button/button';
+import { useLocale } from '@localization/useLocale';
 
 export function Documentation() {
+  const { language } = useLocale();
   const { URL } = useSelector(selectRawRequest);
   const [getGraphqlResultQuery] = useLazyGetGraphqlResultQuery();
   const [schema, setSchema] = useState<__Schema | undefined>();
@@ -38,7 +40,6 @@ export function Documentation() {
           store.dispatch(toggleDocsEnable(false));
           return;
         }
-        console.log(data);
         const schema = (data as GraphQLResponse).data.__schema;
         setSchema(schema);
         store.dispatch(toggleDocsEnable(true));
@@ -57,7 +58,7 @@ export function Documentation() {
   return (
     <section className={classNames(classes.documentationContent)}>
       <Button mode="light" onClick={() => handleChangeActiveType()}>
-        Docs
+        {language.strings.schema}
       </Button>
       {activeType ? <SingleType type={activeType} onClick={handleChangeActiveType} /> : <AllTypes schema={schema} onClick={handleChangeActiveType} />}
     </section>
