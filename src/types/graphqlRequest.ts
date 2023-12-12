@@ -9,6 +9,6 @@ export type GraphQLRawRequest = {
 } & BaseGraphQLRequest;
 
 export type GraphQLValidRequest = {
-  headers: Record<string, string | undefined>;
+  headers?: Record<string, string | undefined>;
   variables: Record<string, string | undefined> | string;
 } & BaseGraphQLRequest;
