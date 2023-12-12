@@ -12,10 +12,15 @@
   "setEndpoint": "Set endpoint",
   "docsHeader": "Documentation",
   "docShowButton": "Docs",
-  "endpointPlaceholder": "enter endpoint",
+  "endpointPlaceholder": "Enter endpoint",
   "homepage": "Homepage",
   "signIn": "Sign In / Sign Up",
   "welcome": "Welcome to GraphiQL progect",
   "english": "English",
-  "russian": "Russian"
+  "russian": "Russian",
+  "headers": "Headers",
+  "variables": "Variables",
+  "schema": "Schema" ,
+  "makeRequest": "Make request",
+  "prettify": "Prettify"
 }

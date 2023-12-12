@@ -6,8 +6,10 @@ import { store } from '@redux/store';
 import { selectRawRequest, setRawRequest, setValidatedRequest } from '@redux/endpointSlice';
 import { useSelector } from 'react-redux';
 import { prettify } from '../editor/baseEditor/editorService/prettify';
+import { useLocale } from '@localization/useLocale';
 
 export const ActionsPanel: React.FC = () => {
+  const { language } = useLocale();
   const { query, variables, URL } = useSelector(selectRawRequest);
   const makeRequest = () => {
     store.dispatch(setValidatedRequest({ query, variables, URL }));
@@ -20,10 +22,10 @@ export const ActionsPanel: React.FC = () => {
   return (
     <aside className={classes.actions}>
       <Button mode="light" additionalClass={classes.actionButton} onClick={makeRequest}>
-        <img title="make request" src={playIcon} alt="make request" />
+        <img title={language.strings.makeRequest} src={playIcon} alt="make request" />
       </Button>
       <Button mode="light" additionalClass={classes.actionButton} onClick={prettifyQuery}>
-        <img title="prettify" src={prettifyInon} alt="prettify" />
+        <img title={language.strings.prettify} src={prettifyInon} alt="prettify" />
       </Button>
     </aside>
   );
