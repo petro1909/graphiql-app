@@ -1,5 +1,5 @@
-@use '../../helpers/variables.scss' as *;
-@import '../../helpers/mixins';
+@use '@helpers/variables.scss' as *;
+@import '@helpers/mixins';
 
 .main {
 
@@ -12,7 +12,8 @@
 .mainTop {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  padding: 20px 0;
 
   @include _768 {
     flex-wrap: wrap;
@@ -88,6 +89,10 @@
     background-color: $color-gray-light;
     color: $color-gray-dark;
     cursor: auto;
+
+    @include _480 {
+      width: 100%;
+    }
   }
 }
 
