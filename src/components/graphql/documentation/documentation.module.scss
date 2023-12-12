@@ -1,0 +1,8 @@
+@use '@helpers/variables.scss' as *;
+@import '@helpers/mixins';
+
+.documentation-content {
+  padding: 0;
+  background-color: $color-gray;
+  width: 500px;
+}
