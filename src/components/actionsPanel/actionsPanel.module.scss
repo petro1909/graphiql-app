@@ -1,5 +1,5 @@
-@use '../../helpers/variables.scss' as *;
-@import '../../helpers/mixins';
+@use '@helpers/variables.scss' as *;
+@import '@helpers/mixins';
 
 .actions {
   grid-row: 1/3;
