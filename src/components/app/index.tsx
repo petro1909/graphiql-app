@@ -9,6 +9,8 @@ import { MainPage } from '@pages/main/mainPage';
 import { NotFound } from '@pages/404/notFound';
 
 import './style.css';
+import { SignIn } from '@pages/auth/signInForm/signInForm';
+import { SignUp } from '@pages/auth/signUpForm/signUpForm';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +19,12 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Welcome /> },
       {
-        path: routes.AUTH_URL,
+        path: routes.WELCOME_URL,
         element: <AuthorizationPage />,
+        children: [
+          { path: routes.SIGN_IN, element: <SignIn /> },
+          { path: routes.SIGN_UP, element: <SignUp /> },
+        ],
       },
       { path: routes.ANY_OTHER_URL, element: <NotFound /> },
     ],

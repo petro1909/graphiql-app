@@ -30,7 +30,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@validation/*": ["./src/validation/*"],
       "@localization/*": ["./src/localization/*"],
-      "@lang/*": ["./lang/*"]
+      "@lang/*": ["./lang/*"],
+      "@models/*": ["./src/models/*"]
     },
     "plugins": [
       {

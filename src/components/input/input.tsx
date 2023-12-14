@@ -1,21 +1,20 @@
-import { InputHTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 import classes from './input.module.scss';
 
-type InputProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'name' | 'disabled'> & {
+type InputProps = {
   label?: string;
   error?: string;
+  disabled?: boolean;
+  value?: string;
+  placeholder?: string;
 };
 
-export const Input: React.FC<InputProps> = ({ onChange, name, disabled, value, placeholder, label, error }) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ disabled, value, placeholder, label, error, ...props }, ref) => {
   return (
     <div className={classes.field}>
-      {label && (
-        <label className={classes.label} htmlFor={name}>
-          {label}
-        </label>
-      )}
-      <input className={classes.input} name={name} disabled={disabled} onChange={onChange} value={value} placeholder={placeholder} />
+      {label && <label className={classes.label}>{label}</label>}
+      <input className={classes.input} disabled={disabled} value={value} placeholder={placeholder} ref={ref} {...props} />
       <div className={classes.error}>{error}</div>
     </div>
   );
-};
+});
