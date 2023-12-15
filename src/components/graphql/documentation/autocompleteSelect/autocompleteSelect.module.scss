@@ -1,0 +1,74 @@
+@use '@helpers/variables.scss' as *;
+
+.autocomplete-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-button {
+  position: relative;
+  background: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+.toggle-button:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.toggle-button-image {
+  width: inherit;
+  height: inherit;
+}
+
+.autocomplete-input {
+  width: 330px;
+  border-color: $color-white;
+}
+
+.items-wrapper {
+  position: absolute;
+  top: 45px;
+  padding: 0px;
+  margin: 0px;
+  width: 350px;
+  background: white;
+  overflow: hidden;
+  max-height: 0;
+  border: none;
+  visibility: hidden;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  border-radius: 6px;
+}
+
+.items-wrapper.visible {
+  visibility: visible;
+  display: block;
+  max-height: 315px;
+}
+
+.items-scroll-wrapper {
+  max-height: inherit;
+  overflow: auto;
+  font-size: 18px;
+}
+
+.proposed-item {
+  margin: 0;
+  padding: 5px 10px;
+  border-bottom: 1px solid black;
+}
+.proposed-item-active {
+  background-color: $color-blue-light;
+  opacity: 70%;
+}
+.proposed-item:hover {
+  cursor: pointer;
+  background-color: $color-blue-light;
+  opacity: 70%;
+}
