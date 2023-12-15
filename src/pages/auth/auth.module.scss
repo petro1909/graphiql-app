@@ -6,10 +6,10 @@
   background-image: url(@assets/bgWeb.webp);
   background-position: center;
   background-repeat: no-repeat;
-  & > .authForm {
+  & .authForm {
     width: 100%;
     position: relative;
-    max-width: 300px;
+    width: 300px;
     gap: 24px;
     align-items: stretch;
   }
@@ -24,4 +24,10 @@
 .buttonWrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.wrapperForm {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
