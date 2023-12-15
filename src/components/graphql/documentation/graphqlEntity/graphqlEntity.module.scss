@@ -1,0 +1,53 @@
+@use '@helpers/variables.scss' as *;
+
+.entity-header, 
+.description,  
+.property-wrapper, 
+.property-header,
+.property-list
+{
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.property-list {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.type-name {
+  display: inline-block;
+  margin: 3px 0;
+  font-weight: 600;
+  color: #d75405;
+}
+
+.type-name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.type-fields-wrapper {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid $color-black;
+}
+
+.field-arg {
+  margin: 0;
+}
+
+.field-name {
+  color: #973900;
+}
+
+.field-name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.enum-name {
+  font-weight: 600;
+  color: #973900;
+}
