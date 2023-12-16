@@ -29,7 +29,7 @@ export type __Field = {
   args: __InputValue[];
   type: __Type;
   isDeprecated: boolean;
-  deprecationReson: string;
+  deprecationReason: string;
 };
 
 export type __InputValue = {
@@ -37,24 +37,26 @@ export type __InputValue = {
   description: string;
   type: __Type;
   defaultValue: string;
+  isDeprecated: boolean;
+  deprecationReason: string;
 };
 
 export type __EnumValue = {
   name: string;
   description: string;
   isDeprecated: boolean;
-  deprecationReson: string;
+  deprecationReason: string;
 };
 
 export type __Type = {
   kind: __TypeKind;
   name: string;
   description: string;
-  fields: __Field[];
-  interfaces: __Type[];
-  possibleTypes: __Type[];
-  enumValues: __EnumValue[];
-  inputFields: __InputValue[];
+  fields: __Field[] | null;
+  interfaces: __Type[] | null;
+  possibleTypes: __Type[] | null;
+  enumValues: __EnumValue[] | null;
+  inputFields: __InputValue[] | null;
   ofType: __Type;
 };
 
@@ -63,4 +65,11 @@ export type __Directive = {
   description: string;
   locations: string[];
   args: __InputValue[];
+};
+
+export type GraphQlEntity = __Field | __Type | __InputValue | __Schema;
+
+export type GraphQlSearchInputType = {
+  typeName: string;
+  fieldName?: string;
 };
