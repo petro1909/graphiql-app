@@ -32,5 +32,17 @@
   "variables": "Variables",
   "schema": "Schema" ,
   "makeRequest": "Make request",
-  "prettify": "Prettify"
+  "prettify": "Prettify",
+  "searchSchema": "Search Schema",
+  "rootTypes": "Root types",
+  "endpointTypes": "Endpoint types",
+  "graphqlTypes": "GraphQl types",
+  "implements": "Implements",
+  "inputFields": "Input fields",
+  "enumValues": "Enum Values",
+  "fields": "Fields",
+  "agruments": "Agruments",
+  "type": "Type",
+  "defaultValue": "Default Value",
+  "deprecated": "Deprecated"
 }

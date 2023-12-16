@@ -32,5 +32,17 @@
   "variables": "Переменные",
   "schema": "Схема",
   "makeRequest": "Сделать запрос",
-  "prettify": "Нормализовать"
+  "prettify": "Нормализовать",
+  "searchSchema": "Искать по схеме",
+  "rootTypes": "Корневые типы",
+  "endpointTypes": "Типы источника",
+  "graphqlTypes": "Типы GraphQL",
+  "implements": "Реализует",
+  "inputFields": "Поля ввода",
+  "enumValues": "Значения перечисления",
+  "fields": "Поля",
+  "agruments": "Аргументы",
+  "type": "Тип",
+  "defaultValue": "Значение по умолчанию",
+  "deprecated": "Устарело"
 }
