@@ -1,9 +1,9 @@
-import { GraphQlEntity, __Type, __TypeKind } from '@app_types/graphql';
+import { GraphQlSearchInputType, __Type, __TypeKind } from '@app_types/graphql';
 import { TypeName } from './graphqlTypeName';
 
 type ReturnTypePros = {
   type: __Type;
-  handleClick: (entity: GraphQlEntity) => void;
+  handleClick: (entity: GraphQlSearchInputType) => void;
 };
 
 export function GraphqlCompoisteType({ type, handleClick }: ReturnTypePros) {

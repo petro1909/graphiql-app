@@ -1,13 +1,15 @@
-import { GraphQlEntity, __Schema, __Type } from '@app_types/graphql';
+import { GraphQlSearchInputType, __Schema, __Type } from '@app_types/graphql';
 import { TypeName } from '../graphqlEntity/graphqlTypeName';
 import classes from './schema.module.scss';
+import { useLocale } from '@localization/useLocale';
 
 type AllTypesProps = {
   schema: __Schema;
-  handleClick: (entity: GraphQlEntity) => void;
+  handleClick: (entity: GraphQlSearchInputType) => void;
 };
 
 export function AllTypes({ schema, handleClick }: AllTypesProps) {
+  const { language } = useLocale();
   const rootTypes: Array<{ name: string; type: __Type | undefined }> = [
     { name: 'query', type: schema.queryType },
     { name: 'mutation', type: schema.mutationType },
@@ -25,7 +27,7 @@ export function AllTypes({ schema, handleClick }: AllTypesProps) {
   return (
     <>
       <section>
-        <h3 className={classes.typesListHeader}>Root types</h3>
+        <h3 className={classes.typesListHeader}>{language.strings.rootTypes}</h3>
         {rootTypes.map(
           (rootType) =>
             rootType.type && (
@@ -38,7 +40,7 @@ export function AllTypes({ schema, handleClick }: AllTypesProps) {
       </section>
 
       <section>
-        <h3 className={classes.typesListHeader}>Endpont types</h3>
+        <h3 className={classes.typesListHeader}>{language.strings.endpointTypes}</h3>
         {endpointTypes.map((type) => (
           <div key={type.name}>
             <TypeName name={type.name} handleClick={() => handleClick({ typeName: type.name })} />
@@ -47,7 +49,7 @@ export function AllTypes({ schema, handleClick }: AllTypesProps) {
       </section>
 
       <section>
-        <h3 className={classes.typesListHeader}>GraphQl types</h3>
+        <h3 className={classes.typesListHeader}>{language.strings.graphqlTypes}</h3>
         {gpaphQLTypes.map((type) => (
           <div key={type.name}>
             <TypeName name={type.name} handleClick={() => handleClick({ typeName: type.name })} />

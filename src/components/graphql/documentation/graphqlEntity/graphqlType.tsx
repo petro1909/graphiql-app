@@ -1,13 +1,16 @@
-import { GraphQlEntity, __Type } from '@app_types/graphql';
+import { GraphQlSearchInputType, __Type } from '@app_types/graphql';
 import { GraphqlCompoisteType } from './graphqlCompoisteType';
 import classes from './graphqlEntity.module.scss';
+import { useLocale } from '@localization/useLocale';
 
 type SingleTypeProps = {
   type: __Type;
-  handleClick: (entity: GraphQlEntity) => void;
+  handleClick: (entity: GraphQlSearchInputType) => void;
 };
 
 export function GraphQlType({ type, handleClick }: SingleTypeProps) {
+  const { language } = useLocale();
+
   return (
     <section>
       <h3 className={classes.entityHeader}>{type.name}</h3>
@@ -20,7 +23,7 @@ export function GraphQlType({ type, handleClick }: SingleTypeProps) {
 
       {type.interfaces && type.interfaces?.length !== 0 && (
         <section className={classes.propertyWrapper}>
-          <h4 className={classes.propertyHeader}>Implements</h4>
+          <h4 className={classes.propertyHeader}>{language.strings.implements}</h4>
           <ul className={classes.propertyList}>
             {type.interfaces.map((iface) => (
               <li className={classes.typeFieldsWrapper} key={iface.name}>
@@ -33,7 +36,7 @@ export function GraphQlType({ type, handleClick }: SingleTypeProps) {
 
       {type.inputFields && (
         <section className={classes.propertyWrapper}>
-          <h4 className={classes.propertyHeader}>Input Fields</h4>
+          <h4 className={classes.propertyHeader}>{language.strings.inputFields}</h4>
           <ul className={classes.propertyList}>
             {type.inputFields.map((inField) => (
               <li className={classes.typeFieldsWrapper} key={inField.name}>
@@ -47,7 +50,7 @@ export function GraphQlType({ type, handleClick }: SingleTypeProps) {
 
       {type.enumValues && (
         <section className={classes.propertyWrapper}>
-          <h4 className={classes.propertyHeader}>Enum Values</h4>
+          <h4 className={classes.propertyHeader}>{language.strings.enumValues}</h4>
           <ul className={classes.propertyList}>
             {type.enumValues.map((enumValue) => (
               <li key={enumValue.name} className={classes.typeFieldsWrapper}>
@@ -61,7 +64,7 @@ export function GraphQlType({ type, handleClick }: SingleTypeProps) {
 
       {type.fields && (
         <section className={classes.propertyWrapper}>
-          <h4 className={classes.propertyHeader}>Fields</h4>
+          <h4 className={classes.propertyHeader}>{language.strings.fields}</h4>
           <ul className={classes.propertyList}>
             {type.fields.map((field) => (
               <li className={classes.typeFieldsWrapper} key={field.name}>

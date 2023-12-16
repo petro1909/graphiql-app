@@ -63,10 +63,12 @@
   padding: 5px 10px;
   border-bottom: 1px solid black;
 }
+
 .proposed-item-active {
   background-color: $color-blue-light;
   opacity: 70%;
 }
+
 .proposed-item:hover {
   cursor: pointer;
   background-color: $color-blue-light;

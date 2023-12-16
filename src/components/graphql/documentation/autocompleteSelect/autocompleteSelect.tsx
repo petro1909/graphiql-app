@@ -3,19 +3,21 @@ import React from 'react';
 import { useState } from 'react';
 import classes from './autocompleteSelect.module.scss';
 import classNames from 'classnames';
-import { GraphQlEntity } from '@app_types/graphql';
+import { GraphQlSearchInputType } from '@app_types/graphql';
+import { useSelector } from 'react-redux';
+import { selectAllEntities } from '@redux/docsSlice';
 
 type AutocompleteSelectProps = {
-  items: GraphQlEntity[];
   placeholder?: string;
   errorMessage?: string;
-  handleSelectItem: (entity: GraphQlEntity) => void;
+  handleSelectItem: (entity: GraphQlSearchInputType) => void;
 };
 
-export const AutocompleteSelect = ({ items, placeholder, handleSelectItem, errorMessage }: AutocompleteSelectProps) => {
+export const AutocompleteSelect = ({ placeholder, handleSelectItem, errorMessage }: AutocompleteSelectProps) => {
+  const initItems = useSelector(selectAllEntities);
   const [inputValue, setInputValue] = useState('');
   const [itemsIsVisible, setItemsIsVisible] = useState(false);
-  const [proposedItems, setProposedItems] = useState(items);
+  const [proposedItems, setProposedItems] = useState(initItems);
 
   const filterItems = (value: string) => {
     value = value.toLowerCase();
@@ -23,7 +25,7 @@ export const AutocompleteSelect = ({ items, placeholder, handleSelectItem, error
       return [];
     }
 
-    return items.filter(
+    return initItems.filter(
       (item) => (item.typeName.toLowerCase().toLowerCase().includes(value) && !item.fieldName) || item.fieldName?.toLocaleLowerCase().includes(value)
     );
   };
@@ -35,7 +37,7 @@ export const AutocompleteSelect = ({ items, placeholder, handleSelectItem, error
     setProposedItems(filteredItems);
   };
 
-  const handlerSelectList = (entity: GraphQlEntity) => {
+  const handlerSelectList = (entity: GraphQlSearchInputType) => {
     setInputValue(entity.fieldName || entity.typeName);
     setProposedItems(filterItems(entity.fieldName || entity.typeName));
     setItemsIsVisible(false);
