@@ -1,12 +1,13 @@
 import { InputHTMLAttributes } from 'react';
+import classNames from 'classnames';
 import classes from './input.module.scss';
 
-type InputProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'name' | 'disabled'> & {
+type InputProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'name' | 'disabled' | 'className'> & {
   label?: string;
   error?: string;
 };
 
-export const Input: React.FC<InputProps> = ({ onChange, name, disabled, value, placeholder, label, error }) => {
+export const Input: React.FC<InputProps> = ({ onChange, name, disabled, value, placeholder, label, error, className }) => {
   return (
     <div className={classes.field}>
       {label && (
@@ -14,7 +15,14 @@ export const Input: React.FC<InputProps> = ({ onChange, name, disabled, value, p
           {label}
         </label>
       )}
-      <input className={classes.input} name={name} disabled={disabled} onChange={onChange} value={value} placeholder={placeholder} />
+      <input
+        className={classNames(classes.input, className)}
+        name={name}
+        disabled={disabled}
+        onChange={onChange}
+        value={value}
+        placeholder={placeholder}
+      />
       <div className={classes.error}>{error}</div>
     </div>
   );
