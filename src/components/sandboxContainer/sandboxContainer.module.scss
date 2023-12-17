@@ -8,8 +8,6 @@
   border-radius: 10px;
   height: 100%;
   box-sizing: border-box;
-
-  @include _768 {
-   
-  }
+  border: 2px solid $color-black;
+  overflow: hidden;
 }

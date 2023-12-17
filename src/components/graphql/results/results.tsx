@@ -2,6 +2,7 @@ import { selectValidRequest } from '@redux/endpointSlice';
 import { useGetGraphqlResultQuery } from '@redux/graphqlApi';
 import { useSelector } from 'react-redux';
 import { BaseEditor } from '../editor/baseEditor/baseEditor';
+import classes from './results.module.scss';
 
 export function Results() {
   const validRequest = useSelector(selectValidRequest);
@@ -16,5 +17,9 @@ export function Results() {
 
   const result = isError ? error : data;
 
-  return <BaseEditor initText={JSON.stringify(result, null, '\t')} isDisabled={true} isLinesDisabled={true} />;
+  return (
+    <section className={classes.resultsWrapper}>
+      <BaseEditor initText={JSON.stringify(result, null, '\t')} isDisabled={true} isLinesDisabled={true} />
+    </section>
+  );
 }

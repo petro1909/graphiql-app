@@ -7,7 +7,8 @@
   top: 0;
   background-color: #ffffff;
   border-bottom: 1px solid rgb(225 224 223);
-  height: 72px;
+  height: 60px;
+  padding: $padding;
 
   &.headerSmall {
     height: 64px;
@@ -16,8 +17,6 @@
 }
 
 .headerContent {
-  width: 95%;
-  margin: 0 auto;
   height: 100%;
 
   display: flex;

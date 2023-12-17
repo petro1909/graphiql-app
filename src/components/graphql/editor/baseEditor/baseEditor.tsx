@@ -44,8 +44,9 @@ export function BaseEditor({ initText, handleChangeText, isDisabled = false, isL
 
   const handleKeyUp = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     const target = e.currentTarget;
-    if (e.key === '{') {
-      target.setRangeText('}', target.selectionStart, target.selectionStart, 'preserve');
+    if (e.key === '{' || e.key === '[') {
+      const symbol = e.key === '{' ? '}' : ']';
+      target.setRangeText(symbol, target.selectionStart, target.selectionStart, 'preserve');
     }
   };
 

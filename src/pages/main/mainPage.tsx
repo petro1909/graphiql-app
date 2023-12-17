@@ -8,7 +8,6 @@ import classNames from 'classnames';
 import { EndpointForm } from '@components/graphql/endPointForm/endPointForm';
 import { useEffect, useState } from 'react';
 import { QueryEditor } from '@components/graphql/editor/queryEditor/queryEditor';
-import { QueryPropertiesEditor } from '@components/graphql/editor/queryPropertyEditor/queryPropertyEditor';
 import { SandboxContainer } from '@components/sandboxContainer/sandboxContainer';
 import { Results } from '@components/graphql/results/results';
 import { useSelector } from 'react-redux';
@@ -41,11 +40,6 @@ export function MainPage() {
         <section className={classNames(classes.queryGridWrapper)}>
           <SandboxContainer>
             <QueryEditor />
-          </SandboxContainer>
-        </section>
-        <section className={classNames(classes.queryPropertiesGridWrapper)}>
-          <SandboxContainer>
-            <QueryPropertiesEditor />
           </SandboxContainer>
         </section>
         <section className={classNames(classes.resultsGridWrapper)}>
