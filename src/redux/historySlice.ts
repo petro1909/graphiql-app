@@ -5,15 +5,15 @@ import { GraphQlSearchInputType } from '@app_types/graphql';
 type HistorySliceState = {
   history: Array<GraphQlSearchInputType>;
   historyIndex: number;
-  prev: GraphQlSearchInputType | undefined;
-  next: GraphQlSearchInputType | undefined;
+  prev: GraphQlSearchInputType | null;
+  next: GraphQlSearchInputType | null;
 };
 
 const historySliceInitState: HistorySliceState = {
   history: [],
   historyIndex: 0,
-  prev: undefined,
-  next: undefined,
+  prev: null,
+  next: null,
 };
 
 const historySlice = createSlice({
@@ -30,13 +30,13 @@ const historySlice = createSlice({
     historyClear(state) {
       state.history = [];
       state.historyIndex = 0;
-      state.next = undefined;
-      state.prev = undefined;
+      state.next = null;
+      state.prev = null;
     },
     historyForward(state) {
       if (state.historyIndex < state.history.length) {
-        state.next = state.history.at(state.historyIndex + 1);
-        state.prev = state.history.at(state.historyIndex - 1);
+        state.next = state.history[state.historyIndex + 1];
+        state.prev = state.history[state.historyIndex - 1];
         state.historyIndex += 1;
       }
     },
