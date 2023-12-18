@@ -1,11 +1,13 @@
 import { Input } from '@components/input/input';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import classes from './autocompleteSelect.module.scss';
 import classNames from 'classnames';
 import { GraphQlSearchInputType } from '@app_types/graphql';
 import { useSelector } from 'react-redux';
 import { selectAllEntities } from '@redux/docsSlice';
+import { useDebounce } from '@uidotdev/usehooks';
+import { filterItems } from './autocompleteSelectService';
 
 type AutocompleteSelectProps = {
   placeholder?: string;
@@ -18,34 +20,27 @@ export const AutocompleteSelect = ({ placeholder, handleSelectItem, errorMessage
   const [inputValue, setInputValue] = useState('');
   const [itemsIsVisible, setItemsIsVisible] = useState(false);
   const [proposedItems, setProposedItems] = useState(initItems);
+  const debounceInputValue = useDebounce(inputValue, 300);
 
-  const filterItems = (value: string) => {
-    value = value.toLowerCase();
-    if (value === '') {
-      return [];
-    }
-
-    return initItems.filter(
-      (item) => (item.typeName.toLowerCase().toLowerCase().includes(value) && !item.fieldName) || item.fieldName?.toLocaleLowerCase().includes(value)
-    );
-  };
+  useEffect(() => {
+    setProposedItems(filterItems(inputValue, initItems));
+  }, [debounceInputValue]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
     setItemsIsVisible(true);
-    const filteredItems = filterItems(e.target.value);
-    setProposedItems(filteredItems);
   };
 
   const handlerSelectList = (entity: GraphQlSearchInputType) => {
-    setInputValue(entity.fieldName || entity.typeName);
-    setProposedItems(filterItems(entity.fieldName || entity.typeName));
+    const entityName = entity.fieldName || entity.typeName;
+    setInputValue(entityName);
+    setProposedItems(filterItems(entityName, initItems));
     setItemsIsVisible(false);
     handleSelectItem(entity);
   };
 
   const handleFocus = () => {
-    if (inputValue !== '') {
+    if (inputValue) {
       setItemsIsVisible(true);
     }
   };
@@ -62,18 +57,24 @@ export const AutocompleteSelect = ({ placeholder, handleSelectItem, errorMessage
       <section className={classNames(classes.itemsWrapper, itemsIsVisible && classes.visible)}>
         <section className={classes.itemsScrollWrapper}>
           {proposedItems.map((proposedItem, index) => (
-            <p className={classes.proposedItem} key={index} onMouseDown={() => handlerSelectList(proposedItem)}>
-              <span>{proposedItem.typeName}</span>
-              {proposedItem.fieldName && (
-                <>
-                  <span>.</span>
-                  <span>{proposedItem.fieldName}</span>
-                </>
-              )}
-            </p>
+            <AutocompleteSelectLine key={index} item={proposedItem} onMouseDown={handlerSelectList} />
           ))}
         </section>
       </section>
     </section>
   );
 };
+
+type AutocompleteSelectLineProps = {
+  item: GraphQlSearchInputType;
+  onMouseDown: (entity: GraphQlSearchInputType) => void;
+};
+
+function AutocompleteSelectLine({ item, onMouseDown }: AutocompleteSelectLineProps) {
+  return (
+    <p className={classes.proposedItem} onMouseDown={() => onMouseDown(item)}>
+      <span>{item.typeName}</span>
+      {item.fieldName && <span>.{item.fieldName}</span>}
+    </p>
+  );
+}
