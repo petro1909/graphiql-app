@@ -17,17 +17,17 @@ export function MainPage() {
   const { language } = useLocale();
   const isDocsEnable = useSelector(selectDocsEnable);
 
-  const [docsVisibility, toggleDocsVisibility] = useState(isDocsEnable);
+  const [docsVisibility, setDocsVisibility] = useState(isDocsEnable);
 
   useEffect(() => {
-    toggleDocsVisibility(isDocsEnable);
+    setDocsVisibility(isDocsEnable);
   }, [isDocsEnable]);
 
   return (
     <main className={classes.main}>
       <section className={classes.mainTop}>
         <EndpointForm />
-        <Button disabled={!isDocsEnable} mode="light" onClick={() => toggleDocsVisibility(!docsVisibility)}>
+        <Button disabled={!isDocsEnable} mode="light" onClick={() => setDocsVisibility(!docsVisibility)}>
           {language.strings.docShowButton}
         </Button>
       </section>
