@@ -3,34 +3,34 @@ import classes from './documentation.module.scss';
 import { selectRawRequest } from '@redux/endpointSlice';
 import { useLazyGetGraphqlResultQuery } from '@redux/graphqlApi';
 import { store } from '@redux/store';
-import { selectActiveEntity, selectSchema, setActiveEntity, setEntities, setSchema, toggleDocsEnable } from '@redux/docsSlice';
+import { selectActiveEntity, selectSchema, setActiveEntity, toggleDocsEnable } from '@redux/docsSlice';
 import { useEffect, useRef, useState } from 'react';
 import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { graphqlDocsQuery } from './graphqlDocsQuery';
 import { GraphQLResponse, GraphQlSearchInputType } from '@app_types/graphql';
-import { AllTypes } from './schema/schema';
 import { Button } from '@components/button/button';
 import { useLocale } from '@localization/useLocale';
 import { AutocompleteSelect } from '@components/graphql/documentation/autocompleteSelect/autocompleteSelect';
-import { isGraphQlField, isGraphQlSchema, isGraphQlType } from '@helpers/typeGuards';
-import { GraphQlType } from './graphqlEntity/graphqlType';
-import { GraphQlField } from './graphqlEntity/graphqlField';
 import { History } from './history/history';
-import { historyClear, historyPush } from '@redux/historySlice';
+import { historyPush } from '@redux/historySlice';
 import { Loader } from '@components/loader/loader';
+import { useGraphQlSchema } from './useGraphqlSchema';
+import { DocumentationContent } from './documentationContent';
 
 export function Documentation() {
   const { language } = useLocale();
   const { URL } = useSelector(selectRawRequest);
   const [getGraphqlResultQuery] = useLazyGetGraphqlResultQuery();
 
-  const [error, setError] = useState<FetchBaseQueryError | SerializedError | undefined>();
+  const [error, setError] = useState<FetchBaseQueryError | SerializedError | null>(null);
   const [loading, setLoading] = useState(false);
 
   const ref = useRef<HTMLOptionElement>(null);
   const schema = useSelector(selectSchema);
   const activeEntity = useSelector(selectActiveEntity);
+
+  const initSchema = useGraphQlSchema();
 
   const handleActiveEntity = (searchInput: GraphQlSearchInputType) => {
     ref.current?.scrollTo(0, 0);
@@ -45,19 +45,11 @@ export function Documentation() {
         if (error) {
           setError(error);
           store.dispatch(toggleDocsEnable(false));
-
-          return;
+        } else {
+          setError(null);
+          const schema = (data as GraphQLResponse).data.__schema;
+          initSchema(schema);
         }
-        const schema = (data as GraphQLResponse).data.__schema;
-
-        setError(undefined);
-
-        store.dispatch(setSchema(schema));
-        store.dispatch(historyClear());
-        store.dispatch(historyPush({ typeName: '__Schema' }));
-        store.dispatch(setActiveEntity({ typeName: '__Schema' }));
-        store.dispatch(setEntities(schema));
-        store.dispatch(toggleDocsEnable(true));
       })
       .finally(() => {
         setLoading(false);
@@ -71,17 +63,6 @@ export function Documentation() {
     return null;
   }
 
-  let content: JSX.Element | undefined;
-  if (isGraphQlSchema(activeEntity)) {
-    content = <AllTypes schema={schema} handleClick={handleActiveEntity} />;
-  }
-  if (isGraphQlType(activeEntity)) {
-    content = <GraphQlType type={activeEntity} handleClick={handleActiveEntity} />;
-  }
-  if (isGraphQlField(activeEntity)) {
-    content = <GraphQlField field={activeEntity} handleClick={handleActiveEntity} />;
-  }
-
   return (
     <section className={classes.docsWrapper}>
       <History />
@@ -92,7 +73,7 @@ export function Documentation() {
         <AutocompleteSelect placeholder={language.strings.searchSchema} handleSelectItem={handleActiveEntity} />
       </section>
       <section className={classes.typesWrapper} ref={ref}>
-        {content}
+        <DocumentationContent activeEntity={activeEntity} handleActiveEntity={handleActiveEntity} />
       </section>
     </section>
   );
