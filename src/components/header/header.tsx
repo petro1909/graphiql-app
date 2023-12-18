@@ -50,9 +50,15 @@ export const Header: React.FC = () => {
         </CustomNavLink>
         <div className={classes.flex}>
           <SelectLanguage />
-          <Button mode="light" onClick={handleLogout}>
-            {language.strings.signout}
-          </Button>
+          {user ? (
+            <Button mode="light" onClick={handleLogout}>
+              {language.strings.signout}
+            </Button>
+          ) : (
+            <CustomNavLink to={routes.SIGN_IN}>
+              <Button mode="light">{language.strings.signIn}</Button>
+            </CustomNavLink>
+          )}
         </div>
       </div>
       {user?.email}

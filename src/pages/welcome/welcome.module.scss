@@ -24,9 +24,20 @@
 
 .actionWrapper {
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 100px;
+  right: 30px;
   @include _768 {
     right: 24px;
   }
+}
+
+.authButtonWrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.additionalInfo {
+  text-align: center;
+  margin: 18px 8px ;
+  font-size: 14px;
 }

@@ -3,6 +3,7 @@
   "welcomePage": "Приветственная страница",
   "created": "Приложение создано в 2023 году",
   "createdBy": "создатели",
+  "projectWasCreated": "Приложение было создано : ",
   "petrName": "Пётр",
   "nataliaName": "Наталья",
   "daryaName": "Дарья",
@@ -33,5 +34,9 @@
   "errorMessagePasswordDigit": "Ваш пароль должен состоять как минимум из 1 цифры",
   "errorMessagePasswordLowercase": "Ваш пароль должен содержать хотя бы 1 символ нижнего регистра",
   "errorMessagePasswordUppercase": "Ваш пароль должен содержать хотя бы 1 символ верхнего регистра",
-  "errorMessagePasswordSymbol": "Ваш пароль должен состоять как минимум из 1 символа"
+  "errorMessagePasswordSymbol": "Ваш пароль должен состоять как минимум из 1 символа",
+  "project": "проект",
+  "course": "курс",
+  "additionalInformation": "Здесь вы можете прочитать дополнительную информацию о",
+  "andAbout": "и о"
 }

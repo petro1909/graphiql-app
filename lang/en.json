@@ -3,6 +3,7 @@
   "welcomePage": "Welcome Page",
   "created": "Application was created in 2023",
   "createdBy": "creators",
+  "projectWasCreated": "The project was created by : ",
   "petrName": "Petr",
   "nataliaName": "Natalia",
   "daryaName": "Darya",
@@ -33,5 +34,9 @@
   "errorMessagePasswordDigit": "Your password must have at least 1 digit character",
   "errorMessagePasswordLowercase": "Your password must have at least 1 lowercase character",
   "errorMessagePasswordUppercase": "Your password must have at least 1 uppercase character",
-  "errorMessagePasswordSymbol": "Your password must have at least 1 symbol character"
+  "errorMessagePasswordSymbol": "Your password must have at least 1 symbol character",
+  "project": "project",
+  "course": "course",
+  "additionalInformation": "Here you can read additional information about",
+  "andAbout": "andAbout"
 }
