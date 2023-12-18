@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import classNames from 'classnames';
 
 import { useLocale } from '@localization/useLocale';
-import { SignUpForm } from '@models/authForm';
+import { SignUpForm } from '@app_types/authForm';
 import { routes } from '@constants/constants';
 import { Input } from '@components/input/input';
 import { Button } from '@components/button/button';

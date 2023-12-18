@@ -26,5 +26,12 @@
   "authConfirmPasswordPlaceholder": "Повторите пароль",
   "authNamePlaceholder": "Имя",
   "signIn": "Войти",
-  "signUp": "Зарегистрироваться"
+  "signUp": "Зарегистрироваться",
+  "errorMessageEmailRequired" : "Пожалуйста введите ваш адрес электронной почты",
+  "errorMessageEmailNotValid": "Введите корректный адрес электонной почты",
+  "errorMessagePasswordRequired": "Пожалуйста введите ваш пароль",
+  "errorMessagePasswordDigit": "Ваш пароль должен состоять как минимум из 1 цифры",
+  "errorMessagePasswordLowercase": "Ваш пароль должен содержать хотя бы 1 символ нижнего регистра",
+  "errorMessagePasswordUppercase": "Ваш пароль должен содержать хотя бы 1 символ верхнего регистра",
+  "errorMessagePasswordSymbol": "Ваш пароль должен состоять как минимум из 1 символа"
 }

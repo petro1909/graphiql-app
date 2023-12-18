@@ -24,8 +24,8 @@ export default defineConfig({
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@validation': path.resolve(__dirname, './src/validation'),
       '@localization': path.resolve(__dirname, './src/localization'),
+      '@dataBase': path.resolve(__dirname, './src/dataBase'),
       '@lang': path.resolve(__dirname, './lang'),
-      '@models': path.resolve(__dirname, './src/models'),
     },
   },
   test: {

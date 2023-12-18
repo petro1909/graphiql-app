@@ -1,39 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import classNames from 'classnames';
+import * as Yup from 'yup';
 
+import { auth } from '@dataBase/initialApp';
+import { Alert } from '@components/alert/alert';
 import { useLocale } from '@localization/useLocale';
-import { SignInFormData } from '@models/authForm';
+import { SignInFormData } from '@app_types/authForm';
 import { routes } from '@constants/constants';
 import { Input } from '@components/input/input';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
-import { useSignInFormSchema } from './useSignInFormSchema';
-import { firebaseConfig } from '../../../../firebaseConfig';
 
-import classes from '../auth.module.scss';
-import { createUserWithEmailAndPassword, getAuth, signOut } from '@firebase/auth';
-
-import { initializeApp } from 'firebase/app';
-import { Alert } from '@components/alert/alert';
-
-const firebaseApp = initializeApp(firebaseConfig);
+import classes from './auth.module.scss';
 
 export const SignIn: React.FC = () => {
   const { language } = useLocale();
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (isSubmitted) {
-      navigate(routes.MAIN_URL);
-    }
-  }, [isSubmitted, navigate]);
+  const useSignInFormSchema = Yup.object().shape({
+    email: Yup.string().email(language.strings.errorMessageEmailNotValid).required(language.strings.errorMessageEmailRequired),
+    password: Yup.string()
+      .min(6, language.strings.errorMessagePasswordRequired)
+      .max(32)
+      .required(language.strings.errorMessagePasswordRequired)
+      .matches(/[0-9]/, language.strings.errorMessagePasswordDigit)
+      .matches(/[a-z]/, language.strings.errorMessagePasswordLowercase)
+      .matches(/[A-Z]/, language.strings.errorMessagePasswordUppercase)
+      .matches(/[^\w ]/g, language.strings.errorMessagePasswordSymbol),
+  });
 
   const {
     register,
@@ -41,42 +40,22 @@ export const SignIn: React.FC = () => {
     formState: { errors },
   } = useForm<SignInFormData>({ resolver: yupResolver(useSignInFormSchema) });
 
-  const auth = getAuth(firebaseApp);
-
   const [user, loading, error] = useAuthState(auth);
 
   const onSubmit = async (data: SignInFormData) => {
-    try {
-      await createUserWithEmailAndPassword(auth, data.email, data.password);
-      // await signInWithEmailAndPassword(auth, data.email, data.password);
-      setIsSubmitted(true);
-    } catch (error) {
-      console.error('Authentication error:', error);
-    }
-  };
-
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
+    //await createUserWithEmailAndPassword(auth, data.email, data.password);
+    await signInWithEmailAndPassword(auth, data.email, data.password);
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p>Loading...</p>; //change to <Loader>
   }
   if (user) {
-    return (
-      <div>
-        <p>Registered User: {user.email} </p>
-        <button onClick={handleLogout}>Logout</button>
-      </div>
-    );
+    navigate(routes.MAIN_URL);
   }
   return (
     <div className={classes.wrapperForm}>
-      {!error && <Alert message={'error.message'} />}
+      {error && <Alert message={error.message} />}
       <form className={classNames('flex-center', classes.authForm)} onSubmit={handleSubmit(onSubmit)}>
         <h1 className={classes.title}>{language.strings.signIn}</h1>
         <Input
@@ -91,7 +70,6 @@ export const SignIn: React.FC = () => {
           placeholder={language.strings.authPasswordPlaceholder}
           {...register('password')}
         />
-
         <div className={classes.buttonWrapper}>
           <Button type="submit">{language.strings.signIn}</Button>
           <CustomNavLink to={routes.SIGN_UP}>

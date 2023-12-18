@@ -30,8 +30,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@validation/*": ["./src/validation/*"],
       "@localization/*": ["./src/localization/*"],
+      "@dataBase/*": ["./src/dataBase/*"],
       "@lang/*": ["./lang/*"],
-      "@models/*": ["./src/models/*"]
     },
     "plugins": [
       {
@@ -42,6 +42,6 @@
       }
     ]
   },
-  "include": ["src"],
+  "include": ["src", "env.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

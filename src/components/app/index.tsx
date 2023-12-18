@@ -9,7 +9,7 @@ import { MainPage } from '@pages/main/mainPage';
 import { NotFound } from '@pages/404/notFound';
 
 import './style.css';
-import { SignIn } from '@pages/auth/signInForm/signInForm';
+import { SignIn } from '@pages/auth/signInForm';
 import { SignUp } from '@pages/auth/signUpForm/signUpForm';
 
 const router = createBrowserRouter([

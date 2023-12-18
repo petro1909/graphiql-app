@@ -2,7 +2,11 @@ import React from 'react';
 import { useLocale } from '@localization/useLocale';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
+import { auth } from '@dataBase/initialApp';
 import { routes } from '@constants/constants';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Button } from '@components/button/button';
@@ -13,7 +17,9 @@ import classes from './header.module.scss';
 
 export const Header: React.FC = () => {
   const { language } = useLocale();
+  const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +34,11 @@ export const Header: React.FC = () => {
     };
   }, []);
 
+  const handleLogout = async () => {
+    await signOut(auth);
+    navigate(routes.WELCOME_URL);
+  };
+
   const classNamesSticky = isSticky && classes.headerSmall;
 
   return (
@@ -39,9 +50,12 @@ export const Header: React.FC = () => {
         </CustomNavLink>
         <div className={classes.flex}>
           <SelectLanguage />
-          <Button mode="light">{language.strings.signout}</Button>
+          <Button mode="light" onClick={handleLogout}>
+            {language.strings.signout}
+          </Button>
         </div>
       </div>
+      {user?.email}
     </header>
   );
 };

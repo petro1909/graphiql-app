@@ -26,5 +26,12 @@
   "authConfirmPasswordPlaceholder": "Repeat password",
   "authNamePlaceholder": "Name",
   "signIn": "Sign In",
-  "signUp": "Sign Up"
+  "signUp": "Sign Up",
+  "errorMessageEmailRequired" : "Please enter your email address",
+  "errorMessageEmailNotValid": "Type a valid email",
+  "errorMessagePasswordRequired": "Please enter your password",
+  "errorMessagePasswordDigit": "Your password must have at least 1 digit character",
+  "errorMessagePasswordLowercase": "Your password must have at least 1 lowercase character",
+  "errorMessagePasswordUppercase": "Your password must have at least 1 uppercase character",
+  "errorMessagePasswordSymbol": "Your password must have at least 1 symbol character"
 }
