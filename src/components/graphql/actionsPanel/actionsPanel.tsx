@@ -1,7 +1,7 @@
 import { Button } from '@components/button/button';
 import classes from './actionsPanel.module.scss';
-import playIcon from '@assets/play.svg';
-import prettifyInon from '@assets/prettify.svg';
+import { playIcon } from '@assets/index';
+import { prettifyIcon } from '@assets/index';
 import { store } from '@redux/store';
 import { selectRawRequest, setRawRequest, setValidatedRequest } from '@redux/endpointSlice';
 import { useSelector } from 'react-redux';
@@ -25,7 +25,7 @@ export const ActionsPanel: React.FC = () => {
         <img className={classes.image} title={language.strings.makeRequest} src={playIcon} alt="make request" />
       </Button>
       <Button mode="light" className={classes.actionButton} onClick={prettifyQuery}>
-        <img className={classes.image} title={language.strings.prettify} src={prettifyInon} alt="prettify" />
+        <img className={classes.image} title={language.strings.prettify} src={prettifyIcon} alt="prettify" />
       </Button>
     </aside>
   );

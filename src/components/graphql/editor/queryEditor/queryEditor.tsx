@@ -6,8 +6,7 @@ import { Button } from '@components/button/button';
 import { useLocale } from '@localization/useLocale';
 import { useState } from 'react';
 import classes from './queryEditor.module.scss';
-import arrowUp from '@assets/arrow-up.svg';
-import arrowDown from '@assets/arrow-down.svg';
+import { arrowUpIcon, arrowDownIcon } from '@assets/index';
 import classNames from 'classnames';
 
 export function QueryEditor() {
@@ -47,7 +46,7 @@ export function QueryEditor() {
             </Button>
           </div>
           <div className={classes.toggleButton} onClick={() => setIsPropertySectionShowed(!isPropertySectionShowed)}>
-            <img className={classes.toggleButtonImage} src={isPropertySectionShowed ? arrowDown : arrowUp} />
+            <img className={classes.toggleButtonImage} src={isPropertySectionShowed ? arrowDownIcon : arrowUpIcon} />
           </div>
         </div>
         <section className={classNames(classes.propertyEditorsWrapper, !isPropertySectionShowed && classes.hidden)}>
