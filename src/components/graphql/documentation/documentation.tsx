@@ -18,6 +18,7 @@ import { GraphQlType } from './graphqlEntity/graphqlType';
 import { GraphQlField } from './graphqlEntity/graphqlField';
 import { History } from './history/history';
 import { historyClear, historyPush } from '@redux/historySlice';
+import { Loader } from '@components/loader/loader';
 
 export function Documentation() {
   const { language } = useLocale();
@@ -64,7 +65,7 @@ export function Documentation() {
   }, [URL]);
 
   if (loading) {
-    return <div>...Loading</div>;
+    return <Loader />;
   }
   if (error || !schema || !activeEntity) {
     return null;

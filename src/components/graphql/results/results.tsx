@@ -3,6 +3,7 @@ import { useGetGraphqlResultQuery } from '@redux/graphqlApi';
 import { useSelector } from 'react-redux';
 import { BaseEditor } from '../editor/baseEditor/baseEditor';
 import classes from './results.module.scss';
+import { Loader } from '@components/loader/loader';
 
 export function Results() {
   const validRequest = useSelector(selectValidRequest);
@@ -12,7 +13,7 @@ export function Results() {
     return null;
   }
   if (isLoading) {
-    return <div>...Loading</div>;
+    return <Loader />;
   }
 
   const result = isError ? error : data;
