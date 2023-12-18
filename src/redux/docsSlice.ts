@@ -4,16 +4,16 @@ import { GraphQlEntity, GraphQlSearchInputType, __Schema } from '@app_types/grap
 
 type DocsSliceState = {
   isDocsEnable: boolean;
-  schema: __Schema | undefined;
+  schema: __Schema | null;
   entities: GraphQlSearchInputType[];
-  activeEntity: GraphQlEntity | undefined;
+  activeEntity: GraphQlEntity | null;
 };
 
 const docsSliceInitState: DocsSliceState = {
   isDocsEnable: true,
-  schema: undefined,
+  schema: null,
   entities: [],
-  activeEntity: undefined,
+  activeEntity: null,
 };
 
 const docsSlice = createSlice({
@@ -25,6 +25,7 @@ const docsSlice = createSlice({
     },
     setSchema(state, action: PayloadAction<__Schema>) {
       state.schema = action.payload;
+      state.isDocsEnable = true;
     },
     setEntities(state, action: PayloadAction<__Schema>) {
       const schema = action.payload;
@@ -42,7 +43,7 @@ const docsSlice = createSlice({
       });
       state.entities = entities;
     },
-    setActiveEntity(state, action: PayloadAction<GraphQlSearchInputType | undefined>) {
+    setActiveEntity(state, action: PayloadAction<GraphQlSearchInputType | null>) {
       const searchInput = action.payload;
       if (searchInput?.typeName === '__Schema') {
         state.activeEntity = state.schema;
@@ -59,7 +60,7 @@ const docsSlice = createSlice({
           findedEntity = field;
         }
       }
-      state.activeEntity = findedEntity;
+      state.activeEntity = findedEntity || null;
     },
   },
 });
