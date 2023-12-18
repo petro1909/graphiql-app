@@ -8,7 +8,7 @@ import { Welcome } from '@pages/welcome/welcome';
 import { MainPage } from '@pages/main/mainPage';
 import { NotFound } from '@pages/404/notFound';
 
-import './style.css';
+import './style.scss';
 
 const router = createBrowserRouter([
   {

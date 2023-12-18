@@ -1,18 +1,22 @@
 .line-wrapper {
-  height: 19px;
   display: flex;
   justify-content: flex-end;
+  height: 19px;
 }
+
 .line-text-wrapper {
   position: relative;
-  margin: 0;
   width: 100%;
+  margin: 0;
 }
+
 .line-text-area {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
+
   border: none;
   outline: none;
 }
@@ -21,7 +25,7 @@
   margin-right: 10px;
   padding-right: 5px;
 }
+
 .line-number.active {
   color: red;
 }
-

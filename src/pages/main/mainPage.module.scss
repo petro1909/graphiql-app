@@ -1,40 +1,42 @@
 @use '@helpers/variables.scss' as *;
+
 @import '@helpers/mixins';
 
 .main {
-  padding: $padding;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: $padding;
 }
 
-.mainTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 0;
-
+.main-top {
   @include _768 {
     flex-wrap: wrap;
     margin-bottom: 30px;
   }
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 0;
 }
 
-
-.sandBox {
-  position: relative;
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 100px 1fr 1fr auto;
-  grid-template-rows: 100%;
-  overflow: hidden;
-  gap: 5px;
-
+.sand-box {
   @include _768 {
     display: flex;
     flex-direction: column;
   }
+
+  position: relative;
+
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr auto;
+  grid-template-rows: 100%;
+  flex-grow: 1;
+  gap: 5px;
 }
 
 .actions-grid-wrapper {
@@ -50,20 +52,22 @@
 }
 
 .docs-grid-wrapper {
-  grid-column: 4/5;
-  
   @include _1200 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
   }
+
+  grid-column: 4/5;
 }
+
 .docs-hidden {
   display: none;
 }
 
-.mainContent {
+.main-content {
   display: flex;
 }

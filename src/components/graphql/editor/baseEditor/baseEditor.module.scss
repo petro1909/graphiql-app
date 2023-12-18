@@ -1,26 +1,30 @@
 @use '@helpers/variables.scss' as *;
+
 @import '@helpers/mixins';
+
 .editor-wrapper {
   position: relative;
+  overflow: auto;
   display: flex;
   height: 100%;
-  overflow: auto;
 }
 
-textarea {
-  padding: 0;
+.editor {
   resize: none;
+
+  width: 100%;
+  height: fit-content;
+  min-height: 100%;
+  padding: 0;
+
   font-size: 16px;
+  tab-size: 10px;
+
+  background-color: $color-gray;
   border: none;
   outline: none;
-  width: 100%;
-  min-height: 100%;
-  height: fit-content;
-  tab-size: 10px;
-  background-color: $color-gray;
-  
 }
+
 .line-numbers {
   width: 40px;
 }
-

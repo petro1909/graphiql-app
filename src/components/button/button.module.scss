@@ -1,27 +1,30 @@
 @use '@helpers/variables.scss' as *;
 
 .button {
-  font-size: 16px;
-  font-weight: 700;
-  padding: 10px 16px;
-  border-radius: 6px;
-  line-height: 1.25;
   cursor: pointer;
 
+  padding: 10px 16px;
+  
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  
+  border-radius: 6px;
+  
   &:focus {
     outline: none;
     box-shadow: none;
   }
 }
 
-.buttonLight {
+.button-light {
+  color: $color-base;
   background-color: $color-white;
   border: 2px solid $color-gray;
-  color: $color-base;
-
+  
   &:hover {
-    border-color: $color-gray;
     background-color: $color-gray-light;
+    border-color: $color-gray;
   }
 
   &:focus {
@@ -30,20 +33,20 @@
   }
 
   &:disabled {
+    color: $color-gray-dark;
     background-color: $color-gray-light;
     border: 2px solid $color-gray-light;
-    color: $color-gray-dark;
   }
 }
 
-.buttonDark {
+.button-dark {
+  color: $color-white;
   background-color: $color-blue;
   border: 2px solid $color-blue;
-  color: $color-white;
 
   &:hover {
-    border: 2px solid $color-blue-light;
     background-color: $color-blue-light;
+    border: 2px solid $color-blue-light;
   }
 
   &:focus {
@@ -52,8 +55,8 @@
   }
 
   &:disabled {
+    color: $color-gray-dark;
     background-color: $color-gray-light;
     border: 2px solid $color-gray-light;
-    color: $color-gray-dark;
   }
 }

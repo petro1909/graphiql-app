@@ -1,10 +1,10 @@
 @import '@helpers/mixins';
 
 .endpoint {
-  display: flex;
-  grid-gap: 20px;
-
   @include _768 {
     flex-wrap: wrap;
   }
+
+  display: flex;
+  grid-gap: 20px;
 }

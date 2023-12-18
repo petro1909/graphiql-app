@@ -1,11 +1,12 @@
 @use '@helpers/variables.scss' as *;
 
 .query-wrapper {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   height: inherit;
-  overflow: hidden;
 }
 
 .query-editor-wrapper {
@@ -23,8 +24,8 @@
 
 .query-properties-actions {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .toggle-button {
@@ -33,15 +34,16 @@
 }
 
 .toggle-button-image {
-  height: inherit;
   width: inherit;
+  height: inherit;
 }
 
 .property-editors-wrapper {
+  overflow: auto;
   height: 220px;
   transition: height 1s;
-  overflow: auto;
 }
+
 .property-editors-wrapper.hidden {
   height: 0;
 }

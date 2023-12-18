@@ -1,0 +1,12 @@
+@import '@helpers/mixins';
+
+#root {
+  @include _768 {
+    height: auto;
+  }
+
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  height: 100vh;
+}

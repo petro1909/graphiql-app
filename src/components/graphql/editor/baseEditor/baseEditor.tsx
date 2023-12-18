@@ -21,6 +21,7 @@ export function BaseEditor({ initText, handleChangeText, isDisabled = false, isL
   const currentRow = useMemo(() => {
     const textBefore = text.slice(0, ref.current?.selectionEnd);
     const textArr = textBefore.split('\n');
+
     return textArr.length;
   }, [cursor]);
 

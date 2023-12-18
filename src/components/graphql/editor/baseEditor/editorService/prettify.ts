@@ -20,8 +20,10 @@ export function prettify(text: string): string {
       if (line.includes('{')) {
         ++indentLevel;
       }
+
       return line;
     })
     .filter((line) => line.trim() !== '');
+
   return lines.join('\n');
 }

@@ -1,25 +1,30 @@
 @use '@helpers/variables.scss' as *;
+
 @import '@helpers/mixins';
 
 .footer {
-  padding: $padding;
-  margin-top: 20px;
+  @include _768 {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    height: 90px;
+  }
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
   height: 50px;
+  margin-top: 20px;
+  padding: $padding;
+  
   font-size: 16px;
   color: $color-gray-dark;
+
   border-top: 1px solid $color-gray;
-  @include _768 {
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px;
-    height: 90px;
-  }
 }
 
-.wrapperInfo {
+.wrapper-info {
   display: flex;
   gap: 24px;
   align-items: center;
@@ -32,6 +37,6 @@
 
 .flex {
   display: flex;
-  align-items: flex-end;
   gap: 4px;
+  align-items: flex-end;
 }

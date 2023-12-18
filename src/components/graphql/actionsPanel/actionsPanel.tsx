@@ -22,10 +22,10 @@ export const ActionsPanel: React.FC = () => {
   return (
     <aside className={classes.actions}>
       <Button mode="light" className={classes.actionButton} onClick={makeRequest}>
-        <img title={language.strings.makeRequest} src={playIcon} alt="make request" />
+        <img className={classes.image} title={language.strings.makeRequest} src={playIcon} alt="make request" />
       </Button>
       <Button mode="light" className={classes.actionButton} onClick={prettifyQuery}>
-        <img title={language.strings.prettify} src={prettifyInon} alt="prettify" />
+        <img className={classes.image} title={language.strings.prettify} src={prettifyInon} alt="prettify" />
       </Button>
     </aside>
   );

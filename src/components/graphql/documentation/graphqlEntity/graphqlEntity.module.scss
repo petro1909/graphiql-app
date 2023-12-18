@@ -1,11 +1,10 @@
 @use '@helpers/variables.scss' as *;
 
-.entity-header, 
-.description,  
-.property-wrapper, 
+.entity-header,
+.description,
+.property-wrapper,
 .property-header,
-.property-list
-{
+.property-list {
   margin-top: 4px;
   margin-bottom: 10px;
 }
