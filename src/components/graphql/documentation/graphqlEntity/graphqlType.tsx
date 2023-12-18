@@ -3,12 +3,12 @@ import { GraphqlCompoisteType } from './graphqlCompoisteType';
 import classes from './graphqlEntity.module.scss';
 import { useLocale } from '@localization/useLocale';
 
-type SingleTypeProps = {
+type GraphQlTypProps = {
   type: __Type;
   handleClick: (entity: GraphQlSearchInputType) => void;
 };
 
-export function GraphQlType({ type, handleClick }: SingleTypeProps) {
+export function GraphQlType({ type, handleClick }: GraphQlTypProps) {
   const { language } = useLocale();
 
   return (

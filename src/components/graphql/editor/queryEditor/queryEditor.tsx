@@ -1,4 +1,5 @@
-import { selectRawRequest, setRawRequest } from '@redux/endpointSlice';
+import { setRawRequest } from '@redux/endpointSlice';
+import { selectRawRequest } from '@redux/selectors';
 import { store } from '@redux/store';
 import { useSelector } from 'react-redux';
 import { BaseEditor } from '../baseEditor/baseEditor';

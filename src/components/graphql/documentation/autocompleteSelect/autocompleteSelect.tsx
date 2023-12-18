@@ -5,7 +5,7 @@ import classes from './autocompleteSelect.module.scss';
 import classNames from 'classnames';
 import { GraphQlSearchInputType } from '@app_types/graphql';
 import { useSelector } from 'react-redux';
-import { selectAllEntities } from '@redux/docsSlice';
+import { selectAllEntities } from '@redux/selectors';
 import { useDebounce } from '@uidotdev/usehooks';
 import { filterItems } from './autocompleteSelectService';
 

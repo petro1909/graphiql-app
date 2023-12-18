@@ -1,5 +1,6 @@
 import { setActiveEntity } from '@redux/docsSlice';
-import { historyBack, historyForward, selectNext, selectPrev } from '@redux/historySlice';
+import { selectNext, selectPrev } from '@redux/selectors';
+import { historyBack, historyForward } from '@redux/historySlice';
 import { store } from '@redux/store';
 import { useSelector } from 'react-redux';
 import classes from './history.module.scss';

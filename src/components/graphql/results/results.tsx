@@ -1,4 +1,4 @@
-import { selectValidRequest } from '@redux/endpointSlice';
+import { selectValidRequest } from '@redux/selectors';
 import { useGetGraphqlResultQuery } from '@redux/graphqlApi';
 import { useSelector } from 'react-redux';
 import { BaseEditor } from '../editor/baseEditor/baseEditor';

@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { RootState } from './store';
 import { GraphQlSearchInputType } from '@app_types/graphql';
 
 type HistorySliceState = {
@@ -49,9 +48,6 @@ const historySlice = createSlice({
     },
   },
 });
-
-export const selectPrev = (state: RootState) => state.history.prev;
-export const selectNext = (state: RootState) => state.history.next;
 
 export const { historyPush, historyClear, historyForward, historyBack } = historySlice.actions;
 export const historyReducer = historySlice.reducer;

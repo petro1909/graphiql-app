@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { RootState } from './store';
 import { getValueByKeyFromLocalStorage, localStorageValues } from '@service/localStorageService';
 import { GraphQLValidRequest, GraphQLRawRequest } from '@app_types/graphqlRequest';
 
@@ -38,9 +37,6 @@ const endpointSlice = createSlice({
     },
   },
 });
-
-export const selectRawRequest = (state: RootState) => state.endpoint.rawRequest;
-export const selectValidRequest = (state: RootState) => state.endpoint.validRequest;
 
 export const { setRawRequest, setValidatedRequest } = endpointSlice.actions;
 export const endPointSliceReducer = endpointSlice.reducer;

@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import classes from './documentation.module.scss';
-import { selectRawRequest } from '@redux/endpointSlice';
+import { selectRawRequest, selectActiveEntity, selectSchema } from '@redux/selectors';
 import { useLazyGetGraphqlResultQuery } from '@redux/graphqlApi';
 import { store } from '@redux/store';
-import { selectActiveEntity, selectSchema, setActiveEntity, toggleDocsEnable } from '@redux/docsSlice';
+import { setActiveEntity, toggleDocsEnable } from '@redux/docsSlice';
 import { useEffect, useRef, useState } from 'react';
 import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';

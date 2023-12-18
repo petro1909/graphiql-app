@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { RootState } from './store';
 import { GraphQlEntity, GraphQlSearchInputType, __Schema } from '@app_types/graphql';
 
 type DocsSliceState = {
@@ -64,11 +63,6 @@ const docsSlice = createSlice({
     },
   },
 });
-
-export const selectSchema = (state: RootState) => state.docs.schema;
-export const selectDocsEnable = (state: RootState) => state.docs.isDocsEnable;
-export const selectAllEntities = (state: RootState) => state.docs.entities;
-export const selectActiveEntity = (state: RootState) => state.docs.activeEntity;
 
 export const { toggleDocsEnable, setSchema, setEntities, setActiveEntity } = docsSlice.actions;
 export const docsSliceReducer = docsSlice.reducer;
