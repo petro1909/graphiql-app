@@ -11,7 +11,7 @@ import { QueryEditor } from '@components/graphql/editor/queryEditor/queryEditor'
 import { SandboxContainer } from '@components/sandboxContainer/sandboxContainer';
 import { Results } from '@components/graphql/results/results';
 import { useSelector } from 'react-redux';
-import { selectDocsEnable } from '@redux/docsSlice';
+import { selectDocsEnable } from '@redux/selectors';
 
 export function MainPage() {
   const { language } = useLocale();
