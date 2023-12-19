@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 import { routes } from '@constants/constants';
 import { Layout } from '@components/layout/layout';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
@@ -7,10 +8,11 @@ import { AuthorizationPage } from '@pages/auth/auth';
 import { Welcome } from '@pages/welcome/welcome';
 import { MainPage } from '@pages/main/mainPage';
 import { NotFound } from '@pages/404/notFound';
-
-import './style.css';
 import { SignIn } from '@pages/auth/signInForm';
 import { SignUp } from '@pages/auth/signUpForm';
+import { PrivateRoute } from '@components/privateRoute/privateRoute';
+
+import './style.css';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: routes.MAIN_URL,
-        element: <MainPage />,
+        element: (
+          <PrivateRoute>
+            <MainPage />
+          </PrivateRoute>
+        ),
       },
     ],
   },
