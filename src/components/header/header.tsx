@@ -11,8 +11,10 @@ import { routes } from '@constants/constants';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Button } from '@components/button/button';
 import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
+import { Avatar } from '@components/avatar/avatar';
 
 import HomeIcon from '@assets/home-icon.svg';
+import SignOutIcon from '@assets/signout.svg';
 import classes from './header.module.scss';
 
 export const Header: React.FC = () => {
@@ -51,9 +53,13 @@ export const Header: React.FC = () => {
         <div className={classes.flex}>
           <SelectLanguage />
           {user ? (
-            <Button mode="light" onClick={handleLogout}>
-              {language.strings.signout}
-            </Button>
+            <>
+              <Avatar name={user.displayName} />
+              <Button mode="light" onClick={handleLogout} className={classes.signoutButton}>
+                <img src={SignOutIcon} className={classes.signOutIcon} alt="signOut" />
+                <label>{language.strings.signout}</label>
+              </Button>
+            </>
           ) : (
             <CustomNavLink to={routes.SIGN_IN}>
               <Button mode="light">{language.strings.signIn}</Button>
@@ -61,7 +67,6 @@ export const Header: React.FC = () => {
           )}
         </div>
       </div>
-      {user?.email}
     </header>
   );
 };

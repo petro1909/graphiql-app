@@ -5,7 +5,7 @@
   z-index: 2;
   position: sticky;
   top: 0;
-  background-color: #ffffff;
+  background-color: $color-white;
   border-bottom: 1px solid rgb(225 224 223);
   height: 72px;
 
@@ -42,5 +42,29 @@
 .desktopLink {
   @include _480 {
     display: none;
+  }
+}
+
+.signoutButton {
+  > img {
+    display: none;
+  }
+  @include _480 {
+    border: none;
+    padding: 0;
+
+    &:hover {
+      background-color: $color-white;
+    }
+    &:focus {
+      background-color: $color-white;
+      border: none;
+    }
+    > label {
+      display: none;
+    }
+    > img {
+      display: block;
+    }
   }
 }

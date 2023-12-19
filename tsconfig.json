@@ -31,7 +31,7 @@
       "@validation/*": ["./src/validation/*"],
       "@localization/*": ["./src/localization/*"],
       "@dataBase/*": ["./src/dataBase/*"],
-      "@lang/*": ["./lang/*"],
+      "@lang/*": ["./lang/*"]
     },
     "plugins": [
       {
