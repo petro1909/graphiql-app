@@ -1,29 +1,33 @@
+import { closeCurlyBraces, newLine, openCurlyBraces, tab } from '../editorConstants';
+
 export function prettify(text: string): string {
   let indentLevel = 0;
-  let lines = text.trim().split('\n');
-  lines = lines
-    .map((line) =>
-      line
-        .trim()
-        .replaceAll(/(\s|\t)+/g, ' ')
-        .replaceAll('{', '{\n')
-        .replaceAll('}', '\n}\n')
-    )
-    .filter((line) => line.trim() !== '');
-  lines = lines.join('').split('\n');
-  lines = lines
-    .map((line) => {
-      if (line.includes('}')) {
-        --indentLevel;
-      }
-      line = ''.padEnd(indentLevel, '\t').concat(line);
-      if (line.includes('{')) {
-        ++indentLevel;
-      }
+  const trimmedText = text.trim().replaceAll(/( )+/g, ' ');
 
-      return line;
-    })
-    .filter((line) => line.trim() !== '');
+  const linesString = trimmedText
+    .replaceAll(/\s*{\s*/g, ' {\n')
+    .replaceAll(/\s*}\s*/g, '\n}\n')
+    .replaceAll(/\s*\(/g, '(')
+    .replaceAll(/\s*\,/g, ',')
+    .replaceAll(/\s*\:/g, ':')
+    .replaceAll(/\s*\=\s*/g, ' = ');
 
-  return lines.join('\n');
+  let lines = linesString.split(newLine);
+  lines = lines.map((line) => line.trim()).filter((line) => line);
+
+  lines = lines.map((line) => {
+    if (line.includes(closeCurlyBraces)) {
+      --indentLevel;
+    }
+    if (indentLevel >= 0) {
+      line = tab.repeat(indentLevel).concat(line);
+    }
+    if (line.includes(openCurlyBraces)) {
+      ++indentLevel;
+    }
+
+    return line;
+  });
+
+  return lines.join(newLine);
 }

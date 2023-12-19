@@ -1,12 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-
-const tab: string = '\t';
-const openSquareBraces = '[';
-const closeSquareBraces = ']';
-const openCurlyBraces = '{';
-const closeCurlyBraces = '}';
-const newLine: string = '\n';
-const keyTab: string = 'Tab';
+import { newLine, keyTab, tab, openCurlyBraces, openSquareBraces, closeCurlyBraces, closeSquareBraces } from '../editorConstants';
 
 export const useEditor = (initText: string, ref: React.RefObject<HTMLTextAreaElement>, handleChangeText?: (text: string) => void) => {
   const [text, setText] = useState(initText);
