@@ -1,10 +1,9 @@
+import rsLogo from '@assets/rs_school_js.svg';
+import { CustomNavLink } from '@components/customNavLink/customNavLink';
+import { ghLinks } from '@constants/constants';
+import { useLocale } from '@localization/useLocale';
 import React from 'react';
 
-import { useLocale } from '@localization/useLocale';
-import { CustomNavLink } from '@components/customNavLink/customNavLink';
-import { link } from '@constants/constants';
-
-import rsLogo from '@assets/rs_school_js.svg';
 import classes from './footer.module.scss';
 
 export const Footer: React.FC = () => {
@@ -22,15 +21,15 @@ export const Footer: React.FC = () => {
       </div>
       <div className={classes.flex}>
         {language.strings.createdBy}:
-        <CustomNavLink to={link.petrGithubLink} className={classes.link} target="blank">
+        <CustomNavLink to={ghLinks.petrGithubLink} className={classes.link} target="blank">
           {language.strings.petrName}
         </CustomNavLink>
         /
-        <CustomNavLink to={link.nataliaGithubLink} className={classes.link} target="blank">
+        <CustomNavLink to={ghLinks.nataliaGithubLink} className={classes.link} target="blank">
           {language.strings.nataliaName}
         </CustomNavLink>
         /
-        <CustomNavLink to={link.daryaGithubLink} className={classes.link} target="blank">
+        <CustomNavLink to={ghLinks.daryaGithubLink} className={classes.link} target="blank">
           {language.strings.daryaName}
         </CustomNavLink>
       </div>

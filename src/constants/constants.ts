@@ -6,7 +6,7 @@ export const routes = {
   SIGN_UP: '/signUp',
 };
 
-export const link = {
+export const ghLinks = {
   petrGithubLink: 'https://github.com/petro1909',
   nataliaGithubLink: 'https://github.com/nataliavozhdaeva',
   daryaGithubLink: 'https://github.com/DaryaBobko',

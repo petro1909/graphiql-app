@@ -1,5 +1,5 @@
-import { useLocale } from '@localization/useLocale';
 import { languages } from '@localization/languages';
+import { useLocale } from '@localization/useLocale';
 
 import classes from './selectLanguage.module.scss';
 

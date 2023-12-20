@@ -1,20 +1,19 @@
-import React from 'react';
-import { useLocale } from '@localization/useLocale';
-import { useEffect, useState } from 'react';
-import classNames from 'classnames';
-import { useNavigate } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
-
-import { auth } from '@dataBase/initialApp';
-import { routes } from '@constants/constants';
-import { CustomNavLink } from '@components/customNavLink/customNavLink';
-import { Button } from '@components/button/button';
-import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
-import { Avatar } from '@components/avatar/avatar';
-
 import HomeIcon from '@assets/home-icon.svg';
 import SignOutIcon from '@assets/signout.svg';
+import { Avatar } from '@components/avatar/avatar';
+import { Button } from '@components/button/button';
+import { CustomNavLink } from '@components/customNavLink/customNavLink';
+import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
+import { routes } from '@constants/constants';
+import { auth } from '@dataBase/initialApp';
+import { useLocale } from '@localization/useLocale';
+import classNames from 'classnames';
+import { signOut } from 'firebase/auth';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+
 import classes from './header.module.scss';
 
 export const Header: React.FC = () => {
@@ -37,11 +36,31 @@ export const Header: React.FC = () => {
   }, []);
 
   const handleLogout = async () => {
-    await signOut(auth);
+    signOut(auth);
     navigate(routes.WELCOME_URL);
   };
 
   const classNamesSticky = isSticky && classes.headerSmall;
+
+  const accountInfo = () => {
+    if (user) {
+      return (
+        <>
+          <Avatar name={user.displayName} />
+          <Button mode="light" onClick={handleLogout} className={classes.signoutButton}>
+            <img src={SignOutIcon} className={classes.signOutIcon} alt="signOut" />
+            <label>{language.strings.signout}</label>
+          </Button>
+        </>
+      );
+    } else {
+      return (
+        <CustomNavLink to={routes.SIGN_IN}>
+          <Button mode="light">{language.strings.signIn}</Button>
+        </CustomNavLink>
+      );
+    }
+  };
 
   return (
     <header className={classNames(classNamesSticky, classes.header)}>
@@ -52,19 +71,7 @@ export const Header: React.FC = () => {
         </CustomNavLink>
         <div className={classes.flex}>
           <SelectLanguage />
-          {user ? (
-            <>
-              <Avatar name={user.displayName} />
-              <Button mode="light" onClick={handleLogout} className={classes.signoutButton}>
-                <img src={SignOutIcon} className={classes.signOutIcon} alt="signOut" />
-                <label>{language.strings.signout}</label>
-              </Button>
-            </>
-          ) : (
-            <CustomNavLink to={routes.SIGN_IN}>
-              <Button mode="light">{language.strings.signIn}</Button>
-            </CustomNavLink>
-          )}
+          {accountInfo()}
         </div>
       </div>
     </header>

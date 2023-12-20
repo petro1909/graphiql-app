@@ -1,4 +1,5 @@
 import React from 'react';
+
 import classes from './alert.module.scss';
 
 type AlertProps = {

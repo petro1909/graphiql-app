@@ -1,18 +1,21 @@
-import { useLocale } from '@localization/useLocale';
-import { Input } from '@components/input/input';
-import { Button } from '@components/button/button';
 import { ActionsPanel } from '@components/actionsPanel/actionsPanel';
 import { BigSandboxComponent } from '@components/bigSandboxComponent/bigSandboxComponent';
+import { Button } from '@components/button/button';
 import { DocumentationSection } from '@components/documentationSection/documentationSection';
+import { Input } from '@components/input/input';
 import { SmallSandboxComponent } from '@components/smallSandboxComponent/smallSandboxComponent';
-import classes from './mainPage.module.scss';
+import { useLocale } from '@localization/useLocale';
 import classNames from 'classnames';
+
+import classes from './mainPage.module.scss';
 
 export function MainPage() {
   const { language } = useLocale();
-  const placeholder = language.strings.endpointPlaceholder;
+
+  const placeholder = language.strings.placeholder.endpoint;
   const isDocsShown = false;
   const docBtnStyle = isDocsShown ? classes.documentationBtn : classes.documentationDisabled;
+
   return (
     <main className={classes.main}>
       <section className={classes.mainTop}>

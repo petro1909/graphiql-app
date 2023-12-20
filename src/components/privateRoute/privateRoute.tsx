@@ -10,8 +10,10 @@ interface PrivateRouteProps {
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
   const [user] = useAuthState(auth);
+
   if (!user) {
     return <Navigate to={routes.SIGN_IN} replace />;
   }
+
   return <>{children}</>;
 };

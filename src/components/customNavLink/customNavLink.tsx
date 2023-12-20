@@ -1,5 +1,5 @@
-import { NavLink, LinkProps } from 'react-router-dom';
 import classNames from 'classnames';
+import { LinkProps, NavLink } from 'react-router-dom';
 
 import classes from './customNavLink.module.scss';
 

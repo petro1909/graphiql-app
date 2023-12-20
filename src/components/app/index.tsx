@@ -1,18 +1,17 @@
-import { StrictMode } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import './style.css';
 
-import { routes } from '@constants/constants';
 import { Layout } from '@components/layout/layout';
+import { PrivateRoute } from '@components/privateRoute/privateRoute';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
-import { AuthorizationPage } from '@pages/auth/auth';
-import { Welcome } from '@pages/welcome/welcome';
-import { MainPage } from '@pages/main/mainPage';
+import { routes } from '@constants/constants';
 import { NotFound } from '@pages/404/notFound';
+import { AuthorizationPage } from '@pages/auth/auth';
 import { SignIn } from '@pages/auth/signInForm';
 import { SignUp } from '@pages/auth/signUpForm';
-import { PrivateRoute } from '@components/privateRoute/privateRoute';
-
-import './style.css';
+import { MainPage } from '@pages/main/mainPage';
+import { Welcome } from '@pages/welcome/welcome';
+import { StrictMode } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {

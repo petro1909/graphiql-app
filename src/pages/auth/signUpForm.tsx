@@ -1,52 +1,32 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router';
-import { useForm } from 'react-hook-form';
-import * as Yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import classNames from 'classnames';
-
-import { useLocale } from '@localization/useLocale';
 import { SignUpFormData } from '@app_types/authForm';
-import { routes } from '@constants/constants';
-import { Input } from '@components/input/input';
+import { Alert } from '@components/alert/alert';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
-
-import classes from './auth.module.scss';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { Input } from '@components/input/input';
+import { routes } from '@constants/constants';
 import { auth } from '@dataBase/initialApp';
-import { Alert } from '@components/alert/alert';
+import { yupResolver } from '@hookform/resolvers/yup';
 import useSignUp from '@hooks/useSignUp';
+import { useLocale } from '@localization/useLocale';
+import classNames from 'classnames';
+import React, { useEffect } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+
+import { useSignUpFormSchema } from '../../utils/useSignUpFormSchema';
+import classes from './auth.module.scss';
 
 export const SignUp: React.FC = () => {
   const { language } = useLocale();
   const navigate = useNavigate();
   const { signUp } = useSignUp();
 
-  const useSignUpFormSchema = Yup.object().shape({
-    name: Yup.string()
-      .max(20, language.strings.errorMessageNameLong)
-      .matches(/^[A-Z]/, language.strings.errorMessageNameFirstLetter)
-      .required(language.strings.errorMessageNameRequired),
-    email: Yup.string().email(language.strings.errorMessageEmailNotValid).required(language.strings.errorMessageEmailRequired),
-    password: Yup.string()
-      .min(8, language.strings.errorMessagePasswordRequired)
-      .max(32)
-      .required(language.strings.errorMessagePasswordRequired)
-      .matches(/[0-9]/, language.strings.errorMessagePasswordDigit)
-      .matches(/[a-z]/, language.strings.errorMessagePasswordLowercase)
-      .matches(/[A-Z]/, language.strings.errorMessagePasswordUppercase)
-      .matches(/[^\w ]/g, language.strings.errorMessagePasswordSymbol),
-    confirmPassword: Yup.string()
-      .required(language.strings.errorMessageConfirmPassword)
-      .oneOf([Yup.ref('password')], language.strings.errorMessagePasswordMatch),
-  });
-
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignUpFormData>({ resolver: yupResolver(useSignUpFormSchema) });
+  } = useForm<SignUpFormData>({ resolver: yupResolver(useSignUpFormSchema()) });
 
   const [user, loading, error] = useAuthState(auth);
 
@@ -57,7 +37,7 @@ export const SignUp: React.FC = () => {
   }, [user, navigate]);
 
   const onSubmit = async (data: SignUpFormData) => {
-    await signUp(data.email, data.password, data.name);
+    signUp(data.email, data.password, data.name);
   };
 
   if (loading) {
@@ -70,27 +50,27 @@ export const SignUp: React.FC = () => {
       <h1 className={classes.title}>{language.strings.signUp}</h1>
       <Input
         error={errors.name?.message}
-        label={language.strings.authNameLabel}
-        placeholder={language.strings.authNamePlaceholder}
+        label={language.strings.inputLabel.authName}
+        placeholder={language.strings.placeholder.authName}
         {...register('name')}
       />
       <Input
         error={errors.email?.message}
-        label={language.strings.authEmailLabel}
-        placeholder={language.strings.authEmailPlaceholder}
+        label={language.strings.inputLabel.authEmail}
+        placeholder={language.strings.placeholder.authEmail}
         {...register('email')}
       />
       <Input
         error={errors.password?.message}
-        label={language.strings.authPasswordLabel}
-        placeholder={language.strings.authPasswordPlaceholder}
+        label={language.strings.inputLabel.authPassword}
+        placeholder={language.strings.placeholder.authPassword}
         type="password"
         {...register('password')}
       />
       <Input
         error={errors.confirmPassword?.message}
-        label={language.strings.authConfirmPasswordLabel}
-        placeholder={language.strings.authConfirmPasswordPlaceholder}
+        label={language.strings.inputLabel.authConfirmPassword}
+        placeholder={language.strings.placeholder.authConfirmPassword}
         type="password"
         {...register('confirmPassword')}
       />

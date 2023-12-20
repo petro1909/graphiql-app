@@ -1,5 +1,6 @@
-import classes from './documentation.module.scss';
 import classNames from 'classnames';
+
+import classes from './documentation.module.scss';
 
 export const DocumentationSection: React.FC = () => {
   const isDocsShown = false;
