@@ -1,17 +1,17 @@
-import { useLocale } from '@localization/useLocale';
+import classes from './mainPage.module.scss';
 import { Button } from '@components/button/button';
 import { ActionsPanel } from '@components/graphql/actionsPanel/actionsPanel';
 import { Documentation } from '@components/graphql/documentation/documentation';
 
-import classes from './mainPage.module.scss';
-import classNames from 'classnames';
-import { EndpointForm } from '@components/graphql/endPointForm/endPointForm';
-import { useEffect, useState } from 'react';
 import { QueryEditor } from '@components/graphql/editor/queryEditor/queryEditor';
-import { SandboxContainer } from '@components/sandboxContainer/sandboxContainer';
+import { EndpointForm } from '@components/graphql/endPointForm/endPointForm';
 import { Results } from '@components/graphql/results/results';
-import { useSelector } from 'react-redux';
+import { SandboxContainer } from '@components/sandboxContainer/sandboxContainer';
+import { useLocale } from '@localization/useLocale';
 import { selectDocsEnable } from '@redux/selectors';
+import classNames from 'classnames';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export function MainPage() {
   const { language } = useLocale();

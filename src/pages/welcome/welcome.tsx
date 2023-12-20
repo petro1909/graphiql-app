@@ -1,11 +1,9 @@
-import React from 'react';
-import { useLocale } from '@localization/useLocale';
-
-import { routes } from '@constants/constants';
-import { CustomNavLink } from '@components/customNavLink/customNavLink';
-import { Button } from '@components/button/button';
-
 import classes from './welcome.module.scss';
+import { Button } from '@components/button/button';
+import { CustomNavLink } from '@components/customNavLink/customNavLink';
+import { routes } from '@constants/constants';
+import { useLocale } from '@localization/useLocale';
+import React from 'react';
 
 export const Welcome: React.FC = () => {
   const { language } = useLocale();

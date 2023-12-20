@@ -1,8 +1,8 @@
-import React from 'react';
-import { useLocale } from '@localization/useLocale';
-import { CustomNavLink } from '@components/customNavLink/customNavLink';
-import { rsIcon } from '@assets/index';
 import classes from './footer.module.scss';
+import { rsIcon } from '@assets/index';
+import { CustomNavLink } from '@components/customNavLink/customNavLink';
+import { useLocale } from '@localization/useLocale';
+import React from 'react';
 
 export const Footer: React.FC = () => {
   const { language } = useLocale();

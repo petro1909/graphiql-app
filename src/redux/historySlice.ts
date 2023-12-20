@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { GraphQlSearchInputType } from '@app_types/graphql';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type HistorySliceState = {
   history: Array<GraphQlSearchInputType>;

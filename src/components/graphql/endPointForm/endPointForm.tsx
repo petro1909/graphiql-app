@@ -1,10 +1,10 @@
-import { Input } from '@components/input/input';
-import { Button } from '@components/button/button';
-import { useLocale } from '@localization/useLocale';
 import classes from './endpointForm.module.scss';
+import { Button } from '@components/button/button';
+import { Input } from '@components/input/input';
+import { useLocale } from '@localization/useLocale';
+import { setRawRequest } from '@redux/endpointSlice';
 import { useAppDispatch } from '@redux/hooks';
 import { selectRawRequest } from '@redux/selectors';
-import { setRawRequest } from '@redux/endpointSlice';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 

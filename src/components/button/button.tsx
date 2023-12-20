@@ -1,6 +1,6 @@
-import { ButtonHTMLAttributes } from 'react';
-import classNames from 'classnames';
 import classes from './button.module.scss';
+import classNames from 'classnames';
+import { ButtonHTMLAttributes } from 'react';
 
 export type ButtonProps = Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'type' | 'disabled' | 'onClick' | 'className'> & {
   mode?: 'dark' | 'light';

@@ -1,6 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { getValueByKeyFromLocalStorage, localStorageValues } from '@service/localStorageService';
 import { GraphQLValidRequest, GraphQLRawRequest } from '@app_types/graphqlRequest';
+import { getValueByKeyFromLocalStorage, localStorageValues } from '@service/localStorageService';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type EndPointSliceState = {
   validRequest: GraphQLValidRequest;

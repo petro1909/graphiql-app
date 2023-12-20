@@ -1,8 +1,8 @@
-import { GraphQlEntity, GraphQlSearchInputType } from '@app_types/graphql';
-import { isGraphQlSchema, isGraphQlType, isGraphQlField } from '@helpers/typeGuards';
 import { GraphQlField } from './graphqlEntity/graphqlField';
 import { GraphQlType } from './graphqlEntity/graphqlType';
 import { AllTypes } from './schema/schema';
+import { GraphQlEntity, GraphQlSearchInputType } from '@app_types/graphql';
+import { isGraphQlSchema, isGraphQlType, isGraphQlField } from '@helpers/typeGuards';
 
 type DocumentationContentProps = {
   activeEntity: GraphQlEntity;

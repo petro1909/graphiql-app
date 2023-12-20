@@ -1,7 +1,7 @@
-import { useRef } from 'react';
 import classes from './baseEditor.module.scss';
-import { EditorLine } from './editorLine/editorLine';
 import { useEditor } from './editorHooks/useEditor';
+import { EditorLine } from './editorLine/editorLine';
+import { useRef } from 'react';
 
 type BaseEditorProps = {
   initText: string;

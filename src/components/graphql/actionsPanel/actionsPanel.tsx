@@ -1,13 +1,12 @@
-import { Button } from '@components/button/button';
 import classes from './actionsPanel.module.scss';
-import { playIcon } from '@assets/index';
-import { prettifyIcon } from '@assets/index';
+import { playIcon, prettifyIcon } from '@assets/index';
+import { Button } from '@components/button/button';
+import { prettify } from '@components/graphql/editor/baseEditor/editorService/prettify';
+import { useLocale } from '@localization/useLocale';
+import { setRawRequest, setValidatedRequest } from '@redux/endpointSlice';
 import { useAppDispatch } from '@redux/hooks';
 import { selectRawRequest } from '@redux/selectors';
-import { setRawRequest, setValidatedRequest } from '@redux/endpointSlice';
 import { useSelector } from 'react-redux';
-import { prettify } from '../editor/baseEditor/editorService/prettify';
-import { useLocale } from '@localization/useLocale';
 
 export const ActionsPanel: React.FC = () => {
   const dispatch = useAppDispatch();

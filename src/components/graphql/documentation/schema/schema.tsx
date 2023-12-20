@@ -1,6 +1,6 @@
-import { GraphQlSearchInputType, __Schema, __Type } from '@app_types/graphql';
-import { TypeName } from '../graphqlEntity/graphqlTypeName';
 import classes from './schema.module.scss';
+import { TypeName } from '../graphqlEntity/graphqlTypeName';
+import { GraphQlSearchInputType, __Schema, __Type } from '@app_types/graphql';
 import { useLocale } from '@localization/useLocale';
 
 type AllTypesProps = {

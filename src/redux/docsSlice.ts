@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { GraphQlEntity, GraphQlSearchInputType, __Schema } from '@app_types/graphql';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type DocsSliceState = {
   isDocsEnable: boolean;

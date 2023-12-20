@@ -1,5 +1,5 @@
-import { GraphQlSearchInputType, __Type, __TypeKind } from '@app_types/graphql';
 import { TypeName } from './graphqlTypeName';
+import { GraphQlSearchInputType, __Type, __TypeKind } from '@app_types/graphql';
 
 type ReturnTypePros = {
   type: __Type;

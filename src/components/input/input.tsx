@@ -1,6 +1,6 @@
-import { InputHTMLAttributes } from 'react';
-import classNames from 'classnames';
 import classes from './input.module.scss';
+import classNames from 'classnames';
+import { InputHTMLAttributes } from 'react';
 
 type InputProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'name' | 'disabled' | 'className'> & {
   label?: string;

@@ -1,10 +1,10 @@
+import classes from './history.module.scss';
 import { setActiveEntity } from '@redux/docsSlice';
-import { selectNext, selectPrev } from '@redux/selectors';
 import { historyBack, historyForward } from '@redux/historySlice';
 import { useAppDispatch } from '@redux/hooks';
-import { useSelector } from 'react-redux';
-import classes from './history.module.scss';
+import { selectNext, selectPrev } from '@redux/selectors';
 import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 
 export function History() {
   const dispatch = useAppDispatch();

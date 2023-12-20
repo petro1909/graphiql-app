@@ -1,6 +1,6 @@
-import { GraphQlSearchInputType, __Type } from '@app_types/graphql';
 import { GraphqlCompoisteType } from './graphqlCompoisteType';
 import classes from './graphqlEntity.module.scss';
+import { GraphQlSearchInputType, __Type } from '@app_types/graphql';
 import { useLocale } from '@localization/useLocale';
 
 type GraphQlTypProps = {

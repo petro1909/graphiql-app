@@ -1,22 +1,22 @@
-import { useSelector } from 'react-redux';
 import classes from './documentation.module.scss';
-import { selectRawRequest, selectActiveEntity, selectSchema } from '@redux/selectors';
-import { useLazyGetGraphqlResultQuery } from '@redux/graphqlApi';
-import { useAppDispatch } from '@redux/hooks';
-import { setActiveEntity, toggleDocsEnable } from '@redux/docsSlice';
-import { useEffect, useRef, useState } from 'react';
-import { SerializedError } from '@reduxjs/toolkit';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import { DocumentationContent } from './documentationContent';
 import { graphqlDocsQuery } from './graphqlDocsQuery';
+import { History } from './history/history';
+import { useGraphQlSchema } from './useGraphqlSchema';
 import { GraphQLResponse, GraphQlSearchInputType } from '@app_types/graphql';
 import { Button } from '@components/button/button';
-import { useLocale } from '@localization/useLocale';
 import { AutocompleteSelect } from '@components/graphql/documentation/autocompleteSelect/autocompleteSelect';
-import { History } from './history/history';
-import { historyPush } from '@redux/historySlice';
 import { Loader } from '@components/loader/loader';
-import { useGraphQlSchema } from './useGraphqlSchema';
-import { DocumentationContent } from './documentationContent';
+import { useLocale } from '@localization/useLocale';
+import { setActiveEntity, toggleDocsEnable } from '@redux/docsSlice';
+import { useLazyGetGraphqlResultQuery } from '@redux/graphqlApi';
+import { historyPush } from '@redux/historySlice';
+import { useAppDispatch } from '@redux/hooks';
+import { selectRawRequest, selectActiveEntity, selectSchema } from '@redux/selectors';
+import { SerializedError } from '@reduxjs/toolkit';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export function Documentation() {
   const dispatch = useAppDispatch();

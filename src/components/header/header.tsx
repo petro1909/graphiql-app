@@ -1,15 +1,13 @@
-import React from 'react';
-import { useLocale } from '@localization/useLocale';
-import { useEffect, useState } from 'react';
-import classNames from 'classnames';
-
-import { routes } from '@constants/constants';
-import { CustomNavLink } from '@components/customNavLink/customNavLink';
-import { Button } from '@components/button/button';
-import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
-
-import { homeIcon } from '@assets/index';
 import classes from './header.module.scss';
+import { homeIcon } from '@assets/index';
+import { Button } from '@components/button/button';
+import { CustomNavLink } from '@components/customNavLink/customNavLink';
+import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
+import { routes } from '@constants/constants';
+import { useLocale } from '@localization/useLocale';
+
+import classNames from 'classnames';
+import React, { useEffect, useState } from 'react';
 
 export const Header: React.FC = () => {
   const { language } = useLocale();

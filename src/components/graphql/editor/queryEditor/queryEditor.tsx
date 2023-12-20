@@ -1,14 +1,14 @@
-import { setRawRequest } from '@redux/endpointSlice';
-import { selectRawRequest } from '@redux/selectors';
-import { useAppDispatch } from '@redux/hooks';
-import { useSelector } from 'react-redux';
+import classes from './queryEditor.module.scss';
 import { BaseEditor } from '../baseEditor/baseEditor';
+import { arrowUpIcon, arrowDownIcon } from '@assets/index';
 import { Button } from '@components/button/button';
 import { useLocale } from '@localization/useLocale';
-import { useState } from 'react';
-import classes from './queryEditor.module.scss';
-import { arrowUpIcon, arrowDownIcon } from '@assets/index';
+import { setRawRequest } from '@redux/endpointSlice';
+import { useAppDispatch } from '@redux/hooks';
+import { selectRawRequest } from '@redux/selectors';
 import classNames from 'classnames';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export function QueryEditor() {
   const dispatch = useAppDispatch();

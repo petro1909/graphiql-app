@@ -1,8 +1,8 @@
-import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
+import { docsSliceReducer } from './docsSlice';
 import { endPointSliceReducer } from './endpointSlice';
 import { grapqlApi } from './graphqlApi';
-import { docsSliceReducer } from './docsSlice';
 import { historyReducer } from './historySlice';
+import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({
   [grapqlApi.reducerPath]: grapqlApi.reducer,

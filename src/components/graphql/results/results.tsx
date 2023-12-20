@@ -1,9 +1,9 @@
-import { selectValidRequest } from '@redux/selectors';
-import { useGetGraphqlResultQuery } from '@redux/graphqlApi';
-import { useSelector } from 'react-redux';
-import { BaseEditor } from '../editor/baseEditor/baseEditor';
 import classes from './results.module.scss';
+import { BaseEditor } from '../editor/baseEditor/baseEditor';
 import { Loader } from '@components/loader/loader';
+import { useGetGraphqlResultQuery } from '@redux/graphqlApi';
+import { selectValidRequest } from '@redux/selectors';
+import { useSelector } from 'react-redux';
 
 export function Results() {
   const validRequest = useSelector(selectValidRequest);

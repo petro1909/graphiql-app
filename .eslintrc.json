@@ -2,6 +2,8 @@
   "parser": "@typescript-eslint/parser",
   "extends": [
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "prettier",
@@ -37,12 +39,26 @@
     "@typescript-eslint/no-var-reqiures": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "return" }]
+    "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "return" }],
+    "import/order": [
+      "error",
+      {
+        "groups": ["index", "sibling", "parent", "internal", "external", "builtin", "object", "type"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        }
+      }
+    ]
   },
   "settings": {
     "react": {
       "pragma": "React",
       "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": true,
+      "node": true
     }
   }
 }
