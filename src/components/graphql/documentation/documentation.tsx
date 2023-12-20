@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import classes from './documentation.module.scss';
 import { selectRawRequest, selectActiveEntity, selectSchema } from '@redux/selectors';
 import { useLazyGetGraphqlResultQuery } from '@redux/graphqlApi';
-import { store } from '@redux/store';
+import { useAppDispatch } from '@redux/hooks';
 import { setActiveEntity, toggleDocsEnable } from '@redux/docsSlice';
 import { useEffect, useRef, useState } from 'react';
 import { SerializedError } from '@reduxjs/toolkit';
@@ -19,6 +19,7 @@ import { useGraphQlSchema } from './useGraphqlSchema';
 import { DocumentationContent } from './documentationContent';
 
 export function Documentation() {
+  const dispatch = useAppDispatch();
   const { language } = useLocale();
   const { URL } = useSelector(selectRawRequest);
   const [getGraphqlResultQuery] = useLazyGetGraphqlResultQuery();
@@ -34,8 +35,8 @@ export function Documentation() {
 
   const handleActiveEntity = (searchInput: GraphQlSearchInputType) => {
     ref.current?.scrollTo(0, 0);
-    store.dispatch(historyPush(searchInput));
-    store.dispatch(setActiveEntity(searchInput));
+    dispatch(historyPush(searchInput));
+    dispatch(setActiveEntity(searchInput));
   };
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export function Documentation() {
       .then(({ data, error }) => {
         if (error) {
           setError(error);
-          store.dispatch(toggleDocsEnable(false));
+          dispatch(toggleDocsEnable(false));
         } else {
           setError(null);
           const schema = (data as GraphQLResponse).data.__schema;

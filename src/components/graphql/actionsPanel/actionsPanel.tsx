@@ -2,7 +2,7 @@ import { Button } from '@components/button/button';
 import classes from './actionsPanel.module.scss';
 import { playIcon } from '@assets/index';
 import { prettifyIcon } from '@assets/index';
-import { store } from '@redux/store';
+import { useAppDispatch } from '@redux/hooks';
 import { selectRawRequest } from '@redux/selectors';
 import { setRawRequest, setValidatedRequest } from '@redux/endpointSlice';
 import { useSelector } from 'react-redux';
@@ -10,14 +10,15 @@ import { prettify } from '../editor/baseEditor/editorService/prettify';
 import { useLocale } from '@localization/useLocale';
 
 export const ActionsPanel: React.FC = () => {
+  const dispatch = useAppDispatch();
   const { language } = useLocale();
   const { query, variables, URL } = useSelector(selectRawRequest);
   const makeRequest = () => {
-    store.dispatch(setValidatedRequest({ query, variables, URL }));
+    dispatch(setValidatedRequest({ query, variables, URL }));
   };
 
   const prettifyQuery = () => {
-    store.dispatch(setRawRequest({ query: prettify(query), variables: prettify(variables) }));
+    dispatch(setRawRequest({ query: prettify(query), variables: prettify(variables) }));
   };
 
   return (

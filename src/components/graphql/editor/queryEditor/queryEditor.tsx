@@ -1,6 +1,6 @@
 import { setRawRequest } from '@redux/endpointSlice';
 import { selectRawRequest } from '@redux/selectors';
-import { store } from '@redux/store';
+import { useAppDispatch } from '@redux/hooks';
 import { useSelector } from 'react-redux';
 import { BaseEditor } from '../baseEditor/baseEditor';
 import { Button } from '@components/button/button';
@@ -11,6 +11,7 @@ import { arrowUpIcon, arrowDownIcon } from '@assets/index';
 import classNames from 'classnames';
 
 export function QueryEditor() {
+  const dispatch = useAppDispatch();
   const { query, headers, variables } = useSelector(selectRawRequest);
   const { language } = useLocale();
 
@@ -19,16 +20,16 @@ export function QueryEditor() {
 
   const handleChangeVars = (updatedVars: string) => {
     setIsPropertySectionShowed(true);
-    store.dispatch(setRawRequest({ variables: updatedVars }));
+    dispatch(setRawRequest({ variables: updatedVars }));
   };
 
   const handleChangeHeaders = (updatedHeaders: string) => {
     setIsPropertySectionShowed(true);
-    store.dispatch(setRawRequest({ headers: updatedHeaders }));
+    dispatch(setRawRequest({ headers: updatedHeaders }));
   };
 
   const handleChangeQuery = (updatedQuery: string) => {
-    store.dispatch(setRawRequest({ query: updatedQuery }));
+    dispatch(setRawRequest({ query: updatedQuery }));
   };
 
   return (
