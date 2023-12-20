@@ -12,7 +12,9 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "stylelint": "stylelint **/*.scss",
-    "stylelint:fix": "stylelint --fix **/*.scss"
+    "stylelint:fix": "stylelint --fix **/*.scss",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -35,13 +37,14 @@
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "jsdom": "^23.0.1",
     "lint-staged": "^15.1.0",
+    "msw": "^2.0.11",
     "prettier": "^3.1.0",
     "react-error-boundary": "^4.0.11",
     "react-hook-form": "^7.48.2",
@@ -57,5 +60,10 @@
   },
   "lint-staged": {
     "*.{tsx,ts}": "eslint"
+  },
+  "overrides": {
+    "msw": {
+      "typescript": "$typescript"
+    }
   }
 }
