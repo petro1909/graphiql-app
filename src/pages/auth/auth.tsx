@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import classes from './auth.module.scss';
+import { Button } from '@components/button/button';
+import { Input } from '@components/input/input';
 import { useLocale } from '@localization/useLocale';
 import classNames from 'classnames';
-
-import { Input } from '@components/input/input';
-import { Button } from '@components/button/button';
-
-import classes from './auth.module.scss';
+import React, { useState } from 'react';
 
 export const AuthorizationPage: React.FC = () => {
   const { language } = useLocale();

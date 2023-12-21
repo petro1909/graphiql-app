@@ -3,30 +3,33 @@
 .welcome {
   display: flex;
   flex-grow: 1;
-  background-image: url(@assets/bgWeb.webp);
-  background-position: center;
+
+  background-image: url('@assets/bgWeb.webp');
   background-repeat: no-repeat;
+  background-position: center;
 }
 
-.bigText {
-  font-size: 65px;
-  line-height: 65px;
-  font-weight: 700;
-  margin: 0 8px;
-  text-align: center;
-
+.big-text {
   @include _480 {
     font-size: 54px;
-    line-height: 54px;
     font-weight: 600;
+    line-height: 54px;
   }
+
+  margin: 0 8px;
+
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 65px;
+  text-align: center;
 }
 
-.actionWrapper {
-  position: absolute;
-  top: 40px;
-  right: 40px;
+.action-wrapper {
   @include _768 {
     right: 24px;
   }
+
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }

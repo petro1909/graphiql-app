@@ -1,14 +1,14 @@
-import { StrictMode } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { routes } from '@constants/constants';
 import { Layout } from '@components/layout/layout';
 import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
-import { AuthorizationPage } from '@pages/auth/auth';
-import { Welcome } from '@pages/welcome/welcome';
-import { MainPage } from '@pages/main/mainPage';
+import { routes } from '@constants/constants';
 import { NotFound } from '@pages/404/notFound';
+import { AuthorizationPage } from '@pages/auth/auth';
+import { MainPage } from '@pages/main/mainPage';
+import { Welcome } from '@pages/welcome/welcome';
+import { StrictMode } from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import './style.css';
+import './style.scss';
 
 const router = createBrowserRouter([
   {
