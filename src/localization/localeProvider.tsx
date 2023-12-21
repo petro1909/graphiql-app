@@ -1,8 +1,6 @@
-import { BaseProps } from '@app_types/baseProps';
-import { createContext } from 'react';
-import { useState } from 'react';
-
 import { Language, languages } from './languages';
+import { BaseProps } from '@app_types/baseProps';
+import { createContext, useState } from 'react';
 
 type LocaleContextType = {
   language: Language;

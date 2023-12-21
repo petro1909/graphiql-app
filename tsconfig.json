@@ -23,15 +23,16 @@
       "@pages/*": ["./src/pages/*"],
       "@components/*": ["./src/components/*"],
       "@constants/*": ["./src/constants/*"],
-      "@helpers/*": ["./src/helpers/*"],
       "@assets/*": ["./src/assets/*"],
       "@utils/*": ["./src/utils/*"],
       "@redux/*": ["./src/redux/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@validation/*": ["./src/validation/*"],
       "@localization/*": ["./src/localization/*"],
-      "@dataBase/*": ["./src/dataBase/*"],
-      "@lang/*": ["./lang/*"]
+      "@lang/*": ["./lang/*"],
+      "@service/*": ["./src/service/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@dataBase/*": ["./src/dataBase/*"]
     },
     "plugins": [
       {
@@ -42,6 +43,6 @@
       }
     ]
   },
-  "include": ["src"],
+  "include": ["src", "test"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

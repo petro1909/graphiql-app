@@ -1,0 +1,30 @@
+@use '@helpers/variables.scss' as *;
+
+@import '@helpers/mixins';
+
+.editor-wrapper {
+  position: relative;
+  overflow: auto;
+  display: flex;
+  height: 100%;
+}
+
+.editor {
+  resize: none;
+
+  width: 100%;
+  height: fit-content;
+  min-height: 100%;
+  padding: 0;
+
+  font-size: 16px;
+  tab-size: 10px;
+
+  background-color: $color-gray;
+  border: none;
+  outline: none;
+}
+
+.line-numbers {
+  width: 40px;
+}

@@ -1,7 +1,6 @@
+import classes from './selectLanguage.module.scss';
 import { languages } from '@localization/languages';
 import { useLocale } from '@localization/useLocale';
-
-import classes from './selectLanguage.module.scss';
 
 export const SelectLanguage: React.FC = () => {
   const { language, handleChangeLanguage: setLanguage } = useLocale();

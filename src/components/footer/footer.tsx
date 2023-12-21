@@ -1,10 +1,8 @@
-import rsLogo from '@assets/rs_school_js.svg';
+import classes from './footer.module.scss';
+import { rsIcon } from '@assets/index';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
-import { ghLinks } from '@constants/constants';
 import { useLocale } from '@localization/useLocale';
 import React from 'react';
-
-import classes from './footer.module.scss';
 
 export const Footer: React.FC = () => {
   const { language } = useLocale();
@@ -15,7 +13,7 @@ export const Footer: React.FC = () => {
     <footer className={classes.footer}>
       <div className={classes.wrapperInfo}>
         <CustomNavLink to={rsSchoolLink} className={classes.link} target="blank">
-          <img src={rsLogo} className={classes.logo} alt="rs school" />
+          <img src={rsIcon} className={classes.logo} alt="rs school" />
         </CustomNavLink>
         {language.strings.created}
       </div>

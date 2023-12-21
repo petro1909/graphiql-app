@@ -1,20 +1,19 @@
-import HomeIcon from '@assets/home-icon.svg';
 import SignOutIcon from '@assets/signout.svg';
 import { Avatar } from '@components/avatar/avatar';
+import { routes } from '@constants/constants';
+import { auth } from '@dataBase/initialApp';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import classes from './header.module.scss';
+import { homeIcon } from '@assets/index';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
-import { routes } from '@constants/constants';
-import { auth } from '@dataBase/initialApp';
 import { useLocale } from '@localization/useLocale';
-import classNames from 'classnames';
-import { signOut } from 'firebase/auth';
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 
-import classes from './header.module.scss';
+import classNames from 'classnames';
+import React, { useEffect, useState } from 'react';
 
 export const Header: React.FC = () => {
   const { language } = useLocale();
@@ -66,7 +65,7 @@ export const Header: React.FC = () => {
     <header className={classNames(classNamesSticky, classes.header)}>
       <div className={classes.headerContent}>
         <CustomNavLink to={routes.WELCOME_URL} className={classes.link}>
-          <img src={HomeIcon} className={classes.homeIcon} alt="home" />
+          <img src={homeIcon} className={classes.homeIcon} alt="home" />
           <label className={classes.desktopLink}>{language.strings.welcomePage} </label>
         </CustomNavLink>
         <div className={classes.flex}>

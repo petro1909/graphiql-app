@@ -1,0 +1,18 @@
+{
+  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-clean-order"],
+  "rules": {
+    "block-no-empty": true,
+    "selector-max-id": 1,
+    "max-nesting-depth": 2,
+    "declaration-property-value-disallowed-list": {
+      "/^border/": []
+    },
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"]
+      }
+    ],
+    "max-empty-lines": 1
+  }
+}

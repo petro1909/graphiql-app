@@ -1,8 +1,8 @@
 /* eslint-disable */
 /// <reference types='vitest'/>
 /// <reference types='vite/client'/>
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import path from 'path';
 /* eslint-enable */
 
@@ -20,7 +20,6 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
       '@components': path.resolve(__dirname, './src/components'),
       '@constants': path.resolve(__dirname, './src/constants'),
-      '@helpers': path.resolve(__dirname, './src/helpers'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@utils': path.resolve(__dirname, './src/utils'),
       '@redux': path.resolve(__dirname, './src/redux'),
@@ -29,6 +28,8 @@ export default defineConfig({
       '@localization': path.resolve(__dirname, './src/localization'),
       '@dataBase': path.resolve(__dirname, './src/dataBase'),
       '@lang': path.resolve(__dirname, './lang'),
+      '@service': path.resolve(__dirname, './src/service'),
+      '@helpers': path.resolve(__dirname, './src/helpers'),
     },
   },
   test: {
@@ -39,6 +40,8 @@ export default defineConfig({
       provider: 'v8',
       all: true,
       reporter: 'text',
+      include: ['src/*'],
+      exclude: ['src/types/*', 'src/constants/*', 'src/main.tsx', 'src/vite-env.d.ts'],
     },
   },
 });

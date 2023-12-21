@@ -1,12 +1,11 @@
+import classes from './welcome.module.scss';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { ghLinks, routes } from '@constants/constants';
-import { auth } from '@dataBase/initialApp';
 import { useLocale } from '@localization/useLocale';
-import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
-import classes from './welcome.module.scss';
+import React from 'react';
+import { auth } from '../../dataBase/initialApp';
 
 export const Welcome: React.FC = () => {
   const { language } = useLocale();
