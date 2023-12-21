@@ -16,7 +16,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@types': path.resolve(__dirname, './src/types'),
+      '@app_types': path.resolve(__dirname, './src/types'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@components': path.resolve(__dirname, './src/components'),
       '@constants': path.resolve(__dirname, './src/constants'),
@@ -26,10 +26,10 @@ export default defineConfig({
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@validation': path.resolve(__dirname, './src/validation'),
       '@localization': path.resolve(__dirname, './src/localization'),
-      '@dataBase': path.resolve(__dirname, './src/dataBase'),
       '@lang': path.resolve(__dirname, './lang'),
       '@service': path.resolve(__dirname, './src/service'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
+      '@dataBase': path.resolve(__dirname, './src/dataBase'),
     },
   },
   test: {

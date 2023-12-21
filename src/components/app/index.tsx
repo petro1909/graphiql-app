@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 
 import { Layout } from '@components/layout/layout';
 import { PrivateRoute } from '@components/privateRoute/privateRoute';

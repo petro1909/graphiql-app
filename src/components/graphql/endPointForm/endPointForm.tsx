@@ -20,7 +20,7 @@ export function EndpointForm() {
 
   return (
     <div className={classes.endpoint}>
-      <Input value={endPoint} onChange={(e) => setEndpoint(e.target.value)} placeholder={language.strings.endpointPlaceholder} />
+      <Input value={endPoint} onChange={(e) => setEndpoint(e.target.value)} placeholder={language.strings.placeholder.endpoint} />
       <Button mode="light" onClick={handleEndpoint}>
         {language.strings.setEndpoint}
       </Button>

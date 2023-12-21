@@ -6,20 +6,17 @@
 
   background-image: url('@assets/bgWeb.webp');
   background-repeat: no-repeat;
-
   background-position: center;
 
   .auth-form {
     position: relative;
-
-    width: 100%;
     position: relative;
-    width: 300px;
+    
     gap: 24px;
     align-items: stretch;
 
     width: 100%;
-    max-width: 300px;
+    width: 300px;
   }
 }
 

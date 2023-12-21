@@ -1,6 +1,5 @@
-import React from 'react';
-
 import classes from './alert.module.scss';
+import React from 'react';
 
 type AlertProps = {
   message?: string;

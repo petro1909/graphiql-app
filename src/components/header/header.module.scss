@@ -49,25 +49,29 @@
 }
 
 .signoutButton {
-  > img {
-    display: none;
-  }
   @include _480 {
-    border: none;
     padding: 0;
+    border: none;
 
     &:hover {
       background-color: $color-white;
     }
+
     &:focus {
       background-color: $color-white;
       border: none;
     }
+
     > label {
       display: none;
     }
+
     > img {
       display: block;
     }
+  }
+
+  > img {
+    display: none;
   }
 }

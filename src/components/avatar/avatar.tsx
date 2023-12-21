@@ -1,6 +1,5 @@
-import React from 'react';
-
 import classes from './avatar.module.scss';
+import React from 'react';
 
 export type AvatarProps = {
   name: string | null;

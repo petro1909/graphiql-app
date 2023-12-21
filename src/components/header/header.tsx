@@ -1,19 +1,19 @@
-import SignOutIcon from '@assets/signout.svg';
-import { Avatar } from '@components/avatar/avatar';
-import { routes } from '@constants/constants';
-import { auth } from '@dataBase/initialApp';
-import { signOut } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 import classes from './header.module.scss';
 import { homeIcon } from '@assets/index';
+import SignOutIcon from '@assets/signout.svg';
+import { Avatar } from '@components/avatar/avatar';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
+import { routes } from '@constants/constants';
+import { auth } from '@dataBase/initialApp';
 import { useLocale } from '@localization/useLocale';
 
 import classNames from 'classnames';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const { language } = useLocale();

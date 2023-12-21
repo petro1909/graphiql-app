@@ -1,3 +1,4 @@
+import classes from './auth.module.scss';
 import { SignInFormData } from '@app_types/authForm';
 import { Alert } from '@components/alert/alert';
 import { Button } from '@components/button/button';
@@ -5,17 +6,15 @@ import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Input } from '@components/input/input';
 import { routes } from '@constants/constants';
 import { auth } from '@dataBase/initialApp';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { useLocale } from '@localization/useLocale';
 import { useSignInFormSchema } from '@utils/useSignInFormSchema';
+import { yupResolver } from '@hookform/resolvers/yup';
 import classNames from 'classnames';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
-
-import classes from './auth.module.scss';
 
 export const SignIn: React.FC = () => {
   const { language } = useLocale();
