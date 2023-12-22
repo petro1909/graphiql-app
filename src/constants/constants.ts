@@ -10,4 +10,6 @@ export const ghLinks = {
   petrGithubLink: 'https://github.com/petro1909',
   nataliaGithubLink: 'https://github.com/nataliavozhdaeva',
   daryaGithubLink: 'https://github.com/DaryaBobko',
+  projectInfoLink: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
+  courseInfoLink: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/modules/graphiql.md',
 };

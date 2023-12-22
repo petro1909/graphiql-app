@@ -4,9 +4,9 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate } from 'react-router-dom';
 
-interface PrivateRouteProps {
+type PrivateRouteProps = {
   children: React.ReactNode;
-}
+};
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
   const [user] = useAuthState(auth);

@@ -11,32 +11,27 @@ export const Welcome: React.FC = () => {
   const { language } = useLocale();
   const [user] = useAuthState(auth);
 
-  const progectInfoLink = 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md';
-  const courseInfoLink = 'https://github.com/rolling-scopes-school/tasks/blob/master/react/modules/graphiql.md';
-
   return (
     <section className={classes.welcome}>
       <div className="flex-center">
         <div className={classes.bigText}>{language.strings.welcome}</div>
         <div className={classes.additionalInfo}>
-          <div className={classes.linksDelimiterWrapper}>
-            {language.strings.projectWasCreated}
-            <CustomNavLink to={ghLinks.petrGithubLink} className={classes.link} target="blank">
-              {language.strings.petrName}
-            </CustomNavLink>
-            ,
-            <CustomNavLink to={ghLinks.nataliaGithubLink} className={classes.link} target="blank">
-              <> {language.strings.nataliaName}</>
-            </CustomNavLink>
-            ,
-            <CustomNavLink to={ghLinks.daryaGithubLink} className={classes.link} target="blank">
-              <> {language.strings.daryaName}</>
-            </CustomNavLink>
-          </div>
+          {language.strings.projectWasCreated}
+          <CustomNavLink to={ghLinks.petrGithubLink} className={classes.link} target="blank">
+            {language.strings.petrName}
+          </CustomNavLink>
+          ,
+          <CustomNavLink to={ghLinks.nataliaGithubLink} className={classes.link} target="blank">
+            <> {language.strings.nataliaName}</>
+          </CustomNavLink>
+          ,
+          <CustomNavLink to={ghLinks.daryaGithubLink} className={classes.link} target="blank">
+            <> {language.strings.daryaName}</>
+          </CustomNavLink>
           <div>
             {language.strings.additionalInformation}
-            <CustomNavLink to={progectInfoLink}> {language.strings.project}</CustomNavLink> {language.strings.andAbout}
-            <CustomNavLink to={courseInfoLink}> {language.strings.course} </CustomNavLink>
+            <CustomNavLink to={ghLinks.projectInfoLink}> {language.strings.project}</CustomNavLink> {language.strings.andAbout}
+            <CustomNavLink to={ghLinks.courseInfoLink}> {language.strings.course} </CustomNavLink>
           </div>
         </div>
         <div className={classes.actionWrapper}>

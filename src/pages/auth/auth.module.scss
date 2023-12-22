@@ -16,7 +16,6 @@
     align-items: stretch;
 
     width: 100%;
-    width: 300px;
   }
 }
 
@@ -31,8 +30,9 @@
   justify-content: space-between;
 }
 
-.wrapperForm {
+.wrapper-form {
   display: flex;
   flex-direction: column;
+  width: 300px;
   margin: auto;
 }

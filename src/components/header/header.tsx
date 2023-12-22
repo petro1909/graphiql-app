@@ -1,6 +1,5 @@
 import classes from './header.module.scss';
-import { homeIcon } from '@assets/index';
-import SignOutIcon from '@assets/signout.svg';
+import { homeIcon, signOutIcon } from '@assets/index';
 import { Avatar } from '@components/avatar/avatar';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
@@ -47,18 +46,18 @@ export const Header: React.FC = () => {
         <>
           <Avatar name={user.displayName} />
           <Button mode="light" onClick={handleLogout} className={classes.signoutButton}>
-            <img src={SignOutIcon} className={classes.signOutIcon} alt="signOut" />
+            <img src={signOutIcon} className={classes.signOutIcon} alt="signOut" />
             <label>{language.strings.signout}</label>
           </Button>
         </>
       );
-    } else {
-      return (
-        <CustomNavLink to={routes.SIGN_IN}>
-          <Button mode="light">{language.strings.signIn}</Button>
-        </CustomNavLink>
-      );
     }
+
+    return (
+      <CustomNavLink to={routes.SIGN_IN}>
+        <Button mode="light">{language.strings.signIn}</Button>
+      </CustomNavLink>
+    );
   };
 
   return (
