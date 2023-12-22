@@ -27,7 +27,7 @@ export function MainPage() {
     <main className={classes.main}>
       <section className={classes.mainTop}>
         <EndpointForm />
-        <Button disabled={!isDocsEnable} mode="light" onClick={() => setDocsVisibility(!docsVisibility)}>
+        <Button disabled={!isDocsEnable} onClick={() => setDocsVisibility(!docsVisibility)}>
           {language.strings.docShowButton}
         </Button>
       </section>
