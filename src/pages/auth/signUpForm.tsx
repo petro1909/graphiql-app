@@ -38,7 +38,7 @@ export const SignUp: React.FC = () => {
 
   return (
     <div className={classes.wrapperForm}>
-      {!error && <Alert message={'error.message'} />}
+      {error && <Alert message={error.message} />}
       <form className={classNames('flex-center', classes.authForm)} onSubmit={handleSubmit(onSubmit)}>
         <h1 className={classes.title}>{language.strings.signUp}</h1>
         <Input

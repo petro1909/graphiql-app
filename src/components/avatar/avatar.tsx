@@ -6,15 +6,13 @@ export type AvatarProps = {
 };
 
 export const Avatar: React.FC<AvatarProps> = ({ name }) => {
-  if (name === null) {
-    return;
+  if (name) {
+    const firstLetter = name[0];
+
+    return (
+      <div className={classes.avatar} title={name}>
+        <label className={classes.letter}>{firstLetter}</label>
+      </div>
+    );
   }
-
-  const firstLetter = name[0];
-
-  return (
-    <div className={classes.avatar} title={name}>
-      <label className={classes.letter}>{firstLetter}</label>
-    </div>
-  );
 };

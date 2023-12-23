@@ -8,7 +8,7 @@ type AlertProps = {
 export const Alert: React.FC<AlertProps> = ({ message }) => {
   return (
     <div className={classes.alert}>
-      <div>{message}</div>
+      <span>{message}</span>
     </div>
   );
 };
