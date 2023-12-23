@@ -20,10 +20,8 @@ export function EndpointForm() {
 
   return (
     <div className={classes.endpoint}>
-      <Input value={endPoint} onChange={(e) => setEndpoint(e.target.value)} placeholder={language.strings.endpointPlaceholder} />
-      <Button mode="light" onClick={handleEndpoint}>
-        {language.strings.setEndpoint}
-      </Button>
+      <Input value={endPoint} onChange={(e) => setEndpoint(e.target.value)} placeholder={language.strings.placeholder.endpoint} />
+      <Button onClick={handleEndpoint}>{language.strings.setEndpoint}</Button>
     </div>
   );
 }

@@ -30,6 +30,17 @@
   }
 
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 100px;
+  right: 30px;
+}
+
+.auth-button-wrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.additional-info {
+  margin: 18px 8px;
+  font-size: 14px;
+  text-align: center;
 }

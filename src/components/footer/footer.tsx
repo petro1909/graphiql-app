@@ -1,6 +1,7 @@
 import classes from './footer.module.scss';
 import { rsIcon } from '@assets/index';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
+import { ghLinks } from '@constants/constants';
 import { useLocale } from '@localization/useLocale';
 import React from 'react';
 
@@ -8,9 +9,6 @@ export const Footer: React.FC = () => {
   const { language } = useLocale();
 
   const rsSchoolLink = 'https://rs.school/react';
-  const petrGithubLink = 'https://github.com/petro1909';
-  const nataliaGithubLink = 'https://github.com/nataliavozhdaeva';
-  const daryaGithubLink = 'https://github.com/DaryaBobko';
 
   return (
     <footer className={classes.footer}>
@@ -22,15 +20,15 @@ export const Footer: React.FC = () => {
       </div>
       <div className={classes.flex}>
         {language.strings.createdBy}:
-        <CustomNavLink to={petrGithubLink} className={classes.link} target="blank">
+        <CustomNavLink to={ghLinks.petrGithubLink} className={classes.link} target="blank">
           {language.strings.petrName}
         </CustomNavLink>
         /
-        <CustomNavLink to={nataliaGithubLink} className={classes.link} target="blank">
+        <CustomNavLink to={ghLinks.nataliaGithubLink} className={classes.link} target="blank">
           {language.strings.nataliaName}
         </CustomNavLink>
         /
-        <CustomNavLink to={daryaGithubLink} className={classes.link} target="blank">
+        <CustomNavLink to={ghLinks.daryaGithubLink} className={classes.link} target="blank">
           {language.strings.daryaName}
         </CustomNavLink>
       </div>

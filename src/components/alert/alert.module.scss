@@ -1,0 +1,11 @@
+@use '@helpers/variables.scss' as *;
+
+.alert {
+  margin-bottom: 24px;
+  padding: 8px 16px;
+
+  color: $color-red;
+
+  background-color: $color-red-light;
+  border-radius: 6px;
+}

@@ -31,7 +31,8 @@
       "@localization/*": ["./src/localization/*"],
       "@lang/*": ["./lang/*"],
       "@service/*": ["./src/service/*"],
-      "@helpers/*": ["./src/helpers/*"]
+      "@helpers/*": ["./src/helpers/*"],
+      "@dataBase/*": ["./src/dataBase/*"]
     },
     "plugins": [
       {

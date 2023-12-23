@@ -10,12 +10,12 @@
 
   .auth-form {
     position: relative;
+    position: relative;
 
     gap: 24px;
     align-items: stretch;
 
     width: 100%;
-    max-width: 300px;
   }
 }
 
@@ -28,4 +28,11 @@
 .button-wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.wrapper-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
 }

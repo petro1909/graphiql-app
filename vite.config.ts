@@ -1,8 +1,11 @@
+/* eslint-disable */
 /// <reference types='vitest'/>
 /// <reference types='vite/client'/>
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import path from 'path';
+/* eslint-enable */
+
 // https://vitejs.dev/config/
 export default defineConfig({
   css: {
@@ -26,6 +29,7 @@ export default defineConfig({
       '@lang': path.resolve(__dirname, './lang'),
       '@service': path.resolve(__dirname, './src/service'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
+      '@dataBase': path.resolve(__dirname, './src/dataBase'),
     },
   },
   test: {
