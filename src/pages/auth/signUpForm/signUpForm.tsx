@@ -1,5 +1,4 @@
-import classes from './auth.module.scss';
-import { useSignUpFormSchema } from '../../utils/useSignUpFormSchema';
+import classes from '../auth.module.scss';
 import { SignUpFormData } from '@app_types/authForm';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
@@ -10,6 +9,7 @@ import { auth } from '@database/context';
 import useSignUp from '@hooks/useSignUp';
 import { useLocale } from '@localization/useLocale';
 import { showError } from '@redux/errorSlice';
+import { SignUpFormSchema } from '@utils/signUpFormSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import classNames from 'classnames';
 import React, { useEffect, useMemo } from 'react';
@@ -25,7 +25,7 @@ export const SignUp: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignUpFormData>({ resolver: yupResolver(useSignUpFormSchema()) });
+  } = useForm<SignUpFormData>({ resolver: yupResolver(SignUpFormSchema()) });
 
   const [, loading, error] = useAuthState(auth);
 
@@ -48,19 +48,21 @@ export const SignUp: React.FC = () => {
   }
 
   return (
-    <div className={classes.wrapperForm}>
+    <div className={classes.wrapperForm} data-testid="sign-up-form">
       <form className={classNames('flex-center', classes.authForm)} onSubmit={handleSubmit(onSubmit)}>
         <h1 className={classes.title}>{language.strings.signUp}</h1>
         <Input
           error={errors.name?.message}
           label={language.strings.inputLabel.authName}
           placeholder={language.strings.placeholder.authName}
+          data-testid="name"
           {...register('name')}
         />
         <Input
           error={errors.email?.message}
           label={language.strings.inputLabel.authEmail}
           placeholder={language.strings.placeholder.authEmail}
+          data-testid="email"
           {...register('email')}
         />
         <Input
@@ -68,6 +70,7 @@ export const SignUp: React.FC = () => {
           label={language.strings.inputLabel.authPassword}
           placeholder={language.strings.placeholder.authPassword}
           type="password"
+          data-testid="password"
           {...register('password')}
         />
         <Input
@@ -75,10 +78,13 @@ export const SignUp: React.FC = () => {
           label={language.strings.inputLabel.authConfirmPassword}
           placeholder={language.strings.placeholder.authConfirmPassword}
           type="password"
+          data-testid="confirmPassword"
           {...register('confirmPassword')}
         />
         <div className={classes.buttonWrapper}>
-          <Button type="submit">{language.strings.signUp}</Button>
+          <Button data-testid="sign-up-button" type="submit">
+            {language.strings.signUp}
+          </Button>
           <CustomNavLink to={routes.SIGN_IN}>
             <Button mode="light">{language.strings.signIn}</Button>
           </CustomNavLink>
