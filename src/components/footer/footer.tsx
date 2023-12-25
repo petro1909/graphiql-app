@@ -1,7 +1,7 @@
 import classes from './footer.module.scss';
-import { rsIcon } from '@assets/index';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { ghLinks } from '@constants/constants';
+import { rsIcon } from '@icons/index';
 import { useLocale } from '@localization/useLocale';
 import React from 'react';
 

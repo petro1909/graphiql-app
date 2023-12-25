@@ -1,11 +1,11 @@
 import classes from './header.module.scss';
-import { homeIcon, signOutIcon } from '@assets/index';
 import { Avatar } from '@components/avatar/avatar';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { SelectLanguage } from '@components/selectLanguage/selectLanguage';
 import { routes } from '@constants/constants';
-import { auth } from '@dataBase/initialApp';
+import { auth } from '@database/context';
+import { homeIcon, signOutIcon } from '@icons/index';
 import { useLocale } from '@localization/useLocale';
 
 import classNames from 'classnames';

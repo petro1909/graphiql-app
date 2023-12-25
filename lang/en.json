@@ -47,7 +47,8 @@
     "nameLong": "Name is too long",
     "nameFirstLetter": "Your name must start with an uppercase letter",
     "confirmPassword": "Confirm Password is required",
-    "passwordMatch": "Passwords must match"
+    "passwordMatch": "Passwords must match",
+    "sthWrong": "Something went wrong!"
   },
   "project": "project",
   "course": "course",

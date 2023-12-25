@@ -10,3 +10,6 @@ export const selectValidRequest = (state: RootState) => state.endpoint.validRequ
 
 export const selectPrev = (state: RootState) => state.history.prev;
 export const selectNext = (state: RootState) => state.history.next;
+
+export const errorMessage = (state: RootState) => state.alert.error;
+export const showError = (state: RootState) => state.alert.showError;

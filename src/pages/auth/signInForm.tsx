@@ -1,20 +1,21 @@
 import classes from './auth.module.scss';
 import { SignInFormData } from '@app_types/authForm';
-import { Alert } from '@components/alert/alert';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
 import { Input } from '@components/input/input';
 import { Loader } from '@components/loader/loader';
 import { routes } from '@constants/constants';
-import { auth } from '@dataBase/initialApp';
+import { auth } from '@database/context';
 import { useLocale } from '@localization/useLocale';
+import { showError } from '@redux/errorSlice';
 import { useSignInFormSchema } from '@utils/useSignInFormSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import classNames from 'classnames';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 
 export const SignIn: React.FC = () => {
   const { language } = useLocale();
@@ -27,6 +28,12 @@ export const SignIn: React.FC = () => {
 
   const [, loading, error] = useAuthState(auth);
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(showError(error?.message));
+  }, [dispatch, error]);
+
   const onSubmit = async (data: SignInFormData) => {
     signInWithEmailAndPassword(auth, data.email, data.password);
   };
@@ -37,7 +44,6 @@ export const SignIn: React.FC = () => {
 
   return (
     <div className={classes.wrapperForm}>
-      {error && <Alert message={error.message} />}
       <form className={classNames('flex-center', classes.authForm)} onSubmit={handleSubmit(onSubmit)}>
         <h1 className={classes.title}>{language.strings.signIn}</h1>
         <Input

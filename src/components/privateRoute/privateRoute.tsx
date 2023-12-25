@@ -1,5 +1,5 @@
 import { routes } from '@constants/constants';
-import { auth } from '@dataBase/initialApp';
+import { auth } from '@database/context';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate } from 'react-router-dom';
