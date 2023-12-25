@@ -9,7 +9,7 @@ import { routes } from '@constants/constants';
 import { auth } from '@database/context';
 import useSignUp from '@hooks/useSignUp';
 import { useLocale } from '@localization/useLocale';
-import { setError } from '@redux/errorSlice';
+import { showError } from '@redux/errorSlice';
 import { yupResolver } from '@hookform/resolvers/yup';
 import classNames from 'classnames';
 import React, { useEffect, useMemo } from 'react';
@@ -36,7 +36,7 @@ export const SignUp: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setError(errorMessage));
+    dispatch(showError(errorMessage));
   }, [dispatch, errorMessage]);
 
   const onSubmit = async (data: SignUpFormData) => {

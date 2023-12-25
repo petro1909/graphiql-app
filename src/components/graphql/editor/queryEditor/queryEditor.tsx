@@ -1,7 +1,7 @@
 import classes from './queryEditor.module.scss';
 import { BaseEditor } from '../baseEditor/baseEditor';
-import { arrowUpIcon, arrowDownIcon } from '@assets/index';
 import { Button } from '@components/button/button';
+import { arrowUpIcon, arrowDownIcon } from '@icons/index';
 import { useLocale } from '@localization/useLocale';
 import { setRawRequest } from '@redux/endpointSlice';
 import { useAppDispatch } from '@redux/hooks';

@@ -1,7 +1,7 @@
 import classes from './actionsPanel.module.scss';
-import { playIcon, prettifyIcon } from '@assets/index';
 import { Button } from '@components/button/button';
 import { prettify } from '@components/graphql/editor/baseEditor/editorService/prettify';
+import { playIcon, prettifyIcon } from '@icons/index';
 import { useLocale } from '@localization/useLocale';
 import { setRawRequest, setValidatedRequest } from '@redux/endpointSlice';
 import { useAppDispatch } from '@redux/hooks';

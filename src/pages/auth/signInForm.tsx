@@ -7,7 +7,7 @@ import { Loader } from '@components/loader/loader';
 import { routes } from '@constants/constants';
 import { auth } from '@database/context';
 import { useLocale } from '@localization/useLocale';
-import { setError } from '@redux/errorSlice';
+import { showError } from '@redux/errorSlice';
 import { useSignInFormSchema } from '@utils/useSignInFormSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import classNames from 'classnames';
@@ -31,7 +31,7 @@ export const SignIn: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setError(error?.message));
+    dispatch(showError(error?.message));
   }, [dispatch, error]);
 
   const onSubmit = async (data: SignInFormData) => {

@@ -14,16 +14,16 @@ const errorSlice = createSlice({
   name: 'alert',
   initialState: errorSliceInitState,
   reducers: {
-    setError(state, action: PayloadAction<string | undefined>) {
+    showError(state, action: PayloadAction<string | undefined>) {
       state.error = action.payload;
       state.showError = true;
     },
-    endShowError(state) {
+    hideError(state) {
       state.showError = false;
     },
   },
 });
 
-export const { setError, endShowError } = errorSlice.actions;
+export const { showError, hideError } = errorSlice.actions;
 
 export const errorSliceReducer = errorSlice.reducer;

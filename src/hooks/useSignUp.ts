@@ -5,19 +5,19 @@ import { useState } from 'react';
 
 type SignUpFunction = (email: string, password: string, name: string) => Promise<void | User>;
 
-const useSignUp: () => [SignUpFunction, string | undefined, boolean] = () => {
+const useSignUp: () => [SignUpFunction, string | undefined | null, boolean] = () => {
   const { language } = useLocale();
-  const [error, setError] = useState<string | undefined>(undefined);
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   const signUp = (email: string, password: string, name: string) => {
     setLoading(true);
-    setError(undefined);
+    setError(null);
 
     return createUserWithEmailAndPassword(auth, email, password).then(
       (userCredential) => {
         setLoading(false);
-        setError(undefined);
+        setError(null);
 
         return updateProfile(userCredential.user, { displayName: name }).then(() => userCredential.user);
       },

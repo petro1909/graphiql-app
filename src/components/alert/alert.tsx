@@ -1,7 +1,7 @@
 import classes from './alert.module.scss';
-import { closeIcon, warningIcon } from '@assets/index';
 import { Button } from '@components/button/button';
-import { endShowError } from '@redux/errorSlice';
+import { closeIcon, warningIcon } from '@icons/index';
+import { hideError } from '@redux/errorSlice';
 import { showError } from '@redux/selectors';
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
@@ -18,14 +18,14 @@ export const Alert: React.FC<AlertProps> = ({ message }) => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      dispatch(endShowError());
+      dispatch(hideError());
     }, 5000);
 
     return () => clearTimeout(timer);
   }, [dispatch]);
 
   const handleClose = () => {
-    dispatch(endShowError());
+    dispatch(hideError());
   };
 
   return (
