@@ -30,6 +30,7 @@ export default defineConfig({
       '@service': path.resolve(__dirname, './src/service'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
       '@database': path.resolve(__dirname, './src/database'),
+      '@icons': path.resolve(__dirname, './src/assets/icons'),
     },
   },
   test: {

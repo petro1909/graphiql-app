@@ -19,7 +19,7 @@ import { useDispatch } from 'react-redux';
 
 export const SignUp: React.FC = () => {
   const { language } = useLocale();
-  const { signUp, error: signupError } = useSignUp();
+  const [signUp, signUpError, signUpLoading] = useSignUp();
 
   const {
     register,
@@ -30,8 +30,8 @@ export const SignUp: React.FC = () => {
   const [, loading, error] = useAuthState(auth);
 
   const errorMessage = useMemo(() => {
-    return signupError || error?.message;
-  }, [signupError, error]);
+    return signUpError || error?.message;
+  }, [signUpError, error, signUpLoading]);
 
   const dispatch = useDispatch();
 
