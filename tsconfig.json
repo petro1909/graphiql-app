@@ -32,7 +32,7 @@
       "@lang/*": ["./lang/*"],
       "@service/*": ["./src/service/*"],
       "@helpers/*": ["./src/helpers/*"],
-      "@dataBase/*": ["./src/dataBase/*"]
+      "@database/*": ["src/database/*"]
     },
     "plugins": [
       {

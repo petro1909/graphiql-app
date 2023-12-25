@@ -2,7 +2,6 @@ import './style.scss';
 
 import { Layout } from '@components/layout/layout';
 import { PrivateRoute } from '@components/privateRoute/privateRoute';
-import { SimpleLayout } from '@components/simpleLayout/simpleLayout';
 import { routes } from '@constants/constants';
 import { NotFound } from '@pages/404/notFound';
 import { AuthorizationPage } from '@pages/auth/auth';
@@ -14,11 +13,6 @@ import { StrictMode } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
-  {
-    path: routes.WELCOME_URL,
-    element: <SimpleLayout />,
-    children: [{ path: routes.ANY_OTHER_URL, element: <NotFound /> }],
-  },
   {
     path: routes.WELCOME_URL,
     element: <Layout />,
@@ -40,6 +34,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      { path: routes.ANY_OTHER_URL, element: <NotFound /> },
     ],
   },
 ]);

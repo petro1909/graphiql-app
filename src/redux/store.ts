@@ -1,5 +1,6 @@
 import { docsSliceReducer } from './docsSlice';
 import { endPointSliceReducer } from './endpointSlice';
+import { errorSliceReducer } from './errorSlice';
 import { grapqlApi } from './graphqlApi';
 import { historyReducer } from './historySlice';
 import { PreloadedState, combineReducers, configureStore } from '@reduxjs/toolkit';
@@ -9,6 +10,7 @@ const rootReducer = combineReducers({
   endpoint: endPointSliceReducer,
   docs: docsSliceReducer,
   history: historyReducer,
+  alert: errorSliceReducer,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {

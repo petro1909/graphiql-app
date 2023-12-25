@@ -1,6 +1,7 @@
 import classes from './auth.module.scss';
+import { Header } from '@components/header/header';
 import { routes } from '@constants/constants';
-import { auth } from '@dataBase/initialApp';
+import { auth } from '@database/context';
 
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -18,8 +19,11 @@ export const AuthorizationPage: React.FC = () => {
   }, [user, navigate]);
 
   return (
-    <section className={classes.auth}>
-      <Outlet />
-    </section>
+    <>
+      <Header />
+      <section className={classes.auth}>
+        <Outlet />
+      </section>
+    </>
   );
 };

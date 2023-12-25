@@ -29,7 +29,7 @@ export default defineConfig({
       '@lang': path.resolve(__dirname, './lang'),
       '@service': path.resolve(__dirname, './src/service'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
-      '@dataBase': path.resolve(__dirname, './src/dataBase'),
+      '@database': path.resolve(__dirname, './src/database'),
     },
   },
   test: {
