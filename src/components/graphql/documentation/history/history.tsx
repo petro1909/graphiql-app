@@ -23,13 +23,13 @@ export function History() {
   return (
     <section>
       <div className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
-        <button className={classNames(classes.btnPrev, classes.btnHistory)}></button>
+        <button onClick={handleHistoryBack} className={classNames(classes.btnPrev, classes.btnHistory)}></button>
         {prev && <span onClick={handleHistoryBack}>{prev.fieldName || prev.typeName}</span>}
       </div>
 
       <div className={classNames(classes.historyItem, classes.itemRight, !next && classes.historyDisabled)}>
         {next && <span onClick={handleHistoryForward}>{next.fieldName || next.typeName}</span>}
-        <button className={classNames(classes.btnNext, classes.btnHistory)}></button>
+        <button onClick={handleHistoryForward} className={classNames(classes.btnNext, classes.btnHistory)}></button>
       </div>
     </section>
   );
