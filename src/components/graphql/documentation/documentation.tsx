@@ -65,17 +65,17 @@ export function Documentation() {
   }
 
   return (
-    <section className={classes.docsWrapper}>
+    <div className={classes.docsWrapper}>
       <History />
-      <section className={classes.docsHeader}>
+      <div className={classes.docsHeader}>
         <Button mode="light" className={classes.docsButton} onClick={() => handleActiveEntity({ typeName: '__Schema' })}>
           {language.strings.schema}
         </Button>
         <AutocompleteSelect placeholder={language.strings.searchSchema} handleSelectItem={handleActiveEntity} />
-      </section>
-      <section className={classes.typesWrapper} ref={ref}>
+      </div>
+      <div className={classes.typesWrapper} ref={ref}>
         <DocumentationContent activeEntity={activeEntity} handleActiveEntity={handleActiveEntity} />
-      </section>
-    </section>
+      </div>
+    </div>
   );
 }

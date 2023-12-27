@@ -21,24 +21,20 @@ export function History() {
   };
 
   return (
-    <section>
-      <div className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
-        {prev && (
-          <div onClick={handleHistoryBack} className={classes.historyBtnContainer}>
-            <button className={classNames(classes.btnPrev, classes.btnHistory)}></button>
-            <span>{prev.fieldName || prev.typeName}</span>
-          </div>
-        )}
-      </div>
+    <div className={classes.historyBtnContainer}>
+      {prev && (
+        <div onClick={handleHistoryBack} className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
+          <button className={classNames(classes.btnPrev, classes.btnHistory)}></button>
+          <span>{prev.fieldName || prev.typeName}</span>
+        </div>
+      )}
 
-      <div className={classNames(classes.historyItem, classes.itemRight, !next && classes.historyDisabled)}>
-        {next && (
-          <div onClick={handleHistoryBack} className={classes.historyBtnContainer}>
-            <span onClick={handleHistoryForward}>{next.fieldName || next.typeName}</span>
-            <button onClick={handleHistoryForward} className={classNames(classes.btnNext, classes.btnHistory)}></button>
-          </div>
-        )}
-      </div>
-    </section>
+      {next && (
+        <div onClick={handleHistoryForward} className={classNames(classes.historyItem, classes.itemRight, !next && classes.historyDisabled)}>
+          <span>{next.fieldName || next.typeName}</span>
+          <button className={classNames(classes.btnNext, classes.btnHistory)}></button>
+        </div>
+      )}
+    </div>
   );
 }

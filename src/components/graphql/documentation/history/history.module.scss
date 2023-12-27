@@ -1,6 +1,10 @@
 @use '@helpers/variables.scss' as *;
 
 .history-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
   font-size: 18px;
   font-weight: 600;
 
@@ -16,25 +20,16 @@
   text-decoration: none;
 }
 
-.item-left {
-  float: left;
-}
-
-.item-right {
-  float: right;
-}
-
 .history-btn-container {
   display: flex;
-  gap: 5px;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .btn-history {
   width: 30px;
   height: 30px;
 
-  background: url('../../../../assets/icons/arrow-up.svg') $color-white;
+  background: url('@icons/arrow-up.svg') $color-white;
   background-size: contain;
   border: 1px solid $color-gray;
   border-radius: 5px;

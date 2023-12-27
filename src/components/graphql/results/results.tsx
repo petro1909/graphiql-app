@@ -19,8 +19,8 @@ export function Results() {
   const result = isError ? error : data;
 
   return (
-    <section className={classes.resultsWrapper}>
+    <div className={classes.resultsWrapper}>
       <BaseEditor initText={JSON.stringify(result, null, '\t')} isDisabled={true} isLinesDisabled={true} />
-    </section>
+    </div>
   );
 }
