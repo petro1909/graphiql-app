@@ -27,7 +27,7 @@ export function Documentation() {
   const [error, setError] = useState<FetchBaseQueryError | SerializedError | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const ref = useRef<HTMLOptionElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const schema = useSelector(selectSchema);
   const activeEntity = useSelector(selectActiveEntity);
 
