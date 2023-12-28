@@ -35,11 +35,11 @@ export function QueryEditor() {
   return (
     <div className={classes.queryWrapper}>
       <section className={classNames(classes.queryEditorWrapper, !isPropertySectionShowed && classes.full)}>
-        <h4 className={classes.hiddenSectionHeader}>query editor</h4>
+        <h4 className={classes.hiddenSectionHeader}>{language.strings.queryEditorTitle}</h4>
         <BaseEditor initText={query} handleChangeText={handleChangeQuery} />
       </section>
       <section className={classes.queryPropertiesWrapper}>
-        <h4 className={classes.hiddenSectionHeader}>header and variables editor</h4>
+        <h4 className={classes.hiddenSectionHeader}>{language.strings.headersTitle}</h4>
         <div className={classes.queryPropertiesActions}>
           <div>
             <Button mode="light" onClick={() => setIsHeadersSelected(true)}>

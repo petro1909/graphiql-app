@@ -24,7 +24,7 @@ export function History() {
     <div className={classes.historyBtnContainer}>
       {prev && (
         <div onClick={handleHistoryBack} className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
-          <button className={classNames(classes.btnPrev, classes.btnHistory)}></button>
+          <span className={classNames(classes.btnPrev, classes.btnHistory)}></span>
           <span>{prev.fieldName || prev.typeName}</span>
         </div>
       )}
@@ -32,7 +32,7 @@ export function History() {
       {next && (
         <div onClick={handleHistoryForward} className={classNames(classes.historyItem, classes.itemRight, !next && classes.historyDisabled)}>
           <span>{next.fieldName || next.typeName}</span>
-          <button className={classNames(classes.btnNext, classes.btnHistory)}></button>
+          <span className={classNames(classes.btnNext, classes.btnHistory)}></span>
         </div>
       )}
     </div>
