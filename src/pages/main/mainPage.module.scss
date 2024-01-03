@@ -1,93 +1,75 @@
 @use '@helpers/variables.scss' as *;
+
 @import '@helpers/mixins';
 
 .main {
-  margin-bottom: 50px;
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 0 20px;
 }
 
-.mainTop {
-  width: 95%;
-  margin: auto;
-  display: flex;
-  gap: 50px;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 0;
-
+.main-top {
   @include _768 {
     flex-wrap: wrap;
-    justify-content: center;
     margin-bottom: 30px;
   }
-}
 
-.endpoint {
   display: flex;
-  gap: 15px;
-
-  @include _480 {
-    flex-wrap: wrap;
-    gap: 24px;
-  }
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 0;
 }
 
-.endpointButton {
-  flex: 1 0 auto;
-}
-
-.documentation {
-  &Btn {
-    box-sizing: border-box;
-    padding: 30px;
-    width: 300px;
-    text-align: center;
-    background-color: $color-gray-light;
-    color: $color-black;
-    cursor: pointer;
-
-    &:hover {
-      color: $color-black;
-      border-color: $color-blue;
-      background-color: $color-blue;
-    }
+.sand-box {
+  @include _768 {
+    display: flex;
+    flex-direction: column;
   }
 
-  &Disabled {
-    box-sizing: border-box;
-    padding: 30px;
-    width: 300px;
-    text-align: center;
-    background-color: $color-gray-light;
-    color: $color-gray-dark;
-    cursor: auto;
+  position: relative;
 
-    @include _480 {
-      width: 100%;
-    }
-  }
-}
-
-.mainContent {
-  display: flex;
-}
-
-.sandBox {
-  width: 95%;
-  margin: auto;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: 120px 1fr 1fr 0;
-  grid-gap: 15px;
-  overflow-x: hidden;
+  grid-template-columns: 80px 1fr 1fr auto;
+  grid-template-rows: 100%;
+  flex-grow: 1;
+  gap: 5px;
 
-  @include _768 {
-    grid-template-columns: 1fr;
-  }
+  margin-bottom: 20px;
 }
 
-.visibleDocs {
-  grid-template-columns: 120px 1fr 1fr minmax(100px, 300px);
+.actions-grid-wrapper {
+  grid-column: 1/2;
+}
 
-  @include _768 {
-    grid-template-columns: 1fr;
+.query-grid-wrapper {
+  grid-column: 2/3;
+}
+
+.results-grid-wrapper {
+  grid-column: 3/4;
+}
+
+.docs-grid-wrapper {
+  @include _1200 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
   }
+
+  grid-column: 4/5;
+}
+
+.docs-hidden {
+  display: none;
+}
+
+.main-content {
+  display: flex;
 }

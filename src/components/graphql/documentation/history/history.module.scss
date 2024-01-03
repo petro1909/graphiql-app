@@ -1,0 +1,26 @@
+@use '@helpers/variables.scss' as *;
+
+.history-item {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+  }
+}
+
+.history-disabled:hover {
+  cursor: auto;
+  text-decoration: none;
+}
+
+.item-left {
+  float: left;
+}
+
+.item-right {
+  float: right;
+}

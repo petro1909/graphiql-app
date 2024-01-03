@@ -1,46 +1,77 @@
 @use '@helpers/variables.scss' as *;
+
 @import '@helpers/mixins';
 
 .header {
-  z-index: 2;
   position: sticky;
+  z-index: 2;
   top: 0;
-  background-color: #ffffff;
-  border-bottom: 1px solid rgb(225 224 223);
-  height: 72px;
 
-  &.headerSmall {
+  height: 60px;
+  padding: 0 20px;
+
+  background-color: $color-white;
+  border-bottom: 1px solid rgb(225 224 223);
+
+  &.header-small {
     height: 64px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
   }
 }
 
-.headerContent {
-  width: 95%;
-  margin: 0 auto;
-  height: 100%;
-
+.header-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
 }
 
 .flex {
   display: flex;
-  align-items: center;
   gap: 24px;
+  align-items: center;
 }
 
-.homeIcon {
-  display: none;
+.home-icon {
   @include _480 {
     display: block;
   }
+
+  display: none;
 }
 
-.desktopLink {
+.desktop-link {
   @include _480 {
+    display: none;
+  }
+}
+
+.signout-button {
+  @include _480 {
+    padding: 0;
+    border: none;
+
+    &:hover {
+      background-color: $color-white;
+    }
+
+    &:focus {
+      background-color: $color-white;
+      border: none;
+    }
+
+    > label {
+      display: none;
+    }
+
+    > img {
+      display: block;
+    }
+  }
+
+  > img {
     display: none;
   }
 }

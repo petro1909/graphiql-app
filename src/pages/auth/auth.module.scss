@@ -3,15 +3,19 @@
 .auth {
   display: flex;
   flex-grow: 1;
-  background-image: url(@assets/bgWeb.webp);
-  background-position: center;
+
+  background-image: url('@assets/images/bgWeb.webp');
   background-repeat: no-repeat;
-  & > .authForm {
-    width: 100%;
+  background-position: center;
+
+  .auth-form {
     position: relative;
-    max-width: 300px;
+    position: relative;
+
     gap: 24px;
     align-items: stretch;
+
+    width: 100%;
   }
 }
 
@@ -21,7 +25,14 @@
   text-align: center;
 }
 
-.buttonWrapper {
+.button-wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.wrapper-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
 }
