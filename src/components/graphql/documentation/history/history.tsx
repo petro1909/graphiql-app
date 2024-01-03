@@ -1,4 +1,5 @@
 import classes from './history.module.scss';
+import { Button } from '@components/button/button';
 import { setActiveEntity } from '@redux/docsSlice';
 import { historyBack, historyForward } from '@redux/historySlice';
 import { useAppDispatch } from '@redux/hooks';
@@ -23,17 +24,17 @@ export function History() {
   return (
     <div className={classes.historyBtnContainer}>
       {prev && (
-        <button onClick={handleHistoryBack} className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
+        <Button onClick={handleHistoryBack} className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
           <span className={classNames(classes.btnPrev, classes.btnHistory)}></span>
           <span>{prev.fieldName || prev.typeName}</span>
-        </button>
+        </Button>
       )}
 
       {next && (
-        <button onClick={handleHistoryForward} className={classNames(classes.historyItem, classes.itemRight, !next && classes.historyDisabled)}>
+        <Button onClick={handleHistoryForward} className={classNames(classes.historyItem, classes.itemRight, !next && classes.historyDisabled)}>
           <span>{next.fieldName || next.typeName}</span>
           <span className={classNames(classes.btnNext, classes.btnHistory)}></span>
-        </button>
+        </Button>
       )}
     </div>
   );
