@@ -3,7 +3,7 @@ import { Button } from '@components/button/button';
 import { closeIcon, warningIcon } from '@icons/index';
 import { hideError } from '@redux/errorSlice';
 import { showError } from '@redux/selectors';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 

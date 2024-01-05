@@ -11,7 +11,6 @@ import { useLocale } from '@localization/useLocale';
 import { showError } from '@redux/errorSlice';
 import { SignUpFormSchema } from '@utils/signUpFormSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
-import classNames from 'classnames';
 import React, { useEffect, useMemo } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -49,7 +48,7 @@ export const SignUp: React.FC = () => {
 
   return (
     <div className={classes.wrapperForm} data-testid="sign-up-form">
-      <form className={classNames('flex-center', classes.authForm)} onSubmit={handleSubmit(onSubmit)}>
+      <form className={classes.authForm} onSubmit={handleSubmit(onSubmit)}>
         <h1 className={classes.title}>{language.strings.signUp}</h1>
         <Input
           error={errors.name?.message}

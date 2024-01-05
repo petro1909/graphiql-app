@@ -6,7 +6,7 @@ import { useLocale } from '@localization/useLocale';
 import { setRawRequest } from '@redux/endpointSlice';
 import { useAppDispatch } from '@redux/hooks';
 import { selectRawRequest } from '@redux/selectors';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 

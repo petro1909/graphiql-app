@@ -10,7 +10,6 @@ import { useLocale } from '@localization/useLocale';
 import { showError } from '@redux/errorSlice';
 import { SignInFormSchema } from '@utils/signInFormSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
-import classNames from 'classnames';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -44,7 +43,7 @@ export const SignIn: React.FC = () => {
 
   return (
     <div className={classes.wrapperForm} data-testid="sign-in-form">
-      <form className={classNames('flex-center', classes.authForm)} onSubmit={handleSubmit(onSubmit)}>
+      <form className={classes.authForm} onSubmit={handleSubmit(onSubmit)}>
         <h1 className={classes.title}>{language.strings.signIn}</h1>
         <Input
           error={errors.email?.message}

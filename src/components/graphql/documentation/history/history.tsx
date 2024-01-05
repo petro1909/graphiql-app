@@ -3,7 +3,7 @@ import { setActiveEntity } from '@redux/docsSlice';
 import { historyBack, historyForward } from '@redux/historySlice';
 import { useAppDispatch } from '@redux/hooks';
 import { selectNext, selectPrev } from '@redux/selectors';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { useSelector } from 'react-redux';
 
 export function History() {

@@ -1,5 +1,5 @@
 import classes from './input.module.scss';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { InputHTMLAttributes, forwardRef } from 'react';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {

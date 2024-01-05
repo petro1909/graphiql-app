@@ -3,8 +3,8 @@ import { filterItems } from './autocompleteSelectService';
 import { GraphQlSearchInputType } from '@app_types/graphql';
 import { Input } from '@components/input/input';
 import { selectAllEntities } from '@redux/selectors';
+import { classNames } from '@utils/classNames';
 import { useDebounce } from '@uidotdev/usehooks';
-import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
