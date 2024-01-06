@@ -1,12 +1,14 @@
 const convertStrIntoObj = (string: string, separator: string) => {
-  let usersData = {};
-  string.split('\n').forEach((el) => {
+  //let usersData = {};
+  return string.split('\n').map((el) => {
     const arr = el.split(separator);
     const objFromStr = { [arr[0]]: arr[1] };
-    usersData = { ...objFromStr };
+
+    return objFromStr;
   });
 
-  return usersData;
+  /* console.log('usersData ', usersData)
+  return usersData; */
 };
 
 export { convertStrIntoObj };

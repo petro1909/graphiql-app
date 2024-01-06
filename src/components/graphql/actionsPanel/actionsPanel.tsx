@@ -15,11 +15,15 @@ export const ActionsPanel: React.FC = () => {
   const { query, variables, URL } = useSelector(selectRawRequest);
 
   const headersInStore = useSelector(selectRawRequest).headers;
-  const headers = convertStrIntoObj(headersInStore, ':');
+  //const headers = Object.values(convertStrIntoObj(headersInStore, ':'));
+  const headers = convertStrIntoObj(headersInStore, ':')[0];
+  console.log('headers ', headers);
 
   const makeRequest = () => {
-    console.log('query ', { query, variables, URL, headers });
-    dispatch(setValidatedRequest({ query, variables, URL /* , ...headers */ }));
+    // console.log('query ', {...headers });
+    console.log('aaa ', headers);
+
+    dispatch(setValidatedRequest({ query, variables, URL, headers }));
   };
 
   const prettifyQuery = () => {
