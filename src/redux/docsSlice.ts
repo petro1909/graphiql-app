@@ -30,14 +30,14 @@ const docsSlice = createSlice({
       const schema = action.payload;
       const entities: GraphQlSearchInputType[] = [];
       schema?.types.forEach((type) => {
-        entities.push({ typeName: type.name });
+        entities.push({ typeName: type.name! });
         type.fields &&
           type.fields.forEach((field) => {
-            entities.push({ typeName: type.name, fieldName: field.name });
+            entities.push({ typeName: type.name!, fieldName: field.name });
           });
         type.inputFields &&
           type.inputFields.map((field) => {
-            entities.push({ typeName: type.name, fieldName: field.name });
+            entities.push({ typeName: type.name!, fieldName: field.name });
           });
       });
       state.entities = entities;
