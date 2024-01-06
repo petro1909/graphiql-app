@@ -15,14 +15,9 @@ export const ActionsPanel: React.FC = () => {
   const { query, variables, URL } = useSelector(selectRawRequest);
 
   const headersInStore = useSelector(selectRawRequest).headers;
-  //const headers = Object.values(convertStrIntoObj(headersInStore, ':'));
-  const headers = convertStrIntoObj(headersInStore, ':')[0];
-  console.log('headers ', headers);
+  const headers = convertStrIntoObj(headersInStore, ':');
 
   const makeRequest = () => {
-    // console.log('query ', {...headers });
-    console.log('aaa ', headers);
-
     dispatch(setValidatedRequest({ query, variables, URL, headers }));
   };
 
