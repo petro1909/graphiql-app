@@ -20,7 +20,7 @@ export const AutocompleteSelect = ({ placeholder, handleSelectItem, errorMessage
   const [inputValue, setInputValue] = useState('');
   const [itemsIsVisible, setItemsIsVisible] = useState(false);
   const [proposedItems, setProposedItems] = useState(initItems);
-  const debounceInputValue = useDebounce(inputValue, 300);
+  const debounceInputValue = useDebounce(inputValue, 500);
 
   useEffect(() => {
     setProposedItems(filterItems(inputValue, initItems));
@@ -72,7 +72,7 @@ type AutocompleteSelectLineProps = {
 
 function AutocompleteSelectLine({ item, onMouseDown }: AutocompleteSelectLineProps) {
   return (
-    <p className={classes.proposedItem} onMouseDown={() => onMouseDown(item)}>
+    <p data-testid="proposedItem" className={classes.proposedItem} onMouseDown={() => onMouseDown(item)}>
       <span>{item.typeName}</span>
       {item.fieldName && <span>.{item.fieldName}</span>}
     </p>

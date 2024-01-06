@@ -1,4 +1,4 @@
-export const tab: string = '\t';
+export const tab: string = '  ';
 export const openSquareBraces = '[';
 export const closeSquareBraces = ']';
 export const openCurlyBraces = '{';

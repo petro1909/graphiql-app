@@ -32,8 +32,9 @@
       "@lang/*": ["./lang/*"],
       "@service/*": ["./src/service/*"],
       "@helpers/*": ["./src/helpers/*"],
-      "@database/*": ["src/database/*"],
-      "@icons/*": ["src/assets/icons/*"]
+      "@database/*": ["./src/database/*"],
+      "@icons/*": ["./src/assets/icons/*"],
+      "@test/*": ["./test/*"],
     },
     "plugins": [
       {

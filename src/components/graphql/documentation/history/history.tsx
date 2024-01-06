@@ -21,7 +21,7 @@ export function History() {
   };
 
   return (
-    <section>
+    <section data-testid="history">
       <div className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
         <span>{'<'}</span>
         {prev && <span onClick={handleHistoryBack}>{prev.fieldName || prev.typeName}</span>}

@@ -27,7 +27,7 @@ export function Documentation() {
   const [error, setError] = useState<FetchBaseQueryError | SerializedError | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const ref = useRef<HTMLOptionElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const schema = useSelector(selectSchema);
   const activeEntity = useSelector(selectActiveEntity);
 
@@ -73,9 +73,9 @@ export function Documentation() {
         </Button>
         <AutocompleteSelect placeholder={language.strings.searchSchema} handleSelectItem={handleActiveEntity} />
       </section>
-      <section className={classes.typesWrapper} ref={ref}>
+      <div className={classes.typesWrapper} ref={ref}>
         <DocumentationContent activeEntity={activeEntity} handleActiveEntity={handleActiveEntity} />
-      </section>
+      </div>
     </section>
   );
 }
