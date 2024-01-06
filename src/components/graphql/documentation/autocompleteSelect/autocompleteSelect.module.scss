@@ -1,8 +1,10 @@
 @use '@helpers/variables.scss' as *;
 
+@import '@helpers/mixins';
+
 .autocomplete-wrapper {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
@@ -28,6 +30,10 @@
 }
 
 .autocomplete-input {
+  @include _1200 {
+    width: 100%;
+  }
+
   width: 330px;
   border-color: $color-white;
 }

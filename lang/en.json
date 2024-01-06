@@ -71,5 +71,12 @@
   "agruments": "Agruments",
   "type": "Type",
   "defaultValue": "Default Value",
-  "deprecated": "Deprecated"
+  "deprecated": "Deprecated",
+  "headersTitle": "Header and variables editor",
+  "queryEditorTitle": "Query editor",
+  "actionsTitle": "Actions",
+  "sandboxTitle": "Sandbox",
+  "queryTitle": "Query, headers and variables editor",
+  "resultsTitle": "Results",
+  "endpoint": "Endpoint setter and documentation button"
 }

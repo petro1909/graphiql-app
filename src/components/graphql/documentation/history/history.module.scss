@@ -1,15 +1,36 @@
 @use '@helpers/variables.scss' as *;
+@import '@helpers/mixins';
 
-.history-item {
-  display: inline-block;
+.history-item,
+.history-item:focus {
+  @include _480 {
+    font-size: 14px;
+  }
+
+  float: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
   font-size: 18px;
   font-weight: 600;
+  color: $color-black;
+
+  background-color: $color-gray;
+  border: none;
 
   &:hover {
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 7px;
+
+    background-color: $color-gray;
+    border: none;
   }
+}
+
+.itemRight {
+  margin-left: auto;
 }
 
 .history-disabled:hover {
@@ -17,10 +38,27 @@
   text-decoration: none;
 }
 
-.item-left {
-  float: left;
+.history-btn-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
-.item-right {
-  float: right;
+.btn-history {
+  width: 30px;
+  height: 30px;
+
+  background: url('@icons/arrow-up.svg') $color-gray;
+  background-size: contain;
+  border: 1px solid $color-gray;
+  border-radius: 5px;
+}
+
+.btn-prev {
+  transform: rotate(-90deg);
+}
+
+.btn-next {
+  transform: rotate(90deg);
 }

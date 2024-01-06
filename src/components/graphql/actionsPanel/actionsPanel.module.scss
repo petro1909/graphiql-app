@@ -3,7 +3,7 @@
 @import '@helpers/mixins';
 
 .actions {
-  @include _768 {
+  @include _992 {
     flex-direction: row;
     padding: 0;
   }
