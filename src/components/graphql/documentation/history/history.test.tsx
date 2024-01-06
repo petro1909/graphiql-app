@@ -3,21 +3,15 @@ import schema from '@test/graphql/testGraphqlSchema.json';
 import { renderWithProviders, createPreloadedState } from '@test/renderWithProviders';
 import { fireEvent, screen, within } from '@testing-library/react';
 import { graphql, HttpResponse } from 'msw';
-import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 
 describe('Test history interaction', () => {
   it('Render documentation after successfull request', async () => {
     Element.prototype.scrollTo = () => {};
-    renderWithProviders(
-      <MemoryRouter>
-        <Documentation />
-      </MemoryRouter>,
-      {
-        preloadedState: createPreloadedState({ endpoint: { rawRequest: { URL: 'http://fakeValidEndpoint.com' } } }),
-        responseOverride: [graphql.query('IntrospectionQuery', () => HttpResponse.json(schema))],
-      }
-    );
+    renderWithProviders(<Documentation />, {
+      preloadedState: createPreloadedState({ endpoint: { rawRequest: { URL: 'http://fakeValidEndpoint.com' } } }),
+      responseOverride: [graphql.query('IntrospectionQuery', () => HttpResponse.json(schema))],
+    });
     const history = await screen.findByTestId('history');
 
     const continent = await screen.findByText('Continent');

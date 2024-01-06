@@ -1,7 +1,8 @@
 {
   "signout": "Выйти",
   "welcomePage": "Приветственная страница",
-  "created": "Приложение создано в 2023 году",
+  "created": "Приложение создано в ",
+  "year": " году",
   "createdBy": "создатели",
   "projectWasCreated": "Приложение было создано : ",
   "petrName": "Пётр",
@@ -70,5 +71,12 @@
   "agruments": "Аргументы",
   "type": "Тип",
   "defaultValue": "Значение по умолчанию",
-  "deprecated": "Устарело"
+  "deprecated": "Устарело",
+  "headersTitle": "Переменные и заголовки",
+  "queryEditorTitle": "Запроса",
+  "actionsTitle": "Панель действий",
+  "sandboxTitle": "Песочница",
+  "queryTitle": "Редактор запроса, заголовков и переменных",
+  "resultsTitle": "Результаты",
+  "endpoint": "Адрес сервера и кнопка просмотра документации"
 }

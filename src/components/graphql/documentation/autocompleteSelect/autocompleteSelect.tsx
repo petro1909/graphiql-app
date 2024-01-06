@@ -3,8 +3,8 @@ import { filterItems } from './autocompleteSelectService';
 import { GraphQlSearchInputType } from '@app_types/graphql';
 import { Input } from '@components/input/input';
 import { selectAllEntities } from '@redux/selectors';
+import { classNames } from '@utils/classNames';
 import { useDebounce } from '@uidotdev/usehooks';
-import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
@@ -50,18 +50,18 @@ export const AutocompleteSelect = ({ placeholder, handleSelectItem, errorMessage
   };
 
   return (
-    <section className={classes.autocompleteWrapper} onBlur={handleBlur}>
+    <div className={classes.autocompleteWrapper} onBlur={handleBlur}>
       <div onFocus={handleFocus}>
         <Input placeholder={placeholder} value={inputValue} onChange={handleChange} error={errorMessage} className={classes.autocompleteInput} />
       </div>
-      <section className={classNames(classes.itemsWrapper, itemsIsVisible && classes.visible)}>
-        <section className={classes.itemsScrollWrapper}>
+      <div className={classNames(classes.itemsWrapper, itemsIsVisible && classes.visible)}>
+        <div className={classes.itemsScrollWrapper}>
           {proposedItems.map((proposedItem, index) => (
             <AutocompleteSelectLine key={index} item={proposedItem} onMouseDown={handlerSelectList} />
           ))}
-        </section>
-      </section>
-    </section>
+        </div>
+      </div>
+    </div>
   );
 };
 

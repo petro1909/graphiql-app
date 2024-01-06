@@ -5,6 +5,7 @@ import { render, RenderOptions } from '@testing-library/react';
 import { GraphQLHandler, HttpHandler } from 'msw';
 import React, { PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: Partial<RootState>;
@@ -34,7 +35,9 @@ export function renderWithProviders(
   function Wrapper({ children }: PropsWithChildren): JSX.Element {
     return (
       <Provider store={store}>
-        <LocaleProvider>{children}</LocaleProvider>
+        <MemoryRouter>
+          <LocaleProvider>{children}</LocaleProvider>
+        </MemoryRouter>
       </Provider>
     );
   }

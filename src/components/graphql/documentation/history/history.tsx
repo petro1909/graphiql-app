@@ -1,9 +1,10 @@
 import classes from './history.module.scss';
+import { Button } from '@components/button/button';
 import { setActiveEntity } from '@redux/docsSlice';
 import { historyBack, historyForward } from '@redux/historySlice';
 import { useAppDispatch } from '@redux/hooks';
 import { selectNext, selectPrev } from '@redux/selectors';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { useSelector } from 'react-redux';
 
 export function History() {
@@ -21,16 +22,20 @@ export function History() {
   };
 
   return (
-    <section data-testid="history">
-      <div className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
-        <span>{'<'}</span>
-        {prev && <span onClick={handleHistoryBack}>{prev.fieldName || prev.typeName}</span>}
-      </div>
+    <div data-testid="history" className={classes.historyBtnContainer}>
+      {prev && (
+        <Button onClick={handleHistoryBack} className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
+          <span className={classNames(classes.btnPrev, classes.btnHistory)}></span>
+          <span>{prev.fieldName || prev.typeName}</span>
+        </Button>
+      )}
 
-      <div className={classNames(classes.historyItem, classes.itemRight, !next && classes.historyDisabled)}>
-        {next && <span onClick={handleHistoryForward}>{next.fieldName || next.typeName}</span>}
-        <span>{'>'}</span>
-      </div>
-    </section>
+      {next && (
+        <Button onClick={handleHistoryForward} className={classNames(classes.historyItem, classes.itemRight, !next && classes.historyDisabled)}>
+          <span>{next.fieldName || next.typeName}</span>
+          <span className={classNames(classes.btnNext, classes.btnHistory)}></span>
+        </Button>
+      )}
+    </div>
   );
 }

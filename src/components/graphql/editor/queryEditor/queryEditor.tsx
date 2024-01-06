@@ -6,7 +6,7 @@ import { useLocale } from '@localization/useLocale';
 import { setRawRequest } from '@redux/endpointSlice';
 import { useAppDispatch } from '@redux/hooks';
 import { selectRawRequest } from '@redux/selectors';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -33,11 +33,13 @@ export function QueryEditor() {
   };
 
   return (
-    <section className={classes.queryWrapper}>
+    <div className={classes.queryWrapper}>
       <section className={classNames(classes.queryEditorWrapper, !isPropertySectionShowed && classes.full)}>
+        <h4 className={classes.hiddenSectionHeader}>{language.strings.queryEditorTitle}</h4>
         <BaseEditor initText={query} handleChangeText={handleChangeQuery} />
       </section>
       <section className={classes.queryPropertiesWrapper}>
+        <h4 className={classes.hiddenSectionHeader}>{language.strings.headersTitle}</h4>
         <div className={classes.queryPropertiesActions}>
           <div>
             <Button mode="light" onClick={() => setIsHeadersSelected(true)}>
@@ -51,14 +53,14 @@ export function QueryEditor() {
             <img className={classes.toggleButtonImage} src={isPropertySectionShowed ? arrowDownIcon : arrowUpIcon} />
           </div>
         </div>
-        <section className={classNames(classes.propertyEditorsWrapper, !isPropertySectionShowed && classes.hidden)}>
+        <div className={classNames(classes.propertyEditorsWrapper, !isPropertySectionShowed && classes.hidden)}>
           {isHeadersSelected ? (
             <BaseEditor initText={headers} handleChangeText={handleChangeHeaders} />
           ) : (
             <BaseEditor initText={variables} handleChangeText={handleChangeVars} />
           )}
-        </section>
+        </div>
       </section>
-    </section>
+    </div>
   );
 }
