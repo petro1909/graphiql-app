@@ -9,14 +9,11 @@ import { selectRawRequest } from '@redux/selectors';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-//import { convertStrIntoObj } from '@helpers/utils';
 
 export function QueryEditor() {
   const dispatch = useAppDispatch();
   const { query, headers, variables } = useSelector(selectRawRequest);
   const { language } = useLocale();
-
-  //console.log('new headers ', headers)
   const [isPropertySectionShowed, setIsPropertySectionShowed] = useState(true);
   const [isHeadersSelected, setIsHeadersSelected] = useState(true);
 
@@ -27,8 +24,6 @@ export function QueryEditor() {
 
   const handleChangeHeaders = (updatedHeaders: string) => {
     setIsPropertySectionShowed(true);
-    //const usersHeader = convertStrIntoObj(updatedHeaders, ':');
-
     dispatch(setRawRequest({ headers: updatedHeaders }));
   };
 
