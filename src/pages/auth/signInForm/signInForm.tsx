@@ -1,4 +1,4 @@
-import classes from './auth.module.scss';
+import classes from '../auth.module.scss';
 import { SignInFormData } from '@app_types/authForm';
 import { Button } from '@components/button/button';
 import { CustomNavLink } from '@components/customNavLink/customNavLink';
@@ -8,9 +8,8 @@ import { routes } from '@constants/constants';
 import { auth } from '@database/context';
 import { useLocale } from '@localization/useLocale';
 import { showError } from '@redux/errorSlice';
-import { useSignInFormSchema } from '@utils/useSignInFormSchema';
+import { SignInFormSchema } from '@utils/signInFormSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
-import classNames from 'classnames';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -24,7 +23,7 @@ export const SignIn: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignInFormData>({ resolver: yupResolver(useSignInFormSchema()) });
+  } = useForm<SignInFormData>({ resolver: yupResolver(SignInFormSchema()) });
 
   const [, loading, error] = useAuthState(auth);
 
@@ -43,13 +42,14 @@ export const SignIn: React.FC = () => {
   }
 
   return (
-    <div className={classes.wrapperForm}>
-      <form className={classNames('flex-center', classes.authForm)} onSubmit={handleSubmit(onSubmit)}>
+    <div className={classes.wrapperForm} data-testid="sign-in-form">
+      <form className={classes.authForm} onSubmit={handleSubmit(onSubmit)}>
         <h1 className={classes.title}>{language.strings.signIn}</h1>
         <Input
           error={errors.email?.message}
           label={language.strings.inputLabel.authEmail}
           placeholder={language.strings.placeholder.authEmail}
+          data-testid="email"
           {...register('email')}
         />
         <Input
@@ -57,10 +57,13 @@ export const SignIn: React.FC = () => {
           label={language.strings.inputLabel.authPassword}
           placeholder={language.strings.placeholder.authPassword}
           type="password"
+          data-testid="password"
           {...register('password')}
         />
         <div className={classes.buttonWrapper}>
-          <Button type="submit">{language.strings.signIn}</Button>
+          <Button data-testid="sign-in-button" type="submit">
+            {language.strings.signIn}
+          </Button>
           <CustomNavLink to={routes.SIGN_UP}>
             <Button mode="light">{language.strings.signUp}</Button>
           </CustomNavLink>

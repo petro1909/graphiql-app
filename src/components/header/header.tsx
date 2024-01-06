@@ -8,7 +8,7 @@ import { auth } from '@database/context';
 import { homeIcon, signOutIcon } from '@icons/index';
 import { useLocale } from '@localization/useLocale';
 
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';

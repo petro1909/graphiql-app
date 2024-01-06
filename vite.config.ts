@@ -31,6 +31,7 @@ export default defineConfig({
       '@helpers': path.resolve(__dirname, './src/helpers'),
       '@database': path.resolve(__dirname, './src/database'),
       '@icons': path.resolve(__dirname, './src/assets/icons'),
+      '@test': path.resolve(__dirname, './test'),
     },
   },
   test: {

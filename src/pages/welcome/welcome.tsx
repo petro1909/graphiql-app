@@ -16,7 +16,7 @@ export const Welcome: React.FC = () => {
     <>
       <Header />
       <section className={classes.welcome}>
-        <div className="flex-center">
+        <div className={classes.container}>
           <div className={classes.bigText}>{language.strings.welcome}</div>
           <div className={classes.additionalInfo}>
             {language.strings.projectWasCreated}
