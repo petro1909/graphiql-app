@@ -1,6 +1,7 @@
 import classes from './actionsPanel.module.scss';
 import { Button } from '@components/button/button';
 import { prettify } from '@components/graphql/editor/baseEditor/editorService/prettify';
+import { convertStrIntoObj } from '@helpers/utils';
 import { playIcon, prettifyIcon } from '@icons/index';
 import { useLocale } from '@localization/useLocale';
 import { setRawRequest, setValidatedRequest } from '@redux/endpointSlice';
@@ -12,8 +13,13 @@ export const ActionsPanel: React.FC = () => {
   const dispatch = useAppDispatch();
   const { language } = useLocale();
   const { query, variables, URL } = useSelector(selectRawRequest);
+
+  const headersInStore = useSelector(selectRawRequest).headers;
+  const headers = convertStrIntoObj(headersInStore, ':');
+
   const makeRequest = () => {
-    dispatch(setValidatedRequest({ query, variables, URL }));
+    console.log('query ', { query, variables, URL, headers });
+    dispatch(setValidatedRequest({ query, variables, URL /* , ...headers */ }));
   };
 
   const prettifyQuery = () => {
