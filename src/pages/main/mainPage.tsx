@@ -10,7 +10,7 @@ import { Header } from '@components/header/header';
 import { SandboxContainer } from '@components/sandboxContainer/sandboxContainer';
 import { useLocale } from '@localization/useLocale';
 import { selectDocsEnable } from '@redux/selectors';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -49,8 +49,9 @@ export function MainPage() {
               <QueryEditor />
             </SandboxContainer>
           </section>
-          <section className={classNames(classes.resultsGridWrapper)}>
+          <section className={classes.resultsGridWrapper}>
             <h4 className={classes.hiddenSectionHeader}>{language.strings.resultsTitle}</h4>
+
             <SandboxContainer>
               <Results />
             </SandboxContainer>

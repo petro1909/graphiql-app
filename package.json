@@ -13,12 +13,11 @@
     "prepare": "husky install",
     "stylelint": "stylelint **/*.scss",
     "stylelint:fix": "stylelint --fix **/*.scss",
-    "test": "vitest run",
+    "test": "vitest dev",
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
-    "classnames": "^2.3.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "firebase": "^10.7.1",
     "react": "^18.2.0",

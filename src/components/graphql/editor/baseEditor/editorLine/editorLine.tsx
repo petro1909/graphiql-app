@@ -1,5 +1,5 @@
 import classes from './editorLine.module.scss';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 
 type EditorLineProps = {
   isActive: boolean;

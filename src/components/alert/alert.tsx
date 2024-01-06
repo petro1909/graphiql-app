@@ -3,7 +3,7 @@ import { Button } from '@components/button/button';
 import { closeIcon, warningIcon } from '@icons/index';
 import { hideError } from '@redux/errorSlice';
 import { showError } from '@redux/selectors';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -29,10 +29,10 @@ export const Alert: React.FC<AlertProps> = ({ message }) => {
   };
 
   return (
-    <div className={classNames(classes.alert, hasErrorMessage ? classes.show : classes.hide)}>
+    <div className={classNames(classes.alert, hasErrorMessage ? classes.show : classes.hide)} data-testid="alert-testid">
       <img className={classes.warningIcon} src={warningIcon} />
       <span>{message}</span>
-      <Button className={classes.closeButton} onClick={handleClose}>
+      <Button className={classes.closeButton} onClick={handleClose} data-testid="close-button">
         <img className={classes.closeImg} src={closeIcon} />
       </Button>
     </div>

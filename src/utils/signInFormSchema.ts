@@ -1,13 +1,13 @@
 import { useLocale } from '@localization/useLocale';
 import * as Yup from 'yup';
 
-export function useSignInFormSchema() {
+export function SignInFormSchema() {
   const { language } = useLocale();
 
   return Yup.object().shape({
     email: Yup.string().email(language.strings.errorMessages.emailNotValid).required(language.strings.errorMessages.emailRequired),
     password: Yup.string()
-      .required(language.strings.errorMessages.emailRequired)
+      .required(language.strings.errorMessages.passwordRequired)
       .min(8, language.strings.errorMessages.passwordShort)
       .max(32)
       .matches(/[0-9]/, language.strings.errorMessages.passwordDigit)

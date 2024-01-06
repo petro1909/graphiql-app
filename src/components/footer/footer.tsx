@@ -9,6 +9,7 @@ export const Footer: React.FC = () => {
   const { language } = useLocale();
 
   const rsSchoolLink = 'https://rs.school/react';
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className={classes.footer}>
@@ -17,6 +18,8 @@ export const Footer: React.FC = () => {
           <img src={rsIcon} className={classes.logo} alt="rs school" />
         </CustomNavLink>
         {language.strings.created}
+        {currentYear}
+        {language.strings.year}
       </div>
       <div className={classes.flex}>
         {language.strings.createdBy}:

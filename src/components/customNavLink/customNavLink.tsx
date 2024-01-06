@@ -1,5 +1,5 @@
 import classes from './customNavLink.module.scss';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { NavLink, LinkProps } from 'react-router-dom';
 
 type CustomNavLinkProps = Pick<LinkProps, 'to' | 'children' | 'target' | 'className'>;

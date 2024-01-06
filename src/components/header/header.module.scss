@@ -65,13 +65,13 @@
     > label {
       display: none;
     }
-
-    > img {
-      display: block;
-    }
   }
 
   > img {
+    @include _480 {
+      display: block;
+    }
+
     display: none;
   }
 }
