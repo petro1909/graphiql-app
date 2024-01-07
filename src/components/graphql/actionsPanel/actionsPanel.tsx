@@ -5,6 +5,7 @@ import { convertHeaders } from '@helpers/utils';
 import { playIcon, prettifyIcon } from '@icons/index';
 import { useLocale } from '@localization/useLocale';
 import { setRawRequest, setValidatedRequest } from '@redux/endpointSlice';
+import { showError } from '@redux/errorSlice';
 import { useAppDispatch } from '@redux/hooks';
 import { selectRawRequest } from '@redux/selectors';
 import { useSelector } from 'react-redux';
@@ -15,10 +16,14 @@ export const ActionsPanel: React.FC = () => {
   const { query, variables, URL } = useSelector(selectRawRequest);
 
   const headersInStore = useSelector(selectRawRequest).headers;
-  const headers = convertHeaders(headersInStore, language.strings.errorMessages.uncorrectHeader);
+  const { usersHeaders, isInvalid } = convertHeaders(headersInStore);
 
   const makeRequest = () => {
-    dispatch(setValidatedRequest({ query, variables, URL, headers }));
+    if (isInvalid) {
+      dispatch(showError(language.strings.errorMessages.uncorrectHeader));
+    } else {
+      dispatch(setValidatedRequest({ query, variables, URL, headers: usersHeaders }));
+    }
   };
 
   const prettifyQuery = () => {

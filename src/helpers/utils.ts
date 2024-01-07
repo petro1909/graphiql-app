@@ -1,35 +1,38 @@
-const checkName = (string: string, errorMsg: string) => {
+const isNameValid = (string: string) => {
   for (let i = 0; i < string.length; i++) {
     if (string.charCodeAt(i) < 33 || string.charCodeAt(i) > 126) {
-      alert(errorMsg);
+      return false;
     }
   }
+
+  return true;
 };
 
-const checkValue = (string: string, errorMsg: string) => {
+const isValueValid = (string: string) => {
   const isCorrect = /^[\x00-\x7F]*$/.test(string);
-  if (!isCorrect) alert(errorMsg);
+
+  return isCorrect;
 };
 
-const convertHeaders = (string: string, errorMsg: string) => {
-  const usersData: Record<string, string> = {};
-
+const convertHeaders = (string: string) => {
+  const usersHeaders: Record<string, string> = {};
+  let isValid = true;
   string.split('\n').forEach((el: string) => {
     if (el) {
       const arr = el.split(':');
       const headerName = arr[0];
       const headerValue = arr[1];
 
-      checkName(headerName, errorMsg);
+      isValid = isNameValid(headerName);
       if (el.indexOf(':') !== -1) {
-        checkValue(headerValue, errorMsg);
+        isValid = isValueValid(headerValue);
       }
 
-      usersData[headerName] = headerValue;
+      usersHeaders[headerName] = headerValue;
     }
   });
 
-  return usersData;
+  return { usersHeaders, isInvalid: !isValid };
 };
 
 export { convertHeaders };
