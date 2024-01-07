@@ -10,7 +10,7 @@ import { Header } from '@components/header/header';
 import { SandboxContainer } from '@components/sandboxContainer/sandboxContainer';
 import { useLocale } from '@localization/useLocale';
 import { selectDocsEnable } from '@redux/selectors';
-import classNames from 'classnames';
+import { classNames } from '@utils/classNames';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -29,28 +29,35 @@ export function MainPage() {
       <Header />
       <main className={classes.main}>
         <section className={classes.mainTop}>
+          <h4 className={classes.hiddenSectionHeader}>{language.strings.endpoint}</h4>
           <EndpointForm />
           <Button disabled={!isDocsEnable} onClick={() => setDocsVisibility(!docsVisibility)}>
             {language.strings.docShowButton}
           </Button>
         </section>
         <section className={classes.sandBox}>
-          <section className={classNames(classes.actionsGridWrapper)}>
+          <h4 className={classNames(classes.hiddenSectionHeader, classes.mainHeader)}>{language.strings.sandboxTitle}</h4>
+          <section className={classes.actionsGridWrapper}>
+            <h4 className={classes.hiddenSectionHeader}>{language.strings.actionsTitle}</h4>
             <SandboxContainer>
               <ActionsPanel />
             </SandboxContainer>
           </section>
-          <section className={classNames(classes.queryGridWrapper)}>
+          <section className={classes.queryGridWrapper}>
+            <h4 className={classes.hiddenSectionHeader}>{language.strings.queryTitle}</h4>
             <SandboxContainer>
               <QueryEditor />
             </SandboxContainer>
           </section>
-          <section className={classNames(classes.resultsGridWrapper)}>
+          <section className={classes.resultsGridWrapper}>
+            <h4 className={classes.hiddenSectionHeader}>{language.strings.resultsTitle}</h4>
+
             <SandboxContainer>
               <Results />
             </SandboxContainer>
           </section>
           <section className={classNames(classes.docsGridWrapper, !docsVisibility && classes.docsHidden)}>
+            <h4 className={classes.hiddenSectionHeader}>{language.strings.doc}</h4>
             <SandboxContainer>
               <Documentation />
             </SandboxContainer>

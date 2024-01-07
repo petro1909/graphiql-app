@@ -33,7 +33,8 @@
       "@service/*": ["./src/service/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@database/*": ["src/database/*"],
-      "@icons/*": ["src/assets/icons/*"]
+      "@icons/*": ["src/assets/icons/*"],
+      "@test/*": ["./test/*"]
     },
     "plugins": [
       {

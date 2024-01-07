@@ -13,17 +13,17 @@ export function GraphQlField({ field, handleClick }: GraphQlFieldProps) {
   const { language } = useLocale();
 
   return (
-    <section>
+    <div>
       <h3 className={classes.entityHeader}>{field.name}</h3>
 
       {field.description && (
-        <section>
+        <div>
           <p className={classes.description}>{field.description}</p>
-        </section>
+        </div>
       )}
 
       {isGraphQlField(field) && field.args.length !== 0 && (
-        <section>
+        <div>
           <h4 className={classes.propertyHeader}>{language.strings.agruments}</h4>
           {field.args.map((arg) => (
             <p className={classes.fieldArg} key={arg.name}>
@@ -31,27 +31,27 @@ export function GraphQlField({ field, handleClick }: GraphQlFieldProps) {
               <GraphqlCompoisteType type={arg.type} handleClick={handleClick} />
             </p>
           ))}
-        </section>
+        </div>
       )}
 
-      <section>
+      <div>
         <h4 className={classes.propertyHeader}>{language.strings.type}</h4>
         <GraphqlCompoisteType type={field.type} handleClick={handleClick} />
-      </section>
+      </div>
 
       {isGraphQlInputValue(field) && (
-        <section>
+        <div>
           <h4 className={classes.propertyHeader}>{language.strings.defaultValue}</h4>
           <p>{field.defaultValue}</p>
-        </section>
+        </div>
       )}
 
       {field.isDeprecated && (
-        <section>
+        <div>
           <h4 className={classes.propertyHeader}>{language.strings.deprecated}</h4>
           <p>{field.deprecationReason}</p>
-        </section>
+        </div>
       )}
-    </section>
+    </div>
   );
 }

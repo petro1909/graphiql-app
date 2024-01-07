@@ -1,7 +1,8 @@
 {
   "signout": "Sign Out",
   "welcomePage": "Welcome Page",
-  "created": "Application was created in 2023",
+  "created": "Application was created in ",
+  "year": "",
   "createdBy": "creators",
   "projectWasCreated": "The project was created by: ",
   "petrName": "Petr",
@@ -36,7 +37,7 @@
   },
   "errorMessages": {
     "emailRequired": "Please enter your email address",
-    "emailNotValid": "Type a valid email",
+    "emailNotValid": "Type valid email",
     "passwordRequired": "Please enter your password",
     "passwordShort": "Your password too short",
     "passwordDigit": "Your password must have at least 1 digit character",
@@ -70,5 +71,12 @@
   "agruments": "Agruments",
   "type": "Type",
   "defaultValue": "Default Value",
-  "deprecated": "Deprecated"
+  "deprecated": "Deprecated",
+  "headersTitle": "Header and variables editor",
+  "queryEditorTitle": "Query editor",
+  "actionsTitle": "Actions",
+  "sandboxTitle": "Sandbox",
+  "queryTitle": "Query, headers and variables editor",
+  "resultsTitle": "Results",
+  "endpoint": "Endpoint setter and documentation button"
 }
