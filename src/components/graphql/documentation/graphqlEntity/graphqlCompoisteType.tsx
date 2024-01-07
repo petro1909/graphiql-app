@@ -8,14 +8,25 @@ type ReturnTypePros = {
 
 export function GraphqlCompoisteType({ type, handleClick }: ReturnTypePros) {
   if (type.ofType === null) {
-    return <TypeName name={type.name} handleClick={() => handleClick({ typeName: type.name })} />;
+    return <TypeName name={type.name!} handleClick={() => handleClick({ typeName: type.name! })} />;
   }
   if (type.kind === __TypeKind.LIST || type.kind === __TypeKind.ENUM) {
-    return <>[{<GraphqlCompoisteType type={type.ofType} handleClick={handleClick} />}]</>;
+    return (
+      <>
+        <span>[</span>
+        {<GraphqlCompoisteType type={type.ofType} handleClick={handleClick} />}
+        <span>]</span>
+      </>
+    );
   }
   if (type.kind === __TypeKind.NON_NULL) {
-    return <>{<GraphqlCompoisteType type={type.ofType} handleClick={handleClick} />}!</>;
+    return (
+      <>
+        {<GraphqlCompoisteType type={type.ofType} handleClick={handleClick} />}
+        <span>!</span>
+      </>
+    );
   }
 
-  return <>{<GraphqlCompoisteType type={type.ofType} handleClick={handleClick} />}</>;
+  return <GraphqlCompoisteType type={type.ofType} handleClick={handleClick} />;
 }

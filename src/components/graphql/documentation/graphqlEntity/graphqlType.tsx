@@ -27,7 +27,7 @@ export function GraphQlType({ type, handleClick }: GraphQlTypProps) {
           <ul className={classes.propertyList}>
             {type.interfaces.map((iface) => (
               <li className={classes.typeFieldsWrapper} key={iface.name}>
-                <GraphqlCompoisteType type={iface} handleClick={() => handleClick({ typeName: iface.name })} />
+                <GraphqlCompoisteType type={iface} handleClick={() => handleClick({ typeName: iface.name! })} />
               </li>
             ))}
           </ul>
@@ -40,7 +40,7 @@ export function GraphQlType({ type, handleClick }: GraphQlTypProps) {
           <ul className={classes.propertyList}>
             {type.inputFields.map((inField) => (
               <li className={classes.typeFieldsWrapper} key={inField.name}>
-                <span onClick={() => handleClick({ typeName: type.name, fieldName: inField.name })}>{inField.name}: </span>
+                <span onClick={() => handleClick({ typeName: type.name!, fieldName: inField.name })}>{inField.name}: </span>
                 <GraphqlCompoisteType type={inField.type} handleClick={handleClick} />
               </li>
             ))}
@@ -68,7 +68,7 @@ export function GraphQlType({ type, handleClick }: GraphQlTypProps) {
           <ul className={classes.propertyList}>
             {type.fields.map((field) => (
               <li className={classes.typeFieldsWrapper} key={field.name}>
-                <span className={classes.fieldName} onClick={() => handleClick({ typeName: type.name, fieldName: field.name })}>
+                <span className={classes.fieldName} onClick={() => handleClick({ typeName: type.name!, fieldName: field.name })}>
                   {field.name}
                 </span>
                 {field.args.length !== 0 && (

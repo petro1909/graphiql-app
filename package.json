@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "stylelint": "stylelint **/*.scss",
     "stylelint:fix": "stylelint --fix **/*.scss",
-    "test": "vitest dev",
+    "test": "vitest",
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {

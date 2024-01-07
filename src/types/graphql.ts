@@ -50,14 +50,14 @@ export type __EnumValue = {
 
 export type __Type = {
   kind: __TypeKind;
-  name: string;
-  description: string;
-  fields: __Field[] | null;
-  interfaces: __Type[] | null;
-  possibleTypes: __Type[] | null;
-  enumValues: __EnumValue[] | null;
-  inputFields: __InputValue[] | null;
-  ofType: __Type;
+  name?: string | null;
+  description?: string;
+  fields?: __Field[] | null;
+  interfaces?: __Type[] | null;
+  possibleTypes?: __Type[] | null;
+  enumValues?: __EnumValue[] | null;
+  inputFields?: __InputValue[] | null;
+  ofType: __Type | null;
 };
 
 export type __Directive = {

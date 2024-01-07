@@ -13,8 +13,14 @@ interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   responseOverride?: (GraphQLHandler | HttpHandler)[];
 }
 
-export const createPreloadedState = (): Partial<RootState> => {
-  const state: Partial<RootState> = {};
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;
+
+export const createPreloadedState = (partialState: DeepPartial<RootState>): Partial<RootState> => {
+  const state: Partial<RootState> = partialState as Partial<RootState>;
 
   return state;
 };
@@ -34,6 +40,17 @@ export function renderWithProviders(
         </MemoryRouter>
       </Provider>
     );
+  }
+
+  return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
+}
+
+export function renderApp(
+  ui: React.ReactElement,
+  { preloadedState = {}, store = setupStore(preloadedState), ...renderOptions }: ExtendedRenderOptions = {}
+) {
+  function Wrapper({ children }: PropsWithChildren): JSX.Element {
+    return <Provider store={store}>{children}</Provider>;
   }
 
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };

@@ -88,11 +88,12 @@
   @include _992 {
     order: 10;
   }
+
   grid-row: 2/3;
 }
 
 .hidden-section-header {
-  height: 0;
   width: 0;
+  height: 0;
   font-size: 0;
 }

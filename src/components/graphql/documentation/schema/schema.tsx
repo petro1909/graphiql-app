@@ -17,12 +17,12 @@ export function AllTypes({ schema, handleClick }: AllTypesProps) {
   ];
   const endpointTypes = schema.types.filter(
     (type) =>
-      !type.name.includes('__') &&
+      !type.name!.includes('__') &&
       type.name !== schema.queryType.name &&
       type.name !== schema.mutationType?.name &&
       type.name !== schema.subscriptionType?.name
   );
-  const gpaphQLTypes = schema.types.filter((type) => type.name.includes('__'));
+  const gpaphQLTypes = schema.types.filter((type) => type.name!.includes('__'));
 
   return (
     <>
@@ -33,7 +33,7 @@ export function AllTypes({ schema, handleClick }: AllTypesProps) {
             rootType.type && (
               <p className={classes.rootType} key={rootType.name}>
                 <span>{rootType.name}: </span>
-                <TypeName name={rootType.type.name} handleClick={() => handleClick({ typeName: rootType.type!.name })} />
+                <TypeName name={rootType.type.name!} handleClick={() => handleClick({ typeName: rootType.type!.name! })} />
               </p>
             )
         )}
@@ -43,7 +43,7 @@ export function AllTypes({ schema, handleClick }: AllTypesProps) {
         <h3 className={classes.typesListHeader}>{language.strings.endpointTypes}</h3>
         {endpointTypes.map((type) => (
           <div key={type.name}>
-            <TypeName name={type.name} handleClick={() => handleClick({ typeName: type.name })} />
+            <TypeName name={type.name!} handleClick={() => handleClick({ typeName: type.name! })} />
           </div>
         ))}
       </section>
@@ -52,7 +52,7 @@ export function AllTypes({ schema, handleClick }: AllTypesProps) {
         <h3 className={classes.typesListHeader}>{language.strings.graphqlTypes}</h3>
         {gpaphQLTypes.map((type) => (
           <div key={type.name}>
-            <TypeName name={type.name} handleClick={() => handleClick({ typeName: type.name })} />
+            <TypeName name={type.name!} handleClick={() => handleClick({ typeName: type.name! })} />
           </div>
         ))}
       </section>

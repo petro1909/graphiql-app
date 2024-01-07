@@ -22,7 +22,7 @@ export function History() {
   };
 
   return (
-    <div className={classes.historyBtnContainer}>
+    <div data-testid="history" className={classes.historyBtnContainer}>
       {prev && (
         <Button onClick={handleHistoryBack} className={classNames(classes.historyItem, classes.itemLeft, !prev && classes.historyDisabled)}>
           <span className={classNames(classes.btnPrev, classes.btnHistory)}></span>
