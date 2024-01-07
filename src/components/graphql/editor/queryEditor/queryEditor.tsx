@@ -14,7 +14,6 @@ export function QueryEditor() {
   const dispatch = useAppDispatch();
   const { query, headers, variables } = useSelector(selectRawRequest);
   const { language } = useLocale();
-
   const [isPropertySectionShowed, setIsPropertySectionShowed] = useState(true);
   const [isHeadersSelected, setIsHeadersSelected] = useState(true);
 

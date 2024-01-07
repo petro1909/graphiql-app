@@ -49,7 +49,8 @@
     "nameFirstLetter": "Your name must start with an uppercase letter",
     "confirmPassword": "Confirm Password is required",
     "passwordMatch": "Passwords must match",
-    "sthWrong": "Something went wrong!"
+    "sthWrong": "Something went wrong!",
+    "uncorrectHeader": "Please, use permitted characters"
   },
   "project": "project",
   "course": "course",
