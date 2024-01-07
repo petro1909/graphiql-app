@@ -10,14 +10,16 @@ import { useLocale } from '@localization/useLocale';
 import { showError } from '@redux/errorSlice';
 import { SignInFormSchema } from '@utils/signInFormSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { FirebaseError } from 'firebase/app';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
 export const SignIn: React.FC = () => {
   const { language } = useLocale();
+  const [firebaseError, setFireBaseError] = useState<Error | null>(null);
 
   const {
     register,
@@ -30,11 +32,13 @@ export const SignIn: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(showError(error?.message));
-  }, [dispatch, error]);
+    dispatch(showError(error?.message || firebaseError?.message));
+  }, [dispatch, error, firebaseError]);
 
   const onSubmit = async (data: SignInFormData) => {
-    signInWithEmailAndPassword(auth, data.email, data.password);
+    signInWithEmailAndPassword(auth, data.email, data.password).catch((err) => {
+      setFireBaseError(err as FirebaseError);
+    });
   };
 
   if (loading) {

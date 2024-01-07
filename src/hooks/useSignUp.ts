@@ -1,5 +1,6 @@
 import { auth } from '@database/context';
 import { useLocale } from '@localization/useLocale';
+import { FirebaseError } from 'firebase/app';
 import { User, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useState } from 'react';
 
@@ -21,8 +22,11 @@ const useSignUp: () => [SignUpFunction, string | undefined | null, boolean] = ()
 
         return updateProfile(userCredential.user, { displayName: name }).then(() => userCredential.user);
       },
-      () => {
+      (err) => {
         setLoading(false);
+        if (err instanceof FirebaseError) {
+          return setError(err.message);
+        }
 
         return setError(language.strings.errorMessages.sthWrong);
       }
