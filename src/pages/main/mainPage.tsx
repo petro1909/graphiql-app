@@ -29,7 +29,6 @@ export function MainPage() {
       <Header />
       <main className={classes.main}>
         <section className={classes.mainTop}>
-          <h4 className={classes.hiddenSectionHeader}>{language.strings.endpoint}</h4>
           <EndpointForm />
           <Button disabled={!isDocsEnable} onClick={() => setDocsVisibility(!docsVisibility)}>
             {language.strings.docShowButton}

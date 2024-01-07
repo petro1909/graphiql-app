@@ -4,9 +4,9 @@
 
 .editor-wrapper {
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   display: flex;
-  height: 100%;
+  min-height: 100%;
 }
 
 .editor {
@@ -21,6 +21,8 @@
   background-color: $color-gray-light;
   border: none;
   outline: none;
+  overflow: hidden;
+  min-height: 100%;
 }
 
 .line-numbers {
