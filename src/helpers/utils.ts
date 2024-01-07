@@ -1,30 +1,28 @@
-const msgEN: string = 'Please, use permitted characters';
-const msgRU: string = 'Пожалуйста, используйте разрешенные символы';
-
-const checkName = (string: string, language: string) => {
+const checkName = (string: string, errorMsg: string) => {
   for (let i = 0; i < string.length; i++) {
     if (string.charCodeAt(i) < 33 || string.charCodeAt(i) > 126) {
-      language === 'EN' ? alert(msgEN) : alert(msgRU);
+      alert(errorMsg);
     }
   }
 };
 
-const checkValue = (string: string, language: string) => {
+const checkValue = (string: string, errorMsg: string) => {
   const isCorrect = /^[\x00-\x7F]*$/.test(string);
-  if (!isCorrect) language === 'EN' ? alert(msgEN) : alert(msgRU);
+  if (!isCorrect) alert(errorMsg);
 };
 
-const convertHeaders = (string: string, language: string) => {
+const convertHeaders = (string: string, errorMsg: string) => {
   const usersData: Record<string, string> = {};
+
   string.split('\n').forEach((el: string) => {
     if (el) {
       const arr = el.split(':');
       const headerName = arr[0];
       const headerValue = arr[1];
 
-      checkName(headerName, language);
+      checkName(headerName, errorMsg);
       if (el.indexOf(':') !== -1) {
-        checkValue(headerValue, language);
+        checkValue(headerValue, errorMsg);
       }
 
       usersData[headerName] = headerValue;
