@@ -7,7 +7,7 @@ describe('Welcome', () => {
   it('render Welcome Page', async () => {
     renderWithProviders(<Welcome />);
 
-    const welcomePageElement = screen.getByText('Welcome to GraphiQL progect');
+    const welcomePageElement = screen.getByText('Welcome to GraphiQL project');
     expect(welcomePageElement).toBeInTheDocument();
 
     const headerElement = screen.getByText('Welcome Page');
