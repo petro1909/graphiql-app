@@ -1,0 +1,39 @@
+@import '@helpers/mixins';
+
+.auth {
+  display: flex;
+  flex-grow: 1;
+
+  background-image: url('@assets/images/bgWeb.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .auth-form {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+
+    width: 100%;
+  }
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}

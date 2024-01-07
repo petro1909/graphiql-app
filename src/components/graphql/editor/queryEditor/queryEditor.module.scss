@@ -1,0 +1,57 @@
+@use '@helpers/variables.scss' as *;
+
+.query-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: inherit;
+}
+
+.query-editor-wrapper {
+  flex: 1;
+  min-height: 250px;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.query-editor-wrapper.full {
+  height: 100%;
+}
+
+.query-properties-wrapper {
+  border-top: 2px solid $color-black;
+}
+
+.query-properties-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle-button {
+  width: 30px;
+  height: 30px;
+}
+
+.toggle-button-image {
+  width: inherit;
+  height: inherit;
+}
+
+.property-editors-wrapper {
+  overflow: auto;
+  height: 220px;
+  transition: height 1s;
+}
+
+.property-editors-wrapper.hidden {
+  height: 0;
+}
+
+.hidden-section-header {
+  width: 0;
+  height: 0;
+  font-size: 0;
+}

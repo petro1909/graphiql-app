@@ -1,0 +1,15 @@
+@use '@helpers/variables' as *;
+
+@import '@helpers/mixins';
+
+.sandbox-container {
+  overflow: hidden;
+
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+
+  background-color: $color-gray-light;
+  border: 1px solid $color-gray;
+  border-radius: 10px;
+}

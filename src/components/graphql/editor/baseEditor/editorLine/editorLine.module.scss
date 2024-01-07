@@ -1,0 +1,33 @@
+@use '@helpers/variables.scss' as *;
+
+.line-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  height: 19px;
+}
+
+.line-text-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.line-text-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  border: none;
+  outline: none;
+}
+
+.line-number {
+  margin-right: 10px;
+  padding-right: 5px;
+}
+
+.line-number.active {
+  color: $color-red;
+}

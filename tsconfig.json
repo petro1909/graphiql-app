@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitAny": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "@app_types/*": ["./src/types/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@validation/*": ["./src/validation/*"],
+      "@localization/*": ["./src/localization/*"],
+      "@lang/*": ["./lang/*"],
+      "@service/*": ["./src/service/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@database/*": ["./src/database/*"],
+      "@icons/*": ["./src/assets/icons/*"],
+      "@test/*": ["./test/*"],
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "classnameTransform": "camelCaseOnly"
+        }
+      }
+    ]
+  },
+  "include": ["src", "test"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

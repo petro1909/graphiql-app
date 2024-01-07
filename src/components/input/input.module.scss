@@ -1,0 +1,49 @@
+@use '@helpers/variables.scss' as *;
+
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: $color-base;
+}
+
+.error {
+  position: absolute;
+  bottom: -24px;
+
+  height: 24px;
+
+  font-size: 12px;
+  line-height: 12px;
+  color: $color-red;
+}
+
+.input {
+  flex: auto;
+
+  height: 40px;
+  padding: 0 8px;
+
+  font-size: 16px;
+  color: $color-base;
+
+  opacity: 1;
+  border: 2px solid $color-gray;
+  border-radius: 6px;
+
+  &::placeholder {
+    font-size: 16px;
+    opacity: 0.5;
+  }
+
+  &:focus-visible {
+    border: 2px solid $color-blue;
+    outline: none;
+    box-shadow: none;
+  }
+}

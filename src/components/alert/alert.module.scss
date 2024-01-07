@@ -1,0 +1,63 @@
+@use '@helpers/variables.scss' as *;
+
+.show {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hide {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.alert {
+  position: absolute;
+  z-index: 999;
+  right: 20px;
+  bottom: 70px;
+
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+
+  max-width: 440px;
+  padding: 8px;
+
+  font-size: 14px;
+  color: $color-red;
+
+  background-color: $color-red-light;
+  border-radius: 6px;
+
+  .close-button {
+    margin-top: 4px;
+    padding: 0;
+
+    font-size: 0;
+
+    background-color: transparent;
+    border: none;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border: none;
+    }
+
+    > img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+.close-img {
+  width: 12px;
+  height: 12px;
+}
+
+.warning-icon {
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+}

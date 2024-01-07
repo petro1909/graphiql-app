@@ -1,0 +1,99 @@
+@use '@helpers/variables.scss' as *;
+
+@import '@helpers/mixins';
+
+.main {
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 0 20px;
+}
+
+.main-top {
+  @include _768 {
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 20px 0;
+}
+
+.sand-box {
+  @include _992 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  position: relative;
+
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr auto;
+  grid-template-rows: 100%;
+  flex-grow: 1;
+  gap: 5px;
+
+  margin-bottom: 20px;
+}
+
+.actions-grid-wrapper {
+  @include _992 {
+    order: 1;
+  }
+
+  grid-column: 1/2;
+}
+
+.query-grid-wrapper {
+  @include _992 {
+    order: 1;
+  }
+
+  grid-column: 2/3;
+}
+
+.results-grid-wrapper {
+  @include _992 {
+    order: 1;
+  }
+
+  grid-column: 3/4;
+}
+
+.docs-grid-wrapper {
+  @include _992 {
+    order: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  grid-column: 4/5;
+}
+
+.docs-hidden {
+  display: none;
+}
+
+.main-content {
+  display: flex;
+}
+
+.main-header {
+  @include _992 {
+    order: 10;
+  }
+
+  grid-row: 2/3;
+}
+
+.hidden-section-header {
+  width: 0;
+  height: 0;
+  font-size: 0;
+}
